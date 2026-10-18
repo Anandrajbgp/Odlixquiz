@@ -1,8 +1,6 @@
 """Entry point - python bot.py se bot start hota hai."""
 import logging
 import os
-import threading
-from flask import Flask
 
 from telegram.ext import (
     Application, CommandHandler, MessageHandler, CallbackQueryHandler,
@@ -22,19 +20,6 @@ from quiz import handle_poll_answer
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
-
-# ---------- Keep-alive Flask server (Koyeb free tier ke liye) ----------
-flask_app = Flask(__name__)
-
-@flask_app.route("/")
-def home():
-    return "Bot is running!"
-
-def run_flask():
-    port = int(os.environ.get("PORT", 8080))
-    flask_app.run(host="0.0.0.0", port=port)
-
-# ----------------------------------------------------------------------
 
 
 async def on_error(update, context):
@@ -70,10 +55,7 @@ def main():
     app.add_error_handler(on_error)
     # app.post_init = setup_menu_button  # ☰ menu button beside chat box hata diya gaya
 
-    # Flask server background mein start karo (Koyeb port pe listen karega)
-    threading.Thread(target=run_flask, daemon=True).start()
-
-    print("Bot starting (panels + keep-alive)...")
+    print("Bot starting (panels + polling)...")
     app.run_polling()
 
 
