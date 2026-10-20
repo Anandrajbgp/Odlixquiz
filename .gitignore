@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+data.json
+data.json.bak
+*.corrupt
+bot_before_split_backup.py
+bot_old.py
+bot_v2_backup.py
+
