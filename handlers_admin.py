@@ -62,8 +62,12 @@ async def admin_panel_callback(update, context, data):
         await q.message.reply_text(bcm.targets_text(), parse_mode="HTML")
     elif act == "live":
         import live as lvm
+        from telegram import InlineKeyboardButton, InlineKeyboardMarkup
         if lvm.is_live_active():
-            await q.message.reply_text(lvm.live_status_text() + "\nRokne ke liye /livestop", parse_mode="HTML")
+            kb = InlineKeyboardMarkup([
+                [InlineKeyboardButton("⏹ LIVE Roko", callback_data="adm:livestop")]])
+            await q.message.reply_text(lvm.live_status_text() + "\nNeeche button se roko ya /livestop bhejo.",
+                                        reply_markup=kb, parse_mode="HTML")
         else:
             context.user_data["astate"] = {"step": "pick_cat_for_live"}
             await q.message.reply_text("🔴 <b>Kis category ka test LIVE bhejna hai?</b>\n🔒 = sirf LIVE ke liye (user ko nahi dikhega)",
@@ -72,6 +76,23 @@ async def admin_panel_callback(update, context, data):
         context.user_data["astate"] = {"step": "pick_cat_for_hide"}
         await q.message.reply_text("👁 <b>Kis category ko LIVE (hidden) / normal karna hai?</b>\n🔒 laga = user ko nahi dikhega, sirf /live se jayega.",
                                     reply_markup=cat_inline("hidecat"), parse_mode="HTML")
+    elif act == "livestop":
+        import live as lvm
+        from live import _lv
+        import database as dbm
+        lv = _lv()
+        if not lv.get("active"):
+            await q.message.reply_text("Koi LIVE nahi chal raha.")
+        else:
+            lv["active"] = False
+            dbm.save_data()
+            await q.message.reply_text("⏹ LIVE rok diya.")
+            try:
+                import broadcast as bcm
+                await bcm.broadcast_text(context, "⏹ LIVE TEST rok diya gaya.")
+            except Exception:
+                pass
+        return True
     elif act == "stats":
         await q.message.reply_text(admin_stats_line(), parse_mode="HTML")
     elif act == "scores":
