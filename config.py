@@ -13,8 +13,10 @@ except ValueError:
     ADMIN_ID = 0
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_FILE = BASE_DIR / "data.json"
-BACKUP_FILE = BASE_DIR / "data.json.bak"
+# Railway Volume lagane par DATA_DIR=/data set karo taaki data.json redeploy me na ude
+DATA_DIR = Path(os.getenv("DATA_DIR", str(BASE_DIR)))
+DATA_FILE = DATA_DIR / "data.json"
+BACKUP_FILE = DATA_DIR / "data.json.bak"
 
 POLL_OPEN_SECONDS = 20
 TIMEOUT_GRACE = 8  # poll expire ke baad kitna wait karke auto-advance

@@ -41,6 +41,12 @@ def main():
     if not BOT_TOKEN:
         print("BOT_TOKEN missing! .env me daalo.")
         return
+    # Railway: $PORT par health server taaki service Offline na dikhe
+    try:
+        from health import start_health_server
+        start_health_server()
+    except Exception as e:
+        print(f"Health server start nahi hua: {e}")
     dbm.load_data()
     # seed_demo band: admin khud category + PDF se banayega
     app = Application.builder().token(BOT_TOKEN).build()
