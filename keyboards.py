@@ -242,6 +242,60 @@ async def setup_menu_button(app):
         logging.getLogger(__name__).warning(f"menu button setup fail: {e}")
 
 
+# Test ke har Q par kitna time (sec) - LIVE + personal dono isi se chalenge
+QTIME_OPTIONS = [10, 20, 30, 60, 120]
+DEFAULT_QTIME = 30
+
+
+def fmt_qtime(sec) -> str:
+    try:
+        sec = int(sec or DEFAULT_QTIME)
+    except Exception:
+        sec = DEFAULT_QTIME
+    if sec >= 60:
+        m = sec // 60
+        return f"{m} min" if sec % 60 == 0 else f"{m}m {sec % 60}s"
+    return f"{sec}s"
+
+
+def qtime_keyboard(prefix, cid, sid, tid):
+    btns = []
+    row = []
+    for sec in QTIME_OPTIONS:
+        row.append(InlineKeyboardButton(
+            f"⏱ {fmt_qtime(sec)}", callback_data=f"{prefix}:{cid}:{sid}:{tid}:{sec}"))
+        if len(row) == 3:
+            btns.append(row)
+            row = []
+    if row:
+        btns.append(row)
+    return InlineKeyboardMarkup(btns)
+
+
+def set_test_qtime(cid, sid, tid, sec: int):
+    t = dbm.get_test(cid, sid, tid)
+    if not t:
+        return False
+    try:
+        sec = max(5, min(int(sec), 600))
+    except Exception:
+        sec = DEFAULT_QTIME
+    t["qtime"] = sec
+    dbm.save_data()
+    return True
+
+
+def get_test_qtime(cid=None, sid=None, tid=None, t=None) -> int:
+    try:
+        if t is None and cid and sid and tid:
+            t = dbm.get_test(cid, sid, tid)
+        if isinstance(t, dict) and t.get("qtime"):
+            return max(5, min(int(t["qtime"]), 600))
+    except Exception:
+        pass
+    return DEFAULT_QTIME
+
+
 def cat_inline(prefix, page=0, include_hidden=None):
     items = list(dbm.db["categories"].items())
     # LIVE/hidden category user ko kabhi mat dikhao; admin ko sab dikhao

@@ -52,7 +52,11 @@ async def send_q(chat_id, uid, cid, sid, tid, qi, context, stop_msg_id=None):
     total = len(t["questions"])
     s = dbm.get_sub(cid, sid)
     sub_name = s["name"] if s else ""
-    timer = context.user_data.get("quiz_timer", POLL_OPEN_SECONDS)
+    try:
+        from keyboards import get_test_qtime
+        timer = get_test_qtime(t=t)
+    except Exception:
+        timer = context.user_data.get("quiz_timer", POLL_OPEN_SECONDS)
     msg = await _safe_send_poll(
         context.bot, chat_id,
         f"[{sub_name}] Q{qi + 1}/{total}: {q['question']}",
@@ -84,7 +88,16 @@ async def send_q(chat_id, uid, cid, sid, tid, qi, context, stop_msg_id=None):
 
 
 async def _timeout_watch(poll_id, uid, context):
-    timer = context.user_data.get("quiz_timer", POLL_OPEN_SECONDS)
+    info0 = active_polls.get(poll_id)
+    timer = None
+    if info0:
+        try:
+            from keyboards import get_test_qtime as _gt
+            timer = _gt(info0.get("cid"), info0.get("sid"), info0.get("tid"))
+        except Exception:
+            timer = None
+    if not timer:
+        timer = context.user_data.get("quiz_timer", POLL_OPEN_SECONDS)
     await asyncio.sleep(timer + TIMEOUT_GRACE)
     info = active_polls.pop(poll_id, None)
     if not info or info["uid"] != uid:

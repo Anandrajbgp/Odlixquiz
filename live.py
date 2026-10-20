@@ -23,7 +23,9 @@ def live_status_text() -> str:
         t = dbm.get_test(lv.get("cid", ""), lv.get("sid", ""), lv.get("tid", ""))
         title = t.get("title", "?") if t else "?"
         n = len(lv.get("msg_ids", []))
-        return f"LIVE chal raha: <b>{title}</b> ({n} Q bheje). /livestop se roko."
+        from keyboards import get_test_qtime
+        qt = get_test_qtime(t=t)
+        return f"LIVE chal raha: <b>{title}</b> ({n} Q bheje, ⏱ {qt}s/Q). /livestop se roko."
     return "Koi LIVE test nahi chal raha."
 
 def live_index_map():
@@ -59,16 +61,18 @@ def find_test_by_name(text: str):
 def live_tests_list() -> str:
     lines = ["<b>LIVE bhejne ke liye test chuno:</b>"]
     idx = 0
+    from keyboards import get_test_qtime, fmt_qtime
     for cid, c in dbm.db.get("categories", {}).items():
         tag = " [LIVE]" if c.get("hidden") else ""
         for sid, s in (c.get("subjects") or {}).items():
             for tid, t in (s.get("tests") or {}).items():
                 idx += 1
                 nq = len(t.get("questions", []))
-                lines.append(f"{idx}. {c.get('name')}/{s.get('name')} - <b>{t.get('title')}</b> ({nq} Q){tag}")
+                qt = fmt_qtime(get_test_qtime(t=t))
+                lines.append(f"{idx}. {c.get('name')}/{s.get('name')} - <b>{t.get('title')}</b> ({nq} Q, ⏱ {qt}){tag}")
     if idx == 0:
         return "Koi test nahi. Pehle category + PDF se test banao."
-    lines.append("Bhejo: <code>/live 1</code> ya <code>/live Test 1</code>")
+    lines.append("Bhejo: <code>/live 1</code> ya <code>/live Test 1</code> (test ka time lagega)")
     return "\n".join(lines)
 
 async def _send_q_to_targets(context, q, qi, total, title):
@@ -94,7 +98,7 @@ async def _send_q_to_targets(context, q, qi, total, title):
             logger.warning(f"live Q to {cid} fail: {e}")
     return sent
 
-async def run_live(context, cid, sid, tid, gap: int, admin_chat_id: int):
+async def run_live(context, cid, sid, tid, gap: int | None, admin_chat_id: int):
     lv = _lv()
     if lv.get("active"):
         try:
@@ -115,7 +119,14 @@ async def run_live(context, cid, sid, tid, gap: int, admin_chat_id: int):
         except Exception:
             pass
         return
-    lv.update({"active": True, "cid": cid, "sid": sid, "tid": tid, "gap": gap, "msg_ids": []})
+    lv.update({"active": True, "cid": cid, "sid": sid, "tid": tid, "gap": gap or 0, "msg_ids": []})
+    dbm.save_data()
+    # gap = test ka qtime (banate samay chuna). None/0 aaye to test ka time lo.
+    from keyboards import get_test_qtime
+    if not gap:
+        gap = get_test_qtime(cid, sid, tid)
+    gap = max(5, min(int(gap), 600))
+    lv["gap"] = gap
     dbm.save_data()
     qs = t["questions"]
     total = len(qs)
@@ -164,12 +175,12 @@ async def cmd_live(update, context):
         await update.effective_message.reply_text("Ek LIVE chal raha. /livestop se roko.")
         return
     arg = " ".join(context.args).strip() if context.args else ""
-    gap = DEFAULT_GAP
+    gap = None  # None = test ka qtime (banate samay chuna hua)
     if context.args:
         last = context.args[-1].lower()
         m = re.match(r"^(gap=)?(\d+)$", last)
         if m and len(context.args) > 1:
-            gap = max(10, min(int(m.group(2)), 300))
+            gap = max(5, min(int(m.group(2)), 600))
             arg = " ".join(context.args[:-1]).strip()
     if not arg:
         await update.effective_message.reply_text(live_tests_list(), parse_mode="HTML")
@@ -184,8 +195,11 @@ async def cmd_live(update, context):
         return
     cid, sid, tid = found
     t = dbm.get_test(cid, sid, tid)
+    from keyboards import get_test_qtime
+    use_gap = gap or get_test_qtime(cid, sid, tid)
+    note = " (test ka time)" if not gap else " (is baar override)"
     await update.effective_message.reply_text(
-        f"LIVE shuru: <b>{t.get('title')}</b> ({len(t.get('questions', []))} Q, har {gap} sec).",
+        f"LIVE shuru: <b>{t.get('title')}</b> ({len(t.get('questions', []))} Q, ⏱ {use_gap}s/Q{note}).",
         parse_mode="HTML")
     start_live_task(context, cid, sid, tid, gap, update.effective_chat.id)
 

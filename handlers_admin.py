@@ -19,7 +19,7 @@ async def admin_panel_callback(update, context, data):
     Returns True = handled, False = aage wale handler ko do."""
     q = update.callback_query
     act = data.split(":", 1)[1] if ":" in data else ""
-    if data.startswith(("livecat:", "livesub:", "livetest:", "hidecat:")):
+    if data.startswith(("livecat:", "livesub:", "livetest:", "hidecat:", "qtime:", "qtimechg:", "qtimepick:")):
         st = context.user_data.get("astate", {})
         await admin_callback(update, context, data, st)
         return True
@@ -113,11 +113,20 @@ async def admin_panel_callback(update, context, data):
 
 
 async def admin_text_step(update, context):
-    txt = clean_text(update.message.text.strip())
     st = context.user_data.get("astate")
     if not st:
         return False
     step = st.get("step")
+    if step in ("wait_qtime", "wait_qtime_pdf"):
+        txt = clean_text((update.message.text or "").strip())
+        if txt == "/cancel":
+            context.user_data.pop("astate", None)
+            from keyboards import admin_home_panel as _ah, admin_stats_line as _as
+            t0, k0 = _ah(_as())
+            await update.message.reply_text(f"Time 30s default rakha.\n\n{t0}", reply_markup=k0, parse_mode="HTML")
+            return True
+        return True  # time button se chuno
+    txt = clean_text(update.message.text.strip())
     if step == "wait_cat_name":
         if not txt or len(txt) < 2:
             await update.message.reply_text("❌ Naam chhota hai. Dobara bhejo.")
@@ -167,14 +176,18 @@ async def admin_text_step(update, context):
         n = dbm.next_test_number_in(st["cid"], st["sid"])
         title = f"Test {n}"
         tid = dbm.new_id("t", "test")
-        s["tests"][tid] = {"title": title, "questions": qs}
+        s["tests"][tid] = {"title": title, "questions": qs, "qtime": 30}
         dbm.save_data()
         context.user_data.pop("astate", None)
         from keyboards import admin_home_panel as ahp2, admin_stats_line as asl2
+        from keyboards import qtime_keyboard
         t4, k4 = ahp2(asl2())
         await update.message.reply_text(
-            f"✅ <b>{title}</b> save! {len(qs)} Qs.\n\n{t4}",
-            reply_markup=k4, parse_mode="HTML")
+            f"✅ <b>{title}</b> save! {len(qs)} Qs.\n\n"
+            f"⏱ <b>Har Q par kitna time?</b> (LIVE channel + personal dono me yahi lagega)\n"
+            f"Neeche dabao ya /cancel (30s default):",
+            reply_markup=qtime_keyboard("qtime", st["cid"], st["sid"], tid), parse_mode="HTML")
+        context.user_data["astate"] = {"step": "wait_qtime", "cid": st["cid"], "sid": st["sid"], "tid": tid}
         return True
     return False
 
@@ -339,6 +352,46 @@ async def admin_callback(update, context, data, st):
         await q.message.reply_text(f"<b>{c['name']}</b> ab: {st2}\nAur badalna ho to dobara chuno.",
                                     reply_markup=cat_inline("hidecat"), parse_mode="HTML")
         return
+    if data.startswith("qtime:"):
+        _, cid, sid, tid, sec = data.split(":")
+        from keyboards import set_test_qtime, fmt_qtime
+        try:
+            sec_i = int(sec)
+        except Exception:
+            sec_i = 30
+        if set_test_qtime(cid, sid, tid, sec_i):
+            t = dbm.get_test(cid, sid, tid)
+            c = dbm.get_cat(cid)
+            s = dbm.get_sub(cid, sid)
+            cname = c.get("name", "") if c else ""
+            sname = s.get("name", "") if s else ""
+            await q.message.reply_text(
+                f"⏱ <b>{t.get('title')}</b> → {cname} › {sname}: har Q par <b>{fmt_qtime(sec_i)}</b> set!\n"
+                f"LIVE channel me har {sec_i} sec me ek Q jayega. Personal me bhi yahi timer lagega.",
+                parse_mode="HTML")
+        else:
+            await q.message.reply_text("❌ Test nahi mila.")
+        context.user_data.pop("astate", None)
+        from keyboards import admin_home_panel as _ahp, admin_stats_line as _asl
+        t5, k5 = _ahp(_asl())
+        await q.message.reply_text(t5, reply_markup=k5, parse_mode="HTML")
+        return
+    if data.startswith("qtimechg:"):
+        _, cid, sid, tid, sec = data.split(":")
+        from keyboards import set_test_qtime, fmt_qtime
+        try:
+            sec_i = int(sec)
+        except Exception:
+            sec_i = 30
+        if set_test_qtime(cid, sid, tid, sec_i):
+            t = dbm.get_test(cid, sid, tid)
+            await q.message.reply_text(
+                f"⏱ <b>{t.get('title')}</b> ka time ab <b>{fmt_qtime(sec_i)}</b>/Q!",
+                parse_mode="HTML")
+        else:
+            await q.message.reply_text("❌ Test nahi mila.")
+        context.user_data.pop("astate", None)
+        return
     if data.startswith("livecat:"):
         cid = data.split(":")[1]
         c = dbm.get_cat(cid)
@@ -365,14 +418,33 @@ async def admin_callback(update, context, data, st):
             return
         import re
         from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+        from keyboards import get_test_qtime, fmt_qtime
         def sortkey(item):
             tid, t = item
             m = re.search(r"(\d+)", t.get("title", "") or "")
             return (int(m.group(1)) if m else 9999, t.get("title", ""))
         btns = []
         for tid, t in sorted(tests.items(), key=sortkey):
-            btns.append([InlineKeyboardButton(f"🔴 {t.get('title', tid)} ({len(t.get('questions', []))} Q)", callback_data=f"livetest:{cid}:{sid}:{tid}")])
-        await q.message.reply_text("🔴 <b>Kaunsa test LIVE bhejna hai?</b> (dabate hi 30-sec gap se jayega)", reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
+            qt = fmt_qtime(get_test_qtime(t=t))
+            btns.append([InlineKeyboardButton(f"🔴 {t.get('title', tid)} ({len(t.get('questions', []))} Q, ⏱ {qt})", callback_data=f"livetest:{cid}:{sid}:{tid}")])
+        # purane test ka time badalna ho to
+        tbtns = []
+        for tid, t in sorted(tests.items(), key=sortkey):
+            qt = fmt_qtime(get_test_qtime(t=t))
+            tbtns.append([InlineKeyboardButton(f"⏱ {t.get('title', tid)} ({qt}) → time badlo", callback_data=f"qtimepick:{cid}:{sid}:{tid}")])
+        await q.message.reply_text("🔴 <b>Kaunsa test LIVE bhejna hai?</b> (dabate hi uske time se jayega)", reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
+        await q.message.reply_text("⏱ <b>Purane test ka time badalna ho to chuno:</b>", reply_markup=InlineKeyboardMarkup(tbtns), parse_mode="HTML")
+        return
+    if data.startswith("qtimepick:"):
+        _, cid, sid, tid = data.split(":")
+        from keyboards import qtime_keyboard, get_test_qtime, fmt_qtime
+        t = dbm.get_test(cid, sid, tid)
+        if not t:
+            await q.message.reply_text("❌ Test nahi mila.")
+            return
+        await q.message.reply_text(
+            f"⏱ <b>{t.get('title')}</b> — abhi {fmt_qtime(get_test_qtime(t=t))}/Q. Naya time chuno:",
+            reply_markup=qtime_keyboard("qtimechg", cid, sid, tid), parse_mode="HTML")
         return
     if data.startswith("livetest:"):
         _, cid, sid, tid = data.split(":")
@@ -385,8 +457,10 @@ async def admin_callback(update, context, data, st):
             await q.message.reply_text("Test nahi mila.")
             return
         context.user_data.pop("astate", None)
-        await q.message.reply_text(f"🔴 LIVE shuru: <b>{t.get('title')}</b> ({len(t.get('questions', []))} Q, har 30 sec).", parse_mode="HTML")
-        lvm.start_live_task(context, cid, sid, tid, 30, q.message.chat_id)
+        from keyboards import get_test_qtime
+        use_gap = get_test_qtime(cid, sid, tid)
+        await q.message.reply_text(f"🔴 LIVE shuru: <b>{t.get('title')}</b> ({len(t.get('questions', []))} Q, ⏱ {use_gap}s/Q).", parse_mode="HTML")
+        lvm.start_live_task(context, cid, sid, tid, None, q.message.chat_id)
         return
     if data.startswith("asub:"):
         cid = data.split(":")[1]
@@ -507,12 +581,16 @@ async def handle_test_pdf(update, context, st):
     n = dbm.next_test_number_in(st["cid"], st["sid"])
     title = f"Test {n}"
     tid = dbm.new_id("t", "test")
-    s["tests"][tid] = {"title": title, "questions": qs, "source_pdf": fname}
+    s["tests"][tid] = {"title": title, "questions": qs, "source_pdf": fname, "qtime": 30}
     st["count"] = st.get("count", 0) + 1
     dbm.save_data()
     c = dbm.get_cat(st["cid"])
+    from keyboards import qtime_keyboard
     await update.message.reply_text(
-        f"✅ <b>{title}</b> → {c['name']} › {s['name']}! {len(qs)} Qs.\n"
-        "Aur PDF bhejo ya /cancel.",
+        f"✅ <b>{title}</b> → {c['name']} › {s['name']}! {len(qs)} Qs.\n\n"
+        f"⏱ <b>Har Q par kitna time?</b> (LIVE channel + personal dono me yahi lagega)\n"
+        f"Neeche dabao ya aur PDF bhejo (30s default):",
+        reply_markup=qtime_keyboard("qtime", st["cid"], st["sid"], tid),
         parse_mode="HTML")
+    context.user_data["astate"] = {"step": "wait_qtime_pdf", "cid": st["cid"], "sid": st["sid"], "tid": tid, "count": st.get("count", 0)}
 

@@ -57,10 +57,19 @@ async def cmd_leaderboard(update, context):
 async def cmd_cancel(update, context):
     uid = update.effective_user.id
     context.user_data.pop("astate", None)
-    quiz.cancel_live(uid, context)
-    await update.message.reply_text(
-        "Cancelled. Use /start to go back home.",
-        reply_markup=user_home_panel(uid))
+    try:
+        import quiz as _qz
+        _qz.cancel_live(uid, context)
+    except Exception:
+        pass
+    if uid == ADMIN_ID:
+        from keyboards import admin_home_panel, admin_stats_line
+        txt, kb = admin_home_panel(admin_stats_line())
+        await update.message.reply_text("Cancelled.", reply_markup=kb, parse_mode="HTML")
+    else:
+        await update.message.reply_text(
+            "Cancelled. Use /start to go back home.",
+            reply_markup=user_home_panel(uid))
 
 
 async def cmd_admin(update, context):
@@ -210,7 +219,7 @@ async def on_callback(update, context):
         handled = await admin_panel_callback(update, context, data)
         if handled is not False:
             return
-    if data.startswith(("livecat:", "livesub:", "livetest:", "hidecat:")):
+    if data.startswith(("livecat:", "livesub:", "livetest:", "hidecat:", "qtime:", "qtimechg:", "qtimepick:")):
         if uid != ADMIN_ID:
             await q.answer("Admin only.", show_alert=True)
             return
@@ -442,6 +451,7 @@ async def on_callback(update, context):
         or data.startswith("deldo:del:")
         or data.startswith("hidecat:") or data.startswith("livecat:")
         or data.startswith("livesub:") or data.startswith("livetest:")
+        or data.startswith("qtime:") or data.startswith("qtimechg:") or data.startswith("qtimepick:")
     ):
         from handlers_admin import admin_callback
         await admin_callback(update, context, data, st)
