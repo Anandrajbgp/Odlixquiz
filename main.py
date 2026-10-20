@@ -18,6 +18,7 @@ from keyboards import setup_menu_button
 from quiz import handle_poll_answer
 import broadcast as bcm
 import live as lvm
+from telegram.ext import filters as _tg_filters
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
@@ -51,8 +52,11 @@ def main():
     app.add_handler(CommandHandler("cancel", cmd_cancel))
     app.add_handler(CommandHandler("admin", cmd_admin))
     # broadcast: channel/group link + admin jo bolega bot bhejega
-    app.add_handler(CommandHandler("myid", bcm.cmd_myid))
-    app.add_handler(CommandHandler("linkhere", bcm.cmd_linkhere))
+    # NOTE: channel me /myid ya /linkhere post karo to CommandHandler usko
+    # pakad leta hai (Type.CHANNEL_POST filter nahi hota) - isliye ye dono
+    # command channel-post se bhi kaam karenge (broadcast.py me handled).
+    app.add_handler(CommandHandler("myid", bcm.cmd_myid, filters=_tg_filters.ALL))
+    app.add_handler(CommandHandler("linkhere", bcm.cmd_linkhere, filters=_tg_filters.ALL))
     app.add_handler(CommandHandler("unlinkhere", bcm.cmd_unlinkhere))
     app.add_handler(CommandHandler("targets", bcm.cmd_targets))
     app.add_handler(CommandHandler("addtarget", bcm.cmd_addtarget))

@@ -52,7 +52,7 @@ def targets_text() -> str:
 async def _send_to_all(context, send_fn):
     tg = get_targets()
     if not tg:
-        return 0, 0, ["Koi target linked nahi. Pehle /linkhere karo."]
+        return 0, 0, ["Koi target linked nahi. Pehle /linkhere ya /addtarget karo."]
     ok, fail, errs = 0, 0, []
     for cid in list(tg.keys()):
         try:
@@ -60,9 +60,17 @@ async def _send_to_all(context, send_fn):
             ok += 1
         except TelegramError as e:
             fail += 1
-            errs.append(f"{cid}: {e}")
-            msg = str(e).lower()
-            if ("kicked" in msg or "not found" in msg or "blocked" in msg or "deactivated" in msg):
+            low = str(e).lower()
+            hint = ""
+            if "not enough rights" in low or "not enough rights to send" in low:
+                hint = " (bot ko channel/group me ADMIN banao + Post Messages permission do)"
+            elif "chat not found" in low:
+                hint = " (bot us chat me nahi hai ya ID galat hai)"
+            elif "bot was blocked" in low or "kicked" in low:
+                hint = " (bot ko bahar nikal diya gaya)"
+            errs.append(f"{cid}: {e}{hint}")
+            if ("kicked" in low or "chat not found" in low or "bot was blocked" in low
+                    or "deactivated" in low):
                 try:
                     remove_target(cid)
                 except Exception:
@@ -85,16 +93,82 @@ async def broadcast_copy(update: Update, context):
         await context.bot.copy_message(chat_id=cid, from_chat_id=src.chat_id, message_id=src.message_id)
     return await _send_to_all(context, _one)
 
-def _is_admin(uid: int) -> bool:
-    return bool(ADMIN_ID) and uid == ADMIN_ID
+def _is_admin(uid) -> bool:
+    try:
+        return bool(ADMIN_ID) and uid is not None and int(uid) == int(ADMIN_ID)
+    except Exception:
+        return False
+
+
+def _sender_id(update) -> int | None:
+    try:
+        u = update.effective_user
+        return u.id if u else None
+    except Exception:
+        return None
+
+
+async def _maybe_handle_channel_command(update, context) -> bool:
+    """Channel post me /myid ya /linkhere aaye to handle karo. True = handled."""
+    post = update.channel_post
+    if not post:
+        return False
+    txt = (post.text or post.caption or "").strip()
+    if not txt.startswith("/"):
+        return False
+    cmd = txt.split()[0].split("@")[0].lower()
+    chat = post.chat
+    if cmd == "/myid":
+        try:
+            await context.bot.send_message(
+                chat_id=chat.id,
+                text=f"ID: <code>{chat.id}</code>\nTitle: {chat.title or '-'}",
+                parse_mode="HTML")
+        except Exception as e:
+            logger.warning(f"channel /myid fail: {e}")
+        # ID batane ke sath-sath auto-link bhi kar do
+        try:
+            add_target(chat.id, chat.title or chat.username or "", chat.type)
+        except Exception:
+            pass
+        return True
+    if cmd == "/linkhere":
+        # Channel post me sender ka pata nahi chalta, isliye yahan admin-check
+        # possible nahi. Channel ka admin hi post kar sakta hai, to link kar do.
+        try:
+            add_target(chat.id, chat.title or chat.username or "", chat.type)
+            await context.bot.send_message(
+                chat_id=chat.id,
+                text=(f"Linked! <b>{chat.title or chat.id}</b> (<code>{chat.id}</code>)\n"
+                      f"Ab admin private me /send ya /live se yahan bhej sakta hai."),
+                parse_mode="HTML")
+        except Exception as e:
+            logger.warning(f"channel /linkhere fail: {e}")
+        return True
+    return False
+
+
 async def cmd_myid(update, context):
+    if update.channel_post:
+        try:
+            if await _maybe_handle_channel_command(update, context):
+                return
+        except Exception:
+            pass
     c = update.effective_chat
     await update.effective_message.reply_text(
         f"ID: <code>{c.id}</code>\nType: {c.type}\nTitle: {c.title or '-'}",
         parse_mode="HTML")
 
 async def cmd_linkhere(update, context):
-    if not _is_admin(update.effective_user.id):
+    if update.channel_post:
+        try:
+            if await _maybe_handle_channel_command(update, context):
+                return
+        except Exception:
+            pass
+        return
+    if not _is_admin(_sender_id(update)):
         await update.effective_message.reply_text("Admin only.")
         return
     c = update.effective_chat
@@ -109,7 +183,9 @@ async def cmd_linkhere(update, context):
         parse_mode="HTML")
 
 async def cmd_unlinkhere(update, context):
-    if not _is_admin(update.effective_user.id):
+    if update.channel_post:
+        return
+    if not _is_admin(_sender_id(update)):
         return
     c = update.effective_chat
     if remove_target(c.id):
@@ -118,13 +194,17 @@ async def cmd_unlinkhere(update, context):
         await update.effective_message.reply_text("Ye chat list me nahi tha.")
 
 async def cmd_targets(update, context):
-    if not _is_admin(update.effective_user.id):
+    if update.channel_post:
+        return
+    if not _is_admin(_sender_id(update)):
         await update.effective_message.reply_text("Admin only.")
         return
     await update.effective_message.reply_text(targets_text(), parse_mode="HTML")
 
 async def cmd_addtarget(update, context):
-    if not _is_admin(update.effective_user.id):
+    if update.channel_post:
+        return
+    if not _is_admin(_sender_id(update)):
         await update.effective_message.reply_text("Admin only.")
         return
     if not context.args:
@@ -148,7 +228,9 @@ async def cmd_addtarget(update, context):
             f"Jod nahi paya. Bot us chat me Admin hai? Error: {e}")
 
 async def cmd_deltarget(update, context):
-    if not _is_admin(update.effective_user.id):
+    if update.channel_post:
+        return
+    if not _is_admin(_sender_id(update)):
         return
     if not context.args:
         await update.effective_message.reply_text("Use: <code>/deltarget -100xxxx</code>", parse_mode="HTML")
@@ -159,7 +241,9 @@ async def cmd_deltarget(update, context):
         await update.effective_message.reply_text("Ye id list me nahi.")
 
 async def cmd_broadcast(update, context):
-    if not _is_admin(update.effective_user.id):
+    if update.channel_post:
+        return
+    if not _is_admin(_sender_id(update)):
         await update.effective_message.reply_text("Admin only.")
         return
     text = " ".join(context.args) if context.args else ""
@@ -177,7 +261,9 @@ async def cmd_broadcast(update, context):
     await update.effective_message.reply_text(rep)
 
 async def cmd_send(update, context):
-    if not _is_admin(update.effective_user.id):
+    if update.channel_post:
+        return
+    if not _is_admin(_sender_id(update)):
         await update.effective_message.reply_text("Admin only.")
         return
     if not get_targets():
@@ -189,7 +275,9 @@ async def cmd_send(update, context):
         parse_mode="HTML")
 
 async def cmd_autofwd(update, context):
-    if not _is_admin(update.effective_user.id):
+    if update.channel_post:
+        return
+    if not _is_admin(_sender_id(update)):
         return
     arg = (context.args[0].lower() if context.args else "").strip()
     bc = _bc()
@@ -214,6 +302,12 @@ async def on_bot_added(update, context):
         logger.warning(f"on_bot_added fail: {e}")
 
 async def on_channel_post(update, context):
+    # pehle channel ke /linkhere, /myid command dekho
+    try:
+        if await _maybe_handle_channel_command(update, context):
+            return
+    except Exception as e:
+        logger.warning(f"channel cmd fail: {e}")
     post = update.channel_post
     if not post:
         return
