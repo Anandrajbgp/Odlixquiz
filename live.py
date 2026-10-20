@@ -133,9 +133,20 @@ async def run_live(context, cid, sid, tid, gap: int | None, admin_chat_id: int):
     title = t.get("title", "")
     c = dbm.get_cat(cid)
     s = dbm.get_sub(cid, sid)
-    head = (f"LIVE TEST shuru! <b>{c.get('name','')}/{s.get('name','') if s else ''} - {title}</b>\n"
-        f"{total} Q, har {gap} sec me ek. Sab taiyaar!")
+    head = (f"🔴 LIVE TEST shuru! <b>{c.get('name','')}/{s.get('name','') if s else ''} - {title}</b>\n"
+        f"{total} Q, har {gap} sec me ek. Sab taiyaar!\n\n"
+        f"⏹ Rokne ke liye admin ko <code>/livestop</code> bhejna hai.")
     try:
+        from telegram import InlineKeyboardButton as _B, InlineKeyboardMarkup as _M
+        # admin ko private me stop button bhejo
+        try:
+            stop_kb = _M([[ _B("⏹ LIVE Roko", callback_data="adm:livestop") ]])
+            await context.bot.send_message(
+                chat_id=admin_chat_id,
+                text=f"🔴 LIVE chal raha: <b>{title}</b> ({total} Q, {gap}s/Q).\nNeeche button se roko:",
+                parse_mode="HTML", reply_markup=stop_kb)
+        except Exception as e:
+            logger.warning(f"live stop btn fail: {e}")
         await bcm.broadcast_text(context, head)
     except Exception as e:
         logger.warning(f"live head fail: {e}")
