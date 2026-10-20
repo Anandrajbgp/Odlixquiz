@@ -14,8 +14,15 @@ async def open_admin_panel_chat(update, context):
 
 
 async def admin_panel_callback(update, context, data):
+    """Admin panel ke inline buttons. livecat/hidecat/livetest bhi yahin handle
+    honge taaki hidden category select karne par 'gadbad' na aaye.
+    Returns True = handled, False = aage wale handler ko do."""
     q = update.callback_query
     act = data.split(":", 1)[1] if ":" in data else ""
+    if data.startswith(("livecat:", "livesub:", "livetest:", "hidecat:")):
+        st = context.user_data.get("astate", {})
+        await admin_callback(update, context, data, st)
+        return True
     if act == "del":
         from keyboards import delete_menu
         await q.message.reply_text("🗑 <b>Kya delete karna hai?</b>", reply_markup=delete_menu(), parse_mode="HTML")
@@ -80,6 +87,8 @@ async def admin_panel_callback(update, context, data):
             for e in arr[-3:]:
                 lines.append(f"{e.get('name', uid2)} | {e.get('cat','')}/{e.get('sub','')} → {e.get('score')}/{e.get('total')}")
         await q.message.reply_text("Sabki history:\n" + "\n".join(lines[-15:]))
+        return True
+    return True
 
 
 async def admin_text_step(update, context):
@@ -334,6 +343,7 @@ async def admin_callback(update, context, data, st):
             await q.message.reply_text("Isme koi test nahi.")
             return
         import re
+        from telegram import InlineKeyboardButton, InlineKeyboardMarkup
         def sortkey(item):
             tid, t = item
             m = re.search(r"(\d+)", t.get("title", "") or "")

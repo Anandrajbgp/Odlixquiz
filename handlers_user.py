@@ -201,9 +201,29 @@ async def on_callback(update, context):
         rows = list(kb.inline_keyboard) + [nav_row()]
         await edit_or_send(q, "📂 <b>Category chuno:</b>", InlineKeyboardMarkup(rows))
         return
-    if data.startswith("adm:") and uid == ADMIN_ID:
+    if data.startswith("adm:"):
+        if uid != ADMIN_ID:
+            await q.answer("Admin only.", show_alert=True)
+            return
         from handlers_admin import admin_panel_callback
-        await admin_panel_callback(update, context, data)
+        # livecat/hidecat/livetest yahin handle honge (hidden cat par bhi)
+        handled = await admin_panel_callback(update, context, data)
+        if handled is not False:
+            return
+    if data.startswith(("livecat:", "livesub:", "livetest:", "hidecat:")):
+        if uid != ADMIN_ID:
+            await q.answer("Admin only.", show_alert=True)
+            return
+        from handlers_admin import admin_callback
+        try:
+            await admin_callback(update, context, data, st)
+        except Exception as e:
+            import logging as _lg
+            _lg.getLogger(__name__).error(f"live/hide callback fail {data}: {e}", exc_info=e)
+            try:
+                await q.message.reply_text(f"❌ LIVE me error: {e}\nDebug: {data}")
+            except Exception:
+                pass
         return
     if uid != ADMIN_ID and (
         data.startswith("livecat:") or data.startswith("livesub:") or data.startswith("livetest:")
