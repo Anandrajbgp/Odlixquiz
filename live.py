@@ -1,7 +1,6 @@
-"""LIVE test - admin ke command se test channel/group me 30-30 sec gap se."""
+"""LIVE test - admin ke command se test channel/group me test ke time se."""
 import asyncio
 import logging
-import re
 from telegram import Update
 from telegram.ext import ContextTypes
 import database as dbm
@@ -75,20 +74,22 @@ def live_tests_list() -> str:
     lines.append("Bhejo: <code>/live 1</code> ya <code>/live Test 1</code> (test ka time lagega)")
     return "\n".join(lines)
 
-async def _send_q_to_targets(context, q, qi, total, title):
+async def _send_q_to_targets(context, q, qi, total, title, gap):
     from quiz import _safe_send_poll
     tg = bcm.get_targets()
     sent = 0
     lv = _lv()
+    # har Q ke sath countdown: ⏱ 30s me jawab do!
+    qtext = f"[LIVE {title}] Q{qi + 1}/{total} (⏱ {gap}s): {q['question']}"
     for cid in list(tg.keys()):
         try:
             kind = (tg.get(str(cid)) or {}).get("kind", "")
             is_channel = kind == "channel"
             msg = await _safe_send_poll(
                 context.bot, int(cid),
-                f"[LIVE {title}] Q{qi + 1}/{total}: {q['question']}",
+                qtext,
                 q["options"], q["correct"], q.get("explanation", ""),
-                open_period=None, anonymous=is_channel)
+                open_period=gap, anonymous=is_channel)
             sent += 1
             try:
                 lv.setdefault("msg_ids", []).append(msg.message_id)
@@ -154,7 +155,7 @@ async def run_live(context, cid, sid, tid, gap: int | None, admin_chat_id: int):
         if not _lv().get("active"):
             break
         try:
-            await _send_q_to_targets(context, q, qi, total, title)
+            await _send_q_to_targets(context, q, qi, total, title, gap)
         except Exception as e:
             logger.error(f"live Q{qi} fail: {e}")
         if qi < total - 1:
@@ -186,13 +187,7 @@ async def cmd_live(update, context):
         await update.effective_message.reply_text("Ek LIVE chal raha. /livestop se roko.")
         return
     arg = " ".join(context.args).strip() if context.args else ""
-    gap = None  # None = test ka qtime (banate samay chuna hua)
-    if context.args:
-        last = context.args[-1].lower()
-        m = re.match(r"^(gap=)?(\d+)$", last)
-        if m and len(context.args) > 1:
-            gap = max(5, min(int(m.group(2)), 600))
-            arg = " ".join(context.args[:-1]).strip()
+    # Koi time override nahi - hamesha test ka qtime (banate samay chuna hua)
     if not arg:
         await update.effective_message.reply_text(live_tests_list(), parse_mode="HTML")
         return
@@ -207,12 +202,11 @@ async def cmd_live(update, context):
     cid, sid, tid = found
     t = dbm.get_test(cid, sid, tid)
     from keyboards import get_test_qtime
-    use_gap = gap or get_test_qtime(cid, sid, tid)
-    note = " (test ka time)" if not gap else " (is baar override)"
+    use_gap = get_test_qtime(cid, sid, tid)
     await update.effective_message.reply_text(
-        f"LIVE shuru: <b>{t.get('title')}</b> ({len(t.get('questions', []))} Q, ⏱ {use_gap}s/Q{note}).",
+        f"LIVE shuru: <b>{t.get('title')}</b> ({len(t.get('questions', []))} Q, ⏱ {use_gap}s/Q).",
         parse_mode="HTML")
-    start_live_task(context, cid, sid, tid, gap, update.effective_chat.id)
+    start_live_task(context, cid, sid, tid, None, update.effective_chat.id)
 
 async def cmd_livestop(update, context):
     if update.effective_user.id != ADMIN_ID:
