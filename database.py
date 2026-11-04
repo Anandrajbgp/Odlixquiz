@@ -64,31 +64,34 @@ def _sanitize_loaded(d):
 def load_data():
     global db
     with _lock:
-        if DATA_FILE.exists():
-            try:
-                with open(DATA_FILE, "r", encoding="utf-8") as f:
-                    d = json.load(f)
-                if "categories" not in d:
-                    d = default_db()
-                d.setdefault("categories", {})
-                d.setdefault("history", {})
-                d.setdefault("users", {})
-                d.setdefault("seq", {"cat": 0, "sub": 0, "test": 0})
-                d.setdefault("broadcast", {"targets": {}, "autofwd": True, "source_channel": 0})
-                d.setdefault("live", {"active": False, "cid": "", "sid": "", "tid": "", "gap": 30, "msg_ids": []})
-                db = _sanitize_loaded(d)
-                return db
-            except Exception as e:
-                logger.warning(f"data.json corrupt: {e}")
+        for file_path in [DATA_FILE, BACKUP_FILE]:
+            if file_path.exists():
                 try:
-                    if DATA_FILE.exists():
-                        with open(DATA_FILE, "rb") as src:
-                            raw = src.read()
-                        with open(str(BACKUP_FILE) + ".corrupt", "wb") as dst:
-                            dst.write(raw)
-                except Exception:
-                    pass
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        d = json.load(f)
+                    if not isinstance(d, dict) or "categories" not in d:
+                        continue
+                    d.setdefault("categories", {})
+                    d.setdefault("history", {})
+                    d.setdefault("users", {})
+                    d.setdefault("seq", {"cat": 0, "sub": 0, "test": 0})
+                    d.setdefault("broadcast", {"targets": {}, "autofwd": True, "source_channel": 0})
+                    d.setdefault("live", {"active": False, "cid": "", "sid": "", "tid": "", "gap": 30, "msg_ids": []})
+                    db = _sanitize_loaded(d)
+                    logger.info(f"Data successfully loaded from {file_path.name}")
+                    return db
+                except Exception as e:
+                    logger.warning(f"{file_path.name} corrupt: {e}")
+                    try:
+                        if file_path.exists():
+                            with open(file_path, "rb") as src:
+                                raw = src.read()
+                            with open(str(file_path) + ".corrupt", "wb") as dst:
+                                dst.write(raw)
+                    except Exception:
+                        pass
         db = default_db()
+        return db
         return db
 
 

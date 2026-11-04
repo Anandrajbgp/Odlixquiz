@@ -54,130 +54,139 @@ def _clean_opt(s: str) -> str:
 
 
 def parse_questions(text):
-    """Multi-line format parser.
-
-    Har question is format mein ho sakta hai:
-        Q: Sawal kya hai?
-        A) Option 1
-        B) Option 2
-        C) Option 3
-        D) Option 4
-        Ans: B
-        Exp: explanation (optional)
-
-    Agla sawal naye Q: se shuru hona chahiye. Blank line optional hai.
-    Purana single-line format (Q: ... | A | B | C | D | Ans: B) bhi support hoga.
-    """
+    """Multi-format question parser (handles Q:, Q1:, numbered questions, (A)/(B), Ans:, etc.)."""
     text = clean_text(text or "")
     qs = []
     lines = text.split("\n")
 
-    # ---- Step 1: lines ko question-blocks mein todo (har Q: se naya block shuru) ----
+    # ---- Step 1: lines ko question-blocks mein todo ----
     blocks = []
     current_block = []
+    q_start_re = re.compile(r"^(Q[\d\.\:\-\s]*|Question[\d\.\:\-\s]*|\d+[\.\)]\s+)", re.IGNORECASE)
+
     for line in lines:
         stripped = line.strip()
-        if stripped.upper().startswith("Q:"):
-            if current_block:
-                blocks.append(current_block)
+        if not stripped:
+            continue
+
+        is_new = False
+        if q_start_re.match(stripped):
+            is_new = True
+
+        if is_new and current_block:
+            blocks.append(current_block)
             current_block = [line]
         else:
-            if current_block:          # sirf us line ko lojo jo Q: ke baad aayi ho
-                current_block.append(line)
+            current_block.append(line)
+
     if current_block:
         blocks.append(current_block)
 
-    # ---- Agar koi Q: line nahi mili, to purana single-line format try karein ----
+    # ---- Agar koi block nahi mila, single-line format try karein ----
     if not blocks:
         for line in lines:
             line = line.strip()
-            if not line or not line.startswith("Q:"):
+            if not line:
                 continue
-            parts = [p.strip() for p in line[2:].split("|")]
+            parts = [p.strip() for p in line.split("|")]
             if len(parts) < 6:
                 continue
             qtext = clean_text(parts[0])
+            qtext = re.sub(r"^(Q[\d\.\:\-\s]*|Question[\d\.\:\-\s]*|\d+[\.\)]\s*)", "", qtext, flags=re.IGNORECASE).strip()
             opts = [_clean_opt(p) for p in parts[1:5]]
             if not qtext or any(not o for o in opts):
                 continue
-            ans_raw = clean_text(parts[5]).replace("Ans:", "").replace("ANS:", "").strip().upper()
-            m = re.search(r"[ABCD]", ans_raw)
+            ans_raw = clean_text(parts[5]).replace("Ans:", "").replace("ANS:", "").replace("Answer:", "").strip().upper()
+            m = re.search(r"[ABCD1-4]", ans_raw)
             if not m:
                 continue
-            ans_letter = m.group(0).upper()
-            if ans_letter not in ANSWER_MAP:
+            val = m.group(0).upper()
+            ans_idx = {"A": 0, "B": 1, "C": 2, "D": 3, "1": 0, "2": 1, "3": 2, "4": 3}.get(val, -1)
+            if ans_idx < 0:
                 continue
             exp = ""
-            if len(parts) > 6 and parts[6].lower().startswith("exp:"):
-                exp = clean_text(parts[6][4:])
-            if len(qtext) > 300:
-                qtext = qtext[:297] + "..."
-            opts = [o[:100] if len(o) > 100 else o for o in opts]
-            if len(exp) > 200:
-                exp = exp[:197] + "..."
+            if len(parts) > 6 and "exp:" in parts[6].lower():
+                exp = clean_text(parts[6].split(":", 1)[1] if ":" in parts[6] else parts[6])
             qs.append({
-                "question": qtext,
-                "options": opts,
-                "correct": ANSWER_MAP[ans_letter],
-                "explanation": exp,
+                "question": qtext[:300],
+                "options": [o[:100] for o in opts],
+                "correct": ans_idx,
+                "explanation": exp[:200],
             })
         return qs
 
     # ---- Har block ko parse karein ----
     for block in blocks:
-        qtext = ""
+        qtext_lines = []
         opts = ["", "", "", ""]
         ans_raw = ""
         exp = ""
 
         for line in block:
-            line = line.strip()
-            if not line:
+            line_str = line.strip()
+            if not line_str:
                 continue
-            upper = line.upper()
+            upper = line_str.upper()
 
-            # Question line
-            if upper.startswith("Q:"):
-                qtext = clean_text(line[2:].strip())
-            # Option lines: A), B), C), D)  ya  A., B., C., D.  ya  A: B:
-            elif re.match(r"^[A-Da-d1-4][\.\\)\\:\-]\s+", line):
-                opt_text = re.sub(r"^[A-Da-d1-4][\.\\)\\:\-]\s+", "", line).strip()
-                prefix = line[0].upper()
-                if prefix == "A":
-                    opts[0] = opt_text
-                elif prefix == "B":
-                    opts[1] = opt_text
-                elif prefix == "C":
-                    opts[2] = opt_text
-                elif prefix == "D":
-                    opts[3] = opt_text
-            # Answer line
-            elif upper.startswith("ANS:"):
-                ans_raw = line[4:].strip()
-            elif upper.startswith("ANSWER:"):
-                ans_raw = line[7:].strip()
-            # Explanation line
-            elif upper.startswith("EXP:"):
-                exp = line[4:].strip()
-            elif upper.startswith("EXPLANATION:"):
-                exp = line[12:].strip()
+            # Option match: matches A), A., (A), [A], A:, a), 1), etc. (with optional space)
+            opt_match = re.match(r"^[\(\[]?([A-Da-d1-4])[\)\.\:\-\]]\s*(.*)", line_str)
+            if opt_match:
+                opt_letter = opt_match.group(1).upper()
+                opt_text = opt_match.group(2).strip()
+                idx = {"A": 0, "B": 1, "C": 2, "D": 3, "1": 0, "2": 1, "3": 2, "4": 3}.get(opt_letter, -1)
+                if 0 <= idx < 4:
+                    opts[idx] = opt_text
+                continue
 
-        # Validate: question + 4 options + answer sab hone chahiye
-        if not qtext or not all(opts) or not ans_raw:
+            # Answer match: Ans:, Answer:, Correct:, Ans - etc.
+            if upper.startswith("ANS") or upper.startswith("CORRECT") or upper.startswith("ANSWER"):
+                parts = re.split(r"[\:\-]\s*", line_str, 1)
+                ans_raw = parts[1] if len(parts) > 1 else line_str
+                continue
+
+            # Explanation match: Exp:, Explanation:, Sol:, Solution: etc.
+            if upper.startswith("EXP") or upper.startswith("EXPLANATION") or upper.startswith("SOL") or upper.startswith("SOLUTION"):
+                parts = re.split(r"[\:\-]\s*", line_str, 1)
+                exp = parts[1] if len(parts) > 1 else line_str
+                continue
+
+            # Question text line
+            cleaned_line = line_str
+            if not qtext_lines:
+                cleaned_line = re.sub(r"^(Q[\d\.\:\-\s]*|Question[\d\.\:\-\s]*|\d+[\.\)]\s*)", "", line_str, flags=re.IGNORECASE).strip()
+
+            if cleaned_line:
+                qtext_lines.append(cleaned_line)
+
+        qtext = " ".join(qtext_lines).strip()
+        cleaned_opts = [_clean_opt(o) for o in opts]
+
+        # Validation: question, 4 options, and answer must be present
+        if not qtext or not all(cleaned_opts) or not ans_raw:
             continue
 
-        m = re.search(r"[ABCD]", ans_raw.upper())
+        m = re.search(r"[ABCD1-4]", ans_raw.upper())
         if not m:
             continue
-        ans_letter = m.group(0).upper()
-        if ans_letter not in ANSWER_MAP:
+        val = m.group(0).upper()
+        ans_idx = {"A": 0, "B": 1, "C": 2, "D": 3, "1": 0, "2": 1, "3": 2, "4": 3}.get(val, -1)
+        if ans_idx < 0:
             continue
 
-        # Telegram poll limits: Q<=300 chars, option<=100 chars
         if len(qtext) > 300:
             qtext = qtext[:297] + "..."
-        opts = [o[:100] if len(o) > 100 else o for o in opts]
+        cleaned_opts = [o[:100] if len(o) > 100 else o for o in cleaned_opts]
         if len(exp) > 200:
+            exp = exp[:197] + "..."
+
+        qs.append({
+            "question": qtext,
+            "options": cleaned_opts,
+            "correct": ans_idx,
+            "explanation": exp,
+        })
+
+    return qs
             exp = exp[:197] + "..."
 
         qs.append({

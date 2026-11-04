@@ -18,6 +18,16 @@ logger = logging.getLogger(__name__)
 async def start_or_menu(update, context):
     uid = update.effective_user.id
     context.user_data.pop("astate", None)
+
+    # Agar user ne channel ke link se /start test open kiya hai
+    if context.args and any(arg.lower() in ["test", "menu"] for arg in context.args):
+        if not dbm.db.get("categories"):
+            await update.message.reply_text("No categories available — admin will add soon.")
+            return
+        await update.message.reply_text(
+            "📂 <b>Choose Category:</b>", reply_markup=cat_inline("browse"), parse_Mode="HTML" if False else "HTML")
+        return
+
     if uid == ADMIN_ID:
         txt, kb = admin_home_panel(admin_stats_line())
         await update.message.reply_text(
