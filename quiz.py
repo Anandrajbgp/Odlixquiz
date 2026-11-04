@@ -28,7 +28,6 @@ def _live(context, uid):
 async def _safe_send_poll(bot, chat_id, question, options, correct, explanation, open_period=None, anonymous=False):
     question = (question or "")[:300]
     options = [(o or "")[:100] for o in (options or [])]
-    explanation = (explanation or "")[:200]
     if len(options) < 2:
         raise ValueError("kam se kam 2 options chahiye")
     if open_period is None:
@@ -37,9 +36,7 @@ async def _safe_send_poll(bot, chat_id, question, options, correct, explanation,
         chat_id=chat_id,
         question=question,
         options=options[:10],
-        type="quiz",
-        correct_option_id=max(0, min(correct, len(options) - 1)),
-        explanation=explanation,
+        type="regular",
         is_anonymous=anonymous,
         open_period=open_period,
     )
@@ -225,7 +222,7 @@ async def handle_poll_answer(update, context):
     old_fb = context.user_data.pop("feedback_msg_id", None)
     if old_fb:
         try:
-            await context.bot.delete_message(chat_id=u.id, message_id=old_fb)
+            await context.bot.delete_message(chat_id=info["chat_id"], message_id=old_fb)
         except Exception:
             pass
     t = dbm.get_test(info["cid"], info["sid"], info["tid"])
@@ -239,15 +236,31 @@ async def handle_poll_answer(update, context):
     if picked == correct_idx:
         live["score"] = live.get("score", 0) + 1
     elapsed = (datetime.now() - info["start_time"]).total_seconds()
+
+    # Send feedback on selection
+    q_data = t["questions"][info["qi"]]
+    correct_opt_text = q_data["options"][correct_idx] if 0 <= correct_idx < len(q_data["options"]) else ""
+    status_text = "✅ <b>Sahi Jawab! (Correct)</b>" if picked == correct_idx else f"❌ <b>Galat Jawab!</b>\nSahi Answer: <b>{correct_opt_text}</b>"
+    exp_text = f"\n\n💡 <b>Exp:</b> {q_data['explanation']}" if q_data.get("explanation") else ""
+    try:
+        fb_msg = await context.bot.send_message(
+            chat_id=info["chat_id"],
+            text=f"{status_text}{exp_text}",
+            parse_mode="HTML"
+        )
+        context.user_data["feedback_msg_id"] = fb_msg.message_id
+    except Exception:
+        pass
+
     _attempt_details.setdefault(u.id, []).append({
         "qi": info["qi"],
-        "question": t["questions"][info["qi"]]["question"],
-        "options": t["questions"][info["qi"]]["options"],
+        "question": q_data["question"],
+        "options": q_data["options"],
         "correct": correct_idx,
         "picked": picked,
         "timeout": False,
         "time_taken": round(elapsed, 1),
-        "explanation": t["questions"][info["qi"]].get("explanation", ""),
+        "explanation": q_data.get("explanation", ""),
     })
     await _advance(u.id, info, context)
 
