@@ -89,7 +89,7 @@ async def _send_q_to_targets(context, q, qi, total, title, gap):
                 context.bot, int(cid),
                 qtext,
                 q["options"], q["correct"], q.get("explanation", ""),
-                open_period=gap, anonymous=is_channel)
+                open_period=gap, anonymous=False)
             sent += 1
             try:
                 lv.setdefault("msg_ids", []).append(msg.message_id)

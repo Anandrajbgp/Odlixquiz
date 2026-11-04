@@ -28,6 +28,7 @@ def _live(context, uid):
 async def _safe_send_poll(bot, chat_id, question, options, correct, explanation, open_period=None, anonymous=False):
     question = (question or "")[:300]
     options = [(o or "")[:100] for o in (options or [])]
+    explanation = (explanation or "")[:200]
     if len(options) < 2:
         raise ValueError("kam se kam 2 options chahiye")
     if open_period is None:
@@ -36,8 +37,10 @@ async def _safe_send_poll(bot, chat_id, question, options, correct, explanation,
         chat_id=chat_id,
         question=question,
         options=options[:10],
-        type="regular",
-        is_anonymous=anonymous,
+        type="quiz",
+        correct_option_id=max(0, min(correct, len(options) - 1)),
+        explanation=explanation,
+        is_anonymous=False,
         open_period=open_period,
     )
     return msg
