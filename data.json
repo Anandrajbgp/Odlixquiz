@@ -57080,6 +57080,349 @@
           }
         }
       }
+    },
+    "c_ncert11": {
+      "name": "11th NCERT",
+      "subjects": {
+        "s_phy11": {
+          "name": "Physics (भौतिक विज्ञान)",
+          "pdfs": [],
+          "tests": {
+            "t11_phy_1": {
+              "title": "1. भौतिक जगत",
+              "questions": []
+            },
+            "t11_phy_2": {
+              "title": "2. मात्रक और मापन",
+              "questions": []
+            },
+            "t11_phy_3": {
+              "title": "3. सरल रेखा में गति",
+              "questions": []
+            },
+            "t11_phy_4": {
+              "title": "4. समतल में गति",
+              "questions": []
+            },
+            "t11_phy_5": {
+              "title": "5. गति के नियम",
+              "questions": []
+            },
+            "t11_phy_6": {
+              "title": "6. कार्य, ऊर्जा और शक्ति",
+              "questions": []
+            },
+            "t11_phy_7": {
+              "title": "7. कणों के निकाय तथा घूर्णी गति",
+              "questions": []
+            },
+            "t11_phy_8": {
+              "title": "8. गुरुत्वाकर्षण",
+              "questions": []
+            },
+            "t11_phy_9": {
+              "title": "9. ठोसों के यांत्रिक गुण",
+              "questions": []
+            },
+            "t11_phy_10": {
+              "title": "10. तरलों के यांत्रिक गुण",
+              "questions": []
+            },
+            "t11_phy_11": {
+              "title": "11. द्रव्य के तापीय गुण",
+              "questions": []
+            },
+            "t11_phy_12": {
+              "title": "12. ऊष्मागतिकी",
+              "questions": []
+            },
+            "t11_phy_13": {
+              "title": "13. अणुगति सिद्धांत",
+              "questions": []
+            },
+            "t11_phy_14": {
+              "title": "14. दोलन",
+              "questions": []
+            },
+            "t11_phy_15": {
+              "title": "15. तरंगें",
+              "questions": []
+            }
+          }
+        },
+        "s_chem11": {
+          "name": "Chemistry (रसायन विज्ञान)",
+          "pdfs": [],
+          "tests": {
+            "t11_chem_1": {
+              "title": "1. रसायन विज्ञान की कुछ मूल अवधारणाएँ",
+              "questions": []
+            },
+            "t11_chem_2": {
+              "title": "2. परमाणु की संरचना",
+              "questions": []
+            },
+            "t11_chem_3": {
+              "title": "3. तत्वों का वर्गीकरण तथा आवर्तिकता",
+              "questions": []
+            },
+            "t11_chem_4": {
+              "title": "4. रासायनिक आबंधन तथा आणविक संरचना",
+              "questions": []
+            },
+            "t11_chem_5": {
+              "title": "5. द्रव्य की अवस्थाएँ",
+              "questions": []
+            },
+            "t11_chem_6": {
+              "title": "6. ऊष्मागतिकी",
+              "questions": []
+            },
+            "t11_chem_7": {
+              "title": "7. साम्यावस्था",
+              "questions": []
+            },
+            "t11_chem_8": {
+              "title": "8. रेडॉक्स अभिक्रियाएँ",
+              "questions": []
+            },
+            "t11_chem_9": {
+              "title": "9. हाइड्रोजन",
+              "questions": []
+            },
+            "t11_chem_10": {
+              "title": "10. s-ब्लॉक तत्व",
+              "questions": []
+            },
+            "t11_chem_11": {
+              "title": "11. p-ब्लॉक तत्व",
+              "questions": []
+            },
+            "t11_chem_12": {
+              "title": "12. कार्बनिक रसायन: कुछ आधारभूत सिद्धान्त",
+              "questions": []
+            },
+            "t11_chem_13": {
+              "title": "13. हाइड्रोकार्बन",
+              "questions": []
+            }
+          }
+        },
+        "s_math11": {
+          "name": "Mathematics (गणित)",
+          "pdfs": [],
+          "tests": {
+            "t11_math_1": {
+              "title": "1. समुच्चय",
+              "questions": []
+            },
+            "t11_math_2": {
+              "title": "2. संबंध एवं फलन",
+              "questions": []
+            },
+            "t11_math_3": {
+              "title": "3. त्रिकोणमितीय फलन",
+              "questions": []
+            },
+            "t11_math_4": {
+              "title": "4. गणितीय आगमन का सिद्धांत",
+              "questions": []
+            },
+            "t11_math_5": {
+              "title": "5. सम्मिश्र संख्याएँ और द्विघातीय समीकरण",
+              "questions": []
+            },
+            "t11_math_6": {
+              "title": "6. रैखिक असमिकाएँ",
+              "questions": []
+            },
+            "t11_math_7": {
+              "title": "7. क्रमचय और संचय",
+              "questions": []
+            },
+            "t11_math_8": {
+              "title": "8. द्विपद प्रमेय",
+              "questions": []
+            },
+            "t11_math_9": {
+              "title": "9. अनुक्रम तथा श्रेणी",
+              "questions": []
+            },
+            "t11_math_10": {
+              "title": "10. सरल रेखाएँ",
+              "questions": []
+            },
+            "t11_math_11": {
+              "title": "11. शंखु परिच्छेदन",
+              "questions": []
+            },
+            "t11_math_12": {
+              "title": "12. त्रिविमीय ज्यामिति का परिचय",
+              "questions": []
+            },
+            "t11_math_13": {
+              "title": "13. सीमा और अवकलज",
+              "questions": []
+            },
+            "t11_math_14": {
+              "title": "14. गणितीय विवेचन",
+              "questions": []
+            },
+            "t11_math_15": {
+              "title": "15. सांख्यिकी",
+              "questions": []
+            },
+            "t11_math_16": {
+              "title": "16. प्रायिकता",
+              "questions": []
+            }
+          }
+        },
+        "s_bio11": {
+          "name": "Biology (जीव विज्ञान)",
+          "pdfs": [],
+          "tests": {
+            "t11_bio_1": {
+              "title": "1. जीव जगत",
+              "questions": []
+            },
+            "t11_bio_2": {
+              "title": "2. जीव जगत का वर्गीकरण",
+              "questions": []
+            },
+            "t11_bio_3": {
+              "title": "3. वनस्पति जगत",
+              "questions": []
+            },
+            "t11_bio_4": {
+              "title": "4. प्राणी जगत",
+              "questions": []
+            },
+            "t11_bio_5": {
+              "title": "5. पुष्पी पादपों की आकारिकी",
+              "questions": []
+            },
+            "t11_bio_6": {
+              "title": "6. पुष्पी पादपों का शरीर",
+              "questions": []
+            },
+            "t11_bio_7": {
+              "title": "7. प्राणियों में संरचनात्मक संगठन",
+              "questions": []
+            },
+            "t11_bio_8": {
+              "title": "8. कोशिका: जीवन की इकाई",
+              "questions": []
+            },
+            "t11_bio_9": {
+              "title": "9. जैव अणु",
+              "questions": []
+            },
+            "t11_bio_10": {
+              "title": "10. कोशिका चक्र और कोशिका विभाजन",
+              "questions": []
+            },
+            "t11_bio_11": {
+              "title": "11. पौधों में परिवहन",
+              "questions": []
+            },
+            "t11_bio_12": {
+              "title": "12. खनिज पोषण",
+              "questions": []
+            },
+            "t11_bio_13": {
+              "title": "13. उच्च पादपों में प्रकाश संश्लेषण",
+              "questions": []
+            },
+            "t11_bio_14": {
+              "title": "14. पादप में श्वसन",
+              "questions": []
+            },
+            "t11_bio_15": {
+              "title": "15. पादप वृद्धि एवं परिवर्धन",
+              "questions": []
+            },
+            "t11_bio_16": {
+              "title": "16. पाचन एवं अवशोषण",
+              "questions": []
+            },
+            "t11_bio_17": {
+              "title": "17. श्वसन और गैसों का विनिमय",
+              "questions": []
+            },
+            "t11_bio_18": {
+              "title": "18. शरीर द्रव तथा परिसंचरण",
+              "questions": []
+            },
+            "t11_bio_19": {
+              "title": "19. उत्सर्जी उत्पाद एवं निष्कासन",
+              "questions": []
+            },
+            "t11_bio_20": {
+              "title": "20. गमन एवं संचलन",
+              "questions": []
+            },
+            "t11_bio_21": {
+              "title": "21. तंत्रिकीय नियंत्रण एवं समन्वय",
+              "questions": []
+            },
+            "t11_bio_22": {
+              "title": "22. रासायनिक समन्वय तथा एकीकरण",
+              "questions": []
+            }
+          }
+        },
+        "s_eng11": {
+          "name": "English Core",
+          "pdfs": [],
+          "tests": {
+            "t11_eng_1": {
+              "title": "1. The Portrait of a Lady",
+              "questions": []
+            },
+            "t11_eng_2": {
+              "title": "2. We're Not Afraid to Die...",
+              "questions": []
+            },
+            "t11_eng_3": {
+              "title": "3. Discovering Tut: the Saga Continues",
+              "questions": []
+            },
+            "t11_eng_4": {
+              "title": "4. Landscape of the Soul",
+              "questions": []
+            },
+            "t11_eng_5": {
+              "title": "5. The Ailing Planet",
+              "questions": []
+            },
+            "t11_eng_6": {
+              "title": "6. The Browning Version",
+              "questions": []
+            },
+            "t11_eng_7": {
+              "title": "7. The Summer of the Beautiful White Horse",
+              "questions": []
+            },
+            "t11_eng_8": {
+              "title": "8. The Address",
+              "questions": []
+            },
+            "t11_eng_9": {
+              "title": "9. Mother's Day",
+              "questions": []
+            },
+            "t11_eng_10": {
+              "title": "10. Birth",
+              "questions": []
+            },
+            "t11_eng_11": {
+              "title": "11. The Tale of Melon City",
+              "questions": []
+            }
+          }
+        }
+      }
     }
   },
   "history": {
