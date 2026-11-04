@@ -145,10 +145,22 @@ async def begin_test(chat_id, uid, cid, sid, tid, context):
         "score": 0, "done": 0, "total": total,
         "cid": cid, "sid": sid, "tid": tid, "title": t["title"],
     }
+
+    # Test shuru hote hi group chat lock kar do taaki test ke time koi chat na kare aur bot sirf polls bhejta rahe
+    if chat_id < 0:
+        try:
+            from telegram import ChatPermissions
+            await context.bot.set_chat_permissions(
+                chat_id=chat_id,
+                permissions=ChatPermissions(can_send_messages=False)
+            )
+        except Exception as e:
+            logger.error(f"Test start group lock error: {e}")
+
     await context.bot.send_message(
         chat_id=chat_id,
         text=f"🚀 <b>{c['name']} → {s['name']} → {t['title']}</b>\n"
-             f"Total {total} Qs • Har Q ke liye {POLL_OPEN_SECONDS}s\nGood luck!",
+             f"Total {total} Qs • Har Q ke liye {POLL_OPEN_SECONDS}s\nTest shuru ho gaya hai! Sabhi polls ka jawab dein.",
         parse_mode="HTML")
     try:
         await send_q(chat_id, uid, cid, sid, tid, 0, context)
