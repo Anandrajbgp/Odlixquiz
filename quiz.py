@@ -289,6 +289,43 @@ def result_card(title, score, total, details=None, total_time=None):
         f"📜 Saved to history.")
 
 
+async def _group_chat_auto_lock(bot, chat_id, duration=600):
+    try:
+        from telegram import ChatPermissions
+        # Open group chat for discussion
+        await bot.set_chat_permissions(
+            chat_id=chat_id,
+            permissions=ChatPermissions(
+                can_send_messages=True,
+                can_send_polls=True,
+                can_send_other_messages=True,
+                can_add_web_page_previews=True
+            )
+        )
+        await bot.send_message(
+            chat_id=chat_id,
+            text="🔓 <b>Discussion Open!</b> Test complete ho gaya hai. Aap log aagle 10 minutes tak group me chat aur discussion kar sakte hain.",
+            parse_mode="HTML"
+        )
+        # Wait 10 minutes (600 seconds)
+        await asyncio.sleep(duration)
+
+        # Close / lock group chat
+        await bot.set_chat_permissions(
+            chat_id=chat_id,
+            permissions=ChatPermissions(
+                can_send_messages=False
+            )
+        )
+        await bot.send_message(
+            chat_id=chat_id,
+            text="🔒 <b>Discussion Closed!</b> 10 minutes poore ho gaye hain. Chatbox ab band kar diya gaya hai.",
+            parse_mode="HTML"
+        )
+    except Exception as e:
+        logger.error(f"Group auto lock error: {e}")
+
+
 async def finish_test(uid, info, context):
     t = dbm.get_test(info["cid"], info["sid"], info["tid"])
     if not t:
@@ -322,6 +359,12 @@ async def finish_test(uid, info, context):
         "title": t["title"], "score": sc, "total": total,
         "details": details,
     }
+
+    # Trigger auto-lock chat if test was taken in a group chat (chat_id < 0)
+    chat_id = info.get("chat_id")
+    if chat_id and chat_id < 0:
+        context.application.create_task(_group_chat_auto_lock(context.bot, chat_id, duration=600))
+
     from keyboards import result_keyboard
     try:
         await context.bot.send_message(
