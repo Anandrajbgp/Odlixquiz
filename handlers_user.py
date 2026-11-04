@@ -122,6 +122,11 @@ async def history_text(uid):
 
 async def handle_text_buttons(update, context):
     msg = update.message
+    if not msg:
+        return
+    chat = update.effective_chat
+    is_group = chat.type in ("group", "supergroup")
+
     text = ((msg.text or msg.caption) or "").strip()
     uid = update.effective_user.id
     # /send ya Broadcast mode: admin ka agla message sabko copy
@@ -161,6 +166,11 @@ async def handle_text_buttons(update, context):
         else:
             await cmd_home(update, context)
         return
+
+    # GROUP CHAT FIX: Agar group chat hai, to random text message par menu mat bhejo
+    if is_group:
+        return
+
     await start_or_menu(update, context)
 
 
