@@ -187,16 +187,6 @@ def parse_questions(text):
         })
 
     return qs
-            exp = exp[:197] + "..."
-
-        qs.append({
-            "question": qtext,
-            "options": opts,
-            "correct": ANSWER_MAP[ans_letter],
-            "explanation": exp,
-        })
-
-    return qs
 
 
 def pdf_to_text(pdf_path):
