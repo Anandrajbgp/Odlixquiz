@@ -22,7 +22,11 @@ def default_db():
         "history": {},
         "users": {},
         "seq": {"cat": 0, "sub": 0, "test": 0},
-        "broadcast": {"targets": {}, "autofwd": True, "source_channel": 0},
+        "broadcast": {
+            "targets": {"@Odlixquizgroup": {"title": "Odlixquizgroup", "kind": "supergroup"}},
+            "autofwd": True,
+            "source_channel": 0
+        },
         "live": {"active": False, "cid": "", "sid": "", "tid": "", "gap": 30, "msg_ids": []},
     }
 
@@ -75,7 +79,13 @@ def load_data():
                     d.setdefault("history", {})
                     d.setdefault("users", {})
                     d.setdefault("seq", {"cat": 0, "sub": 0, "test": 0})
-                    d.setdefault("broadcast", {"targets": {}, "autofwd": True, "source_channel": 0})
+                    d.setdefault("broadcast", {
+                        "targets": {"@Odlixquizgroup": {"title": "Odlixquizgroup", "kind": "supergroup"}},
+                        "autofwd": True,
+                        "source_channel": 0
+                    })
+                    if not d["broadcast"].get("targets"):
+                        d["broadcast"]["targets"]["@Odlixquizgroup"] = {"title": "Odlixquizgroup", "kind": "supergroup"}
                     d.setdefault("live", {"active": False, "cid": "", "sid": "", "tid": "", "gap": 30, "msg_ids": []})
                     db = _sanitize_loaded(d)
                     logger.info(f"Data successfully loaded from {file_path.name}")
