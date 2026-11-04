@@ -25,7 +25,7 @@ async def start_or_menu(update, context):
             await update.message.reply_text("No categories available — admin will add soon.")
             return
         await update.message.reply_text(
-            "📂 <b>Choose Category:</b>", reply_markup=cat_inline("browse"), parse_Mode="HTML" if False else "HTML")
+            "📂 <b>Choose Category:</b>", reply_markup=cat_inline("browse"), parse_mode="HTML")
         return
 
     if uid == ADMIN_ID:
