@@ -57423,6 +57423,608 @@
           }
         }
       }
+    },
+    "c_ncert12": {
+      "name": "12th NCERT / BSEB",
+      "subjects": {
+        "s_phy12": {
+          "name": "Physics (भौतिकी)",
+          "pdfs": [],
+          "tests": {
+            "t12_phy_1": {
+              "title": "1. वैधुत आवेश तथा क्षेत्र",
+              "questions": []
+            },
+            "t12_phy_2": {
+              "title": "2. स्थिर वैधुत विभव तथा धारिता",
+              "questions": []
+            },
+            "t12_phy_3": {
+              "title": "3. विधुत धारा",
+              "questions": []
+            },
+            "t12_phy_4": {
+              "title": "4. गतिमान आवेश और चुंबकत्व",
+              "questions": []
+            },
+            "t12_phy_5": {
+              "title": "5. चुंबकत्व एवं द्रव्य",
+              "questions": []
+            },
+            "t12_phy_6": {
+              "title": "6. वैधुतचुंबकीय प्रेरण",
+              "questions": []
+            },
+            "t12_phy_7": {
+              "title": "7. प्रत्यावर्ती धारा",
+              "questions": []
+            },
+            "t12_phy_8": {
+              "title": "8. वैधुतचुंबकीय तरंगें",
+              "questions": []
+            },
+            "t12_phy_9": {
+              "title": "9. किरण प्रकाशिकी एवं प्रकाशिक यंत्र",
+              "questions": []
+            },
+            "t12_phy_10": {
+              "title": "10. तरंग-प्रकाशिकी",
+              "questions": []
+            },
+            "t12_phy_11": {
+              "title": "11. विकिरण तथा द्रव्य की द्वैत प्रकृति",
+              "questions": []
+            },
+            "t12_phy_12": {
+              "title": "12. परमाणु",
+              "questions": []
+            },
+            "t12_phy_13": {
+              "title": "13. नाभिक",
+              "questions": []
+            },
+            "t12_phy_14": {
+              "title": "14. अर्धचालक इलेक्ट्रॉनिकी",
+              "questions": []
+            }
+          }
+        },
+        "s_chem12": {
+          "name": "Chemistry (रसायन शास्त्र)",
+          "pdfs": [],
+          "tests": {
+            "t12_chem_1": {
+              "title": "1. विलयन",
+              "questions": []
+            },
+            "t12_chem_2": {
+              "title": "2. वैद्युत रसायन",
+              "questions": []
+            },
+            "t12_chem_3": {
+              "title": "3. रासायनिक बलगतिकी",
+              "questions": []
+            },
+            "t12_chem_4": {
+              "title": "4. d- एवं f-ब्लॉक के तत्व",
+              "questions": []
+            },
+            "t12_chem_5": {
+              "title": "5. उपसहसंयोजन यौगिक",
+              "questions": []
+            },
+            "t12_chem_6": {
+              "title": "6. हैलोऐल्केन तथा हैलोऐरीन",
+              "questions": []
+            },
+            "t12_chem_7": {
+              "title": "7. ऐल्कोहॉल, फ़िनॉल एवं ईथर",
+              "questions": []
+            },
+            "t12_chem_8": {
+              "title": "8. ऐल्डिहाइड, कीटोन एवं कार्बोक्सिलिक अम्ल",
+              "questions": []
+            },
+            "t12_chem_9": {
+              "title": "9. ऐमीन",
+              "questions": []
+            },
+            "t12_chem_10": {
+              "title": "10. जैव-अणु",
+              "questions": []
+            }
+          }
+        },
+        "s_math12": {
+          "name": "Mathematics (गणित)",
+          "pdfs": [],
+          "tests": {
+            "t12_math_1": {
+              "title": "1. संबंध एवं फलन",
+              "questions": []
+            },
+            "t12_math_2": {
+              "title": "2. प्रतिलोम त्रिकोणमितीय फलन",
+              "questions": []
+            },
+            "t12_math_3": {
+              "title": "3. आव्यूह",
+              "questions": []
+            },
+            "t12_math_4": {
+              "title": "4. सारणिक",
+              "questions": []
+            },
+            "t12_math_5": {
+              "title": "5. सांतत्य तथा अवकलनीयता",
+              "questions": []
+            },
+            "t12_math_6": {
+              "title": "6. अवकलज के अनुप्रयोग",
+              "questions": []
+            },
+            "t12_math_7": {
+              "title": "7. समाकलन",
+              "questions": []
+            },
+            "t12_math_8": {
+              "title": "8. समाकलनों के अनुप्रयोग",
+              "questions": []
+            },
+            "t12_math_9": {
+              "title": "9. अवकल समीकरण",
+              "questions": []
+            },
+            "t12_math_10": {
+              "title": "10. सदिश बीजगणित",
+              "questions": []
+            },
+            "t12_math_11": {
+              "title": "11. त्रिविमीय ज्यामिति",
+              "questions": []
+            },
+            "t12_math_12": {
+              "title": "12. रैखिक प्रोग्रामन",
+              "questions": []
+            },
+            "t12_math_13": {
+              "title": "13. प्रायिकता",
+              "questions": []
+            }
+          }
+        },
+        "s_bio12": {
+          "name": "Biology (जीव विज्ञान)",
+          "pdfs": [],
+          "tests": {
+            "t12_bio_1": {
+              "title": "1. जीवों में जनन",
+              "questions": []
+            },
+            "t12_bio_2": {
+              "title": "2. पुष्पी पादपों में लैंगिक जनन",
+              "questions": []
+            },
+            "t12_bio_3": {
+              "title": "3. मानव जनन",
+              "questions": []
+            },
+            "t12_bio_4": {
+              "title": "4. जनन स्वास्थ्य",
+              "questions": []
+            },
+            "t12_bio_5": {
+              "title": "5. वंशागति तथा विविधता के सिद्धांत",
+              "questions": []
+            },
+            "t12_bio_6": {
+              "title": "6. वंशागति का आणविक आधार",
+              "questions": []
+            },
+            "t12_bio_7": {
+              "title": "7. विकास",
+              "questions": []
+            },
+            "t12_bio_8": {
+              "title": "8. मानव स्वास्थ्य तथा रोग",
+              "questions": []
+            },
+            "t12_bio_9": {
+              "title": "9. खाद्य उत्पादन में वृद्धि की कार्यनीति",
+              "questions": []
+            },
+            "t12_bio_10": {
+              "title": "10. मानव कल्याण में सूक्ष्मजीव",
+              "questions": []
+            },
+            "t12_bio_11": {
+              "title": "11. जैव प्रौद्योगिकी: सिद्धांत व प्रक्रम",
+              "questions": []
+            },
+            "t12_bio_12": {
+              "title": "12. जैव प्रौद्योगिकी एवं उसके उपयोग",
+              "questions": []
+            },
+            "t12_bio_13": {
+              "title": "13. जीव और समष्टियाँ",
+              "questions": []
+            },
+            "t12_bio_14": {
+              "title": "14. पारितंत्र",
+              "questions": []
+            },
+            "t12_bio_15": {
+              "title": "15. जीव विविधता एवं संरक्षण",
+              "questions": []
+            },
+            "t12_bio_16": {
+              "title": "16. पर्यावरण के मुद्दे",
+              "questions": []
+            }
+          }
+        }
+      }
+    },
+    "c_ssc": {
+      "name": "SSC Exams (CGL, CHSL, MTS, GD)",
+      "subjects": {
+        "s_ssc_quant": {
+          "name": "Quantitative Aptitude (गणित)",
+          "pdfs": [],
+          "tests": {
+            "t_ssc_q_1": {
+              "title": "Number System & Simplification",
+              "questions": []
+            },
+            "t_ssc_q_2": {
+              "title": "Percentage, Profit & Loss",
+              "questions": []
+            },
+            "t_ssc_q_3": {
+              "title": "Ratio, Proportion & Partnership",
+              "questions": []
+            },
+            "t_ssc_q_4": {
+              "title": "Average, Mixture & Alligation",
+              "questions": []
+            },
+            "t_ssc_q_5": {
+              "title": "Time, Speed & Distance",
+              "questions": []
+            },
+            "t_ssc_q_6": {
+              "title": "Simple & Compound Interest",
+              "questions": []
+            },
+            "t_ssc_q_7": {
+              "title": "Algebra & Geometry",
+              "questions": []
+            },
+            "t_ssc_q_8": {
+              "title": "Trigonometry & Mensuration",
+              "questions": []
+            },
+            "t_ssc_q_9": {
+              "title": "Data Interpretation (DI)",
+              "questions": []
+            }
+          }
+        },
+        "s_ssc_reasoning": {
+          "name": "General Intelligence & Reasoning (तर्कशक्ति)",
+          "pdfs": [],
+          "tests": {
+            "t_ssc_r_1": {
+              "title": "Coding-Decoding & Alphabet Test",
+              "questions": []
+            },
+            "t_ssc_r_2": {
+              "title": "Blood Relations & Direction Sense",
+              "questions": []
+            },
+            "t_ssc_r_3": {
+              "title": "Syllogism & Venn Diagram",
+              "questions": []
+            },
+            "t_ssc_r_4": {
+              "title": "Series, Analogy & Classification",
+              "questions": []
+            },
+            "t_ssc_r_5": {
+              "title": "Non-Verbal Reasoning (Mirror/Water Image)",
+              "questions": []
+            }
+          }
+        },
+        "s_ssc_gs": {
+          "name": "General Awareness / GS (सामान्य अध्ययन)",
+          "pdfs": [],
+          "tests": {
+            "t_ssc_gs_1": {
+              "title": "Indian History & National Movement",
+              "questions": []
+            },
+            "t_ssc_gs_2": {
+              "title": "Indian Polity & Constitution",
+              "questions": []
+            },
+            "t_ssc_gs_3": {
+              "title": "Geography (Indian & World)",
+              "questions": []
+            },
+            "t_ssc_gs_4": {
+              "title": "Indian Economy & Budget",
+              "questions": []
+            },
+            "t_ssc_gs_5": {
+              "title": "General Science (Physics, Chem, Bio)",
+              "questions": []
+            },
+            "t_ssc_gs_6": {
+              "title": "Static GK & Current Affairs",
+              "questions": []
+            }
+          }
+        },
+        "s_ssc_eng": {
+          "name": "General English (अंग्रेज़ी)",
+          "pdfs": [],
+          "tests": {
+            "t_ssc_e_1": {
+              "title": "Spotting Errors & Sentence Improvement",
+              "questions": []
+            },
+            "t_ssc_e_2": {
+              "title": "Synonyms & Antonyms",
+              "questions": []
+            },
+            "t_ssc_e_3": {
+              "title": "Idioms & Phrases, One Word Substitution",
+              "questions": []
+            },
+            "t_ssc_e_4": {
+              "title": "Cloze Test & Reading Comprehension",
+              "questions": []
+            }
+          }
+        }
+      }
+    },
+    "c_railway": {
+      "name": "Railway Exams (RRB NTPC / Group D)",
+      "subjects": {
+        "s_rly_math": {
+          "name": "Railway Mathematics",
+          "pdfs": [],
+          "tests": {
+            "t_rly_m_1": {
+              "title": "Arithmetic & Number System",
+              "questions": []
+            },
+            "t_rly_m_2": {
+              "title": "Percentage & Discount",
+              "questions": []
+            },
+            "t_rly_m_3": {
+              "title": "Time & Work, Pipe & Cistern",
+              "questions": []
+            },
+            "t_rly_m_4": {
+              "title": "Speed, Time, Distance & Train",
+              "questions": []
+            },
+            "t_rly_m_5": {
+              "title": "Statistics & Probability",
+              "questions": []
+            }
+          }
+        },
+        "s_rly_sci": {
+          "name": "General Science (Railway Special)",
+          "pdfs": [],
+          "tests": {
+            "t_rly_s_1": {
+              "title": "Physics Numerical & Concepts",
+              "questions": []
+            },
+            "t_rly_s_2": {
+              "title": "Chemistry Formulas & Elements",
+              "questions": []
+            },
+            "t_rly_s_3": {
+              "title": "Biology Human Body & Diseases",
+              "questions": []
+            }
+          }
+        },
+        "s_rly_gk": {
+          "name": "Railway GK & Current Affairs",
+          "pdfs": [],
+          "tests": {
+            "t_rly_gk_1": {
+              "title": "Indian Railways History & Facts",
+              "questions": []
+            },
+            "t_rly_gk_2": {
+              "title": "Static GK & Awards",
+              "questions": []
+            },
+            "t_rly_gk_3": {
+              "title": "General Awareness Practice Set",
+              "questions": []
+            }
+          }
+        }
+      }
+    },
+    "c_banking": {
+      "name": "Banking Exams (IBPS / SBI PO & Clerk)",
+      "subjects": {
+        "s_bank_quant": {
+          "name": "Quantitative Aptitude (Banking)",
+          "pdfs": [],
+          "tests": {
+            "t_bank_q_1": {
+              "title": "Data Interpretation (DI) - Bar/Pie/Line",
+              "questions": []
+            },
+            "t_bank_q_2": {
+              "title": "Simplification & Approximation",
+              "questions": []
+            },
+            "t_bank_q_3": {
+              "title": "Quadratic Equations & Number Series",
+              "questions": []
+            },
+            "t_bank_q_4": {
+              "title": "Arithmetic Word Problems",
+              "questions": []
+            }
+          }
+        },
+        "s_bank_reason": {
+          "name": "Reasoning Ability (Banking)",
+          "pdfs": [],
+          "tests": {
+            "t_bank_r_1": {
+              "title": "Puzzles & Seating Arrangement",
+              "questions": []
+            },
+            "t_bank_r_2": {
+              "title": "Inequality & Coding-Decoding",
+              "questions": []
+            },
+            "t_bank_r_3": {
+              "title": "Blood Relations & Direction Sense",
+              "questions": []
+            },
+            "t_bank_r_4": {
+              "title": "Input-Output & Logical Reasoning",
+              "questions": []
+            }
+          }
+        },
+        "s_bank_awareness": {
+          "name": "Banking & Financial Awareness",
+          "pdfs": [],
+          "tests": {
+            "t_bank_ba_1": {
+              "title": "RBI & Monetary Policy",
+              "questions": []
+            },
+            "t_bank_ba_2": {
+              "title": "Banking Terms & Financial Institutions",
+              "questions": []
+            },
+            "t_bank_ba_3": {
+              "title": "Current Affairs (Banking Focus)",
+              "questions": []
+            }
+          }
+        }
+      }
+    },
+    "c_upsc_bpsc": {
+      "name": "UPSC & State PCS (BPSC)",
+      "subjects": {
+        "s_pcs_gs": {
+          "name": "General Studies Paper 1 (CSAT & GS)",
+          "pdfs": [],
+          "tests": {
+            "t_pcs_gs_1": {
+              "title": "Ancient & Medieval Indian History",
+              "questions": []
+            },
+            "t_pcs_gs_2": {
+              "title": "Modern Indian History & National Movement",
+              "questions": []
+            },
+            "t_pcs_gs_3": {
+              "title": "Indian Polity, Constitution & Governance",
+              "questions": []
+            },
+            "t_pcs_gs_4": {
+              "title": "Physical, Economic & World Geography",
+              "questions": []
+            },
+            "t_pcs_gs_5": {
+              "title": "Indian Economy & Sustainable Development",
+              "questions": []
+            },
+            "t_pcs_gs_6": {
+              "title": "Environment, Ecology & Biodiversity",
+              "questions": []
+            },
+            "t_pcs_gs_7": {
+              "title": "General Science & Tech",
+              "questions": []
+            }
+          }
+        }
+      }
+    },
+    "c_bihar_exams": {
+      "name": "Bihar Competitive Exams (BPSC, Daroga, BSSC)",
+      "subjects": {
+        "s_bihar_gk": {
+          "name": "Bihar Special GK (बिहार सामान्य ज्ञान)",
+          "pdfs": [],
+          "tests": {
+            "t_bihar_gk_1": {
+              "title": "बिहार का इतिहास एवं स्वतंत्रता संग्राम",
+              "questions": []
+            },
+            "t_bihar_gk_2": {
+              "title": "बिहार का भूगोल, नदियाँ एवं जलवायु",
+              "questions": []
+            },
+            "t_bihar_gk_3": {
+              "title": "बिहार की अर्थव्यवस्था, कृषि एवं जनगणना",
+              "questions": []
+            },
+            "t_bihar_gk_4": {
+              "title": "बिहार राजव्यवस्था एवं प्रमुख व्यक्तित्व",
+              "questions": []
+            }
+          }
+        },
+        "s_bihar_gs": {
+          "name": "General Studies & General Science (बिहार परीक्षा स्पेशल)",
+          "pdfs": [],
+          "tests": {
+            "t_bihar_gs_1": {
+              "title": "सामान्य अध्ययन मिक्स सेट (BPSC/BSSC)",
+              "questions": []
+            },
+            "t_bihar_gs_2": {
+              "title": "सामान्य विज्ञान (Physics, Chem, Bio)",
+              "questions": []
+            },
+            "t_bihar_gs_3": {
+              "title": "बिहार दरोगा / पुलिस प्रैक्टिस सेट",
+              "questions": []
+            }
+          }
+        },
+        "s_bihar_hindi": {
+          "name": "Samanya Hindi (सामान्य हिन्दी)",
+          "pdfs": [],
+          "tests": {
+            "t_bihar_h_1": {
+              "title": "व्याकरण: संज्ञा, सर्वनाम, विशेषण, कारक",
+              "questions": []
+            },
+            "t_bihar_h_2": {
+              "title": "संधि, समास, उपसर्ग एवं प्रत्यय",
+              "questions": []
+            },
+            "t_bihar_h_3": {
+              "title": "पर्यायवाची, विलोम एवं मुहावरे",
+              "questions": []
+            }
+          }
+        }
+      }
     }
   },
   "history": {
