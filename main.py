@@ -68,6 +68,7 @@ def main():
     app.add_handler(CommandHandler("addtarget", bcm.cmd_addtarget))
     app.add_handler(CommandHandler("deltarget", bcm.cmd_deltarget))
     app.add_handler(CommandHandler("broadcast", bcm.cmd_broadcast))
+    app.add_handler(CommandHandler("sendmenu", bcm.cmd_sendmenu))
     app.add_handler(CommandHandler("send", bcm.cmd_send))
     app.add_handler(CommandHandler("autofwd", bcm.cmd_autofwd))
     # LIVE: admin ka test 30-30 sec gap se channel/group me

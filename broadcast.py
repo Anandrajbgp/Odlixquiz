@@ -301,6 +301,36 @@ async def cmd_autofwd(update, context):
         st = "ON" if bc.get("autofwd", True) else "OFF"
         await update.effective_message.reply_text(f"Abhi: {st}. Use /autofwd on|off")
 
+async def cmd_sendmenu(update, context):
+    if update.channel_post:
+        return
+    if not _is_admin(_sender_id(update)):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    text = (
+        "✅ <b>NCERT Chapter-Wise Tests</b>\n"
+        "✅ <b>All Classes:</b> Class 6th to 12th\n"
+        "✅ <b>Exam-Focused:</b> UPSC, SSC, NEET, RAILWAY, SI...."
+    )
+    from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+    keyboard = [
+        [InlineKeyboardButton("🚀 Start Quiz", url="https://t.me/OdlixQuizbot?start=test")],
+        [InlineKeyboardButton("📤 Share Quiz", url="https://t.me/share/url?url=https://t.me/OdlixQuizbot&text=🔥%20Join%20Odlix%20Quiz%20Bot%20for%20NCERT%20Chapter-Wise%20Tests!")]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    tg = get_targets()
+    if not tg:
+        await update.effective_message.reply_text(text, reply_markup=reply_markup, parse_mode="HTML")
+        return
+    ok, fail = 0, 0
+    for cid in list(tg.keys()):
+        try:
+            await context.bot.send_message(chat_id=_parse_chat_id(cid), text=text, reply_markup=reply_markup, parse_mode="HTML")
+            ok += 1
+        except Exception:
+            fail += 1
+    await update.effective_message.reply_text(f"Menu sent to {ok} targets ({fail} fail). Isse group me pin kar dein!")
+
 async def on_bot_added(update, context):
     chat = update.effective_chat
     if not chat or chat.type == "private":
