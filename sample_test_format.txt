@@ -1,0 +1,5 @@
+Q: Bharat ki rajdhani kya hai? | Mumbai | Delhi | Kolkata | Chennai | Ans: B | Exp: Delhi Bharat ki rajdhani hai.
+Q: 2 + 2 kitna hota hai? | 3 | 4 | 5 | 6 | Ans: B | Exp: 2+2=4 hota hai.
+Q: RRB ka full form kya hai? | Railway Recruitment Board | Road Board | Rural Bank | None | Ans: A | Exp: Railway Recruitment Board.
+Q: Pani ka formula? | CO2 | H2O | O2 | N2 | Ans: B | Exp: Pani H2O hai.
+Q: Sun kis direction me ugta hai? | West | East | North | South | Ans: B | Exp: Sun East me ugta hai.
