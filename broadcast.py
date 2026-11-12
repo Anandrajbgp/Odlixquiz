@@ -315,7 +315,10 @@ async def cmd_sendmenu(update, context):
     from telegram import InlineKeyboardButton, InlineKeyboardMarkup
     keyboard = [
         [InlineKeyboardButton("🚀 Start Quiz", url="https://t.me/OdlixQuizbot?start=test")],
-        [InlineKeyboardButton("📤 Share Quiz", url="https://t.me/share/url?url=https://t.me/OdlixQuizbot&text=🔥%20Join%20Odlix%20Quiz%20Bot%20for%20NCERT%20Chapter-Wise%20Tests!")]
+        [
+            InlineKeyboardButton("📤 Share on WhatsApp", url="https://api.whatsapp.com/send?text=🔥%20Join%20Odlix%20Quiz%20Bot%20for%20NCERT%20Chapter-Wise%20Tests%20(Class%206th%20to%2012th)!%20👉%20https://t.me/OdlixQuizbot"),
+            InlineKeyboardButton("✈️ Share on Telegram", url="https://t.me/share/url?url=https://t.me/OdlixQuizbot&text=🔥%20Join%20Odlix%20Quiz%20Bot%20for%20NCERT%20Chapter-Wise%20Tests!")
+        ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     tg = get_targets()
