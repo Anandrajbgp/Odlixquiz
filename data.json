@@ -1,3 +1,116 @@
 {
-  "categories": {}
+  "categories": {
+    "c_ncert6": {
+      "name": "Class 6th NCERT",
+      "subjects": {
+        "s_sci6": {
+          "name": "Science (विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_sst6": {
+          "name": "Social Science (सामाजिक विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_ncert7": {
+      "name": "Class 7th NCERT",
+      "subjects": {
+        "s_sci7": {
+          "name": "Science (विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_sst7": {
+          "name": "Social Science (सामाजिक विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_ncert8": {
+      "name": "Class 8th NCERT",
+      "subjects": {
+        "s_sci8": {
+          "name": "Science (विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_sst8": {
+          "name": "Social Science (सामाजिक विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_ncert9": {
+      "name": "Class 9th NCERT",
+      "subjects": {
+        "s_sci9": {
+          "name": "Science (विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_sst9": {
+          "name": "Social Science (सामाजिक विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_ncert10": {
+      "name": "Class 10th NCERT",
+      "subjects": {
+        "s_sci10": {
+          "name": "Science (विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_sst10": {
+          "name": "Social Science (सामाजिक विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_ncert11": {
+      "name": "Class 11th NCERT",
+      "subjects": {
+        "s_sci11": {
+          "name": "Science (विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_sst11": {
+          "name": "Social Science (सामाजिक विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_ncert12": {
+      "name": "Class 12th NCERT",
+      "subjects": {
+        "s_sci12": {
+          "name": "Science (विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_sst12": {
+          "name": "Social Science (सामाजिक विज्ञान)",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    }
+  }
 }
