@@ -1,0 +1,27 @@
+{
+  "history": {},
+  "users": {},
+  "seq": {
+    "cat": 0,
+    "sub": 0,
+    "test": 0
+  },
+  "broadcast": {
+    "targets": {
+      "@Odlixquizgroup": {
+        "title": "Odlixquizgroup",
+        "kind": "supergroup"
+      }
+    },
+    "autofwd": true,
+    "source_channel": 0
+  },
+  "live": {
+    "active": false,
+    "cid": "",
+    "sid": "",
+    "tid": "",
+    "gap": 30,
+    "msg_ids": []
+  }
+}

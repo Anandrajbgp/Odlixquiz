@@ -1,0 +1,46 @@
+{
+  "c_ncert6": {
+    "name": "Class 6th NCERT",
+    "hidden": false
+  },
+  "c_ncert7": {
+    "name": "Class 7th NCERT",
+    "hidden": false
+  },
+  "c_ncert8": {
+    "name": "Class 8th NCERT",
+    "hidden": false
+  },
+  "c_ncert9": {
+    "name": "Class 9th NCERT",
+    "hidden": false
+  },
+  "c_ncert10": {
+    "name": "Class 10th NCERT",
+    "hidden": false
+  },
+  "c_ncert11": {
+    "name": "Class 11th NCERT",
+    "hidden": false
+  },
+  "c_ncert12": {
+    "name": "Class 12th NCERT",
+    "hidden": false
+  },
+  "c_ssc": {
+    "name": "SSC Exams (CGL, CHSL, MTS)",
+    "hidden": false
+  },
+  "c_railway": {
+    "name": "Railway Exams (NTPC, Group D)",
+    "hidden": false
+  },
+  "c_upsc": {
+    "name": "UPSC & State PCS",
+    "hidden": false
+  },
+  "c_defence": {
+    "name": "Defence Exams (NDA, CDS, Army)",
+    "hidden": false
+  }
+}

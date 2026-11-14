@@ -1,14 +1,22 @@
-"""JSON storage - categories, subjects, tests, PDFs, history.
+"""JSON storage - Modularized structure.
 
-Thread-safe + atomic save (temp file + os.replace) + auto-backup.
+Categories are in categories.json.
+Subjects and Chapters (tests) are in quizzes/ folder:
+quizzes/{cid}/{sid}/subject_info.json (contains subject metadata)
+quizzes/{cid}/{sid}/{tid}.json (contains actual test/chapter data)
+User data, history, and state are in users_data.json.
 """
 import json
 import logging
 import os
+import shutil
 import tempfile
 import threading
+from pathlib import Path
 
-from config import BACKUP_FILE, DATA_FILE
+USERS_DATA_FILE = Path("users_data.json")
+CATEGORIES_FILE = Path("categories.json")
+QUIZZES_DIR = Path("quizzes")
 
 logger = logging.getLogger(__name__)
 
@@ -37,97 +45,143 @@ def _clean_str(s):
     return s.replace("\x00", "").replace("\u0000", "").strip()
 
 
-def _sanitize_loaded(d):
-    """Purane data.json me ghuse NUL saaf karo + live/private flag default."""
-    try:
-        for c in (d.get("categories") or {}).values():
-            if isinstance(c, dict) and "name" in c:
-                c["name"] = _clean_str(c["name"])
-            if isinstance(c, dict):
-                c.setdefault("hidden", False)
-            for s in (c.get("subjects") or {}).values():
-                if isinstance(s, dict) and "name" in s:
-                    s["name"] = _clean_str(s["name"])
-                for t in (s.get("tests") or {}).values():
-                    if not isinstance(t, dict):
-                        continue
-                    t["title"] = _clean_str(t.get("title", ""))
-                    for q in t.get("questions", []) or []:
-                        if not isinstance(q, dict):
-                            continue
-                        q["question"] = _clean_str(q.get("question", ""))
-                        q["explanation"] = _clean_str(q.get("explanation", ""))
-                        opts = q.get("options", [])
-                        if isinstance(opts, list):
-                            q["options"] = [_clean_str(o) for o in opts]
-    except Exception as e:
-        logger.warning(f"sanitize fail: {e}")
-    return d
-
-
 def load_data():
     global db
     with _lock:
-        for file_path in [DATA_FILE, BACKUP_FILE]:
-            if file_path.exists():
-                try:
-                    with open(file_path, "r", encoding="utf-8") as f:
-                        d = json.load(f)
-                    if not isinstance(d, dict) or "categories" not in d:
-                        continue
-                    d.setdefault("categories", {})
-                    d.setdefault("history", {})
-                    d.setdefault("users", {})
-                    d.setdefault("seq", {"cat": 0, "sub": 0, "test": 0})
-                    d.setdefault("broadcast", {
-                        "targets": {},
-                        "autofwd": True,
-                        "source_channel": 0
-                    })
-                    d.setdefault("live", {"active": False, "cid": "", "sid": "", "tid": "", "gap": 30, "msg_ids": []})
-                    db = _sanitize_loaded(d)
-                    logger.info(f"Data successfully loaded from {file_path.name}")
-                    return db
-                except Exception as e:
-                    logger.warning(f"{file_path.name} corrupt: {e}")
-                    try:
-                        if file_path.exists():
-                            with open(file_path, "rb") as src:
-                                raw = src.read()
-                            with open(str(file_path) + ".corrupt", "wb") as dst:
-                                dst.write(raw)
-                    except Exception:
-                        pass
         db = default_db()
-        return db
+
+        # 1. Load User Data
+        if USERS_DATA_FILE.exists():
+            try:
+                with open(USERS_DATA_FILE, "r", encoding="utf-8") as f:
+                    user_d = json.load(f)
+                db["history"] = user_d.get("history", {})
+                db["users"] = user_d.get("users", {})
+                db["seq"] = user_d.get("seq", {"cat": 0, "sub": 0, "test": 0})
+                db["broadcast"] = user_d.get("broadcast", default_db()["broadcast"])
+                db["live"] = user_d.get("live", default_db()["live"])
+            except Exception as e:
+                logger.error(f"Error loading {USERS_DATA_FILE}: {e}")
+
+        # 2. Load Categories
+        if CATEGORIES_FILE.exists():
+            try:
+                with open(CATEGORIES_FILE, "r", encoding="utf-8") as f:
+                    cats = json.load(f)
+                    for c_id, c_data in cats.items():
+                        c_data["name"] = _clean_str(c_data.get("name", ""))
+                        c_data.setdefault("hidden", False)
+                        c_data["subjects"] = {}
+                        db["categories"][c_id] = c_data
+            except Exception as e:
+                logger.error(f"Error loading {CATEGORIES_FILE}: {e}")
+
+        # 3. Load Subjects & Tests (Chapters)
+        if QUIZZES_DIR.exists():
+            for c_id in list(db["categories"].keys()):
+                cat_dir = QUIZZES_DIR / c_id
+                if not cat_dir.is_dir():
+                    continue
+
+                for sub_dir in cat_dir.iterdir():
+                    if not sub_dir.is_dir():
+                        continue
+                    s_id = sub_dir.name
+
+                    # Load subject info
+                    info_file = sub_dir / "subject_info.json"
+                    s_name, s_pdfs = "", []
+                    if info_file.exists():
+                        try:
+                            with open(info_file, "r", encoding="utf-8") as f:
+                                s_info = json.load(f)
+                                s_name = _clean_str(s_info.get("name", ""))
+                                s_pdfs = s_info.get("pdfs", [])
+                        except Exception as e:
+                            logger.error(f"Error loading {info_file}: {e}")
+
+                    db["categories"][c_id]["subjects"][s_id] = {
+                        "name": s_name,
+                        "pdfs": s_pdfs,
+                        "tests": {}
+                    }
+
+                    # Load tests/chapters
+                    for test_file in sub_dir.glob("*.json"):
+                        if test_file.name == "subject_info.json":
+                            continue
+                        t_id = test_file.stem
+                        try:
+                            with open(test_file, "r", encoding="utf-8") as f:
+                                t_data = json.load(f)
+                            t_data["title"] = _clean_str(t_data.get("title", ""))
+                            for q in t_data.get("questions", []):
+                                q["question"] = _clean_str(q.get("question", ""))
+                                q["explanation"] = _clean_str(q.get("explanation", ""))
+                                if isinstance(q.get("options"), list):
+                                    q["options"] = [_clean_str(o) for o in q["options"]]
+                            db["categories"][c_id]["subjects"][s_id]["tests"][t_id] = t_data
+                        except Exception as e:
+                            logger.error(f"Error loading test {test_file}: {e}")
+
+        logger.info("Data loaded from chapter-level modular structure.")
         return db
 
 
 def save_data():
     with _lock:
         try:
-            DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
-            try:
-                if DATA_FILE.exists():
-                    with open(DATA_FILE, "rb") as src:
-                        raw = src.read()
-                    with open(BACKUP_FILE, "wb") as dst:
-                        dst.write(raw)
-            except Exception:
-                pass
-            fd, tmp = tempfile.mkstemp(dir=str(DATA_FILE.parent), suffix=".tmp")
-            try:
-                with os.fdopen(fd, "w", encoding="utf-8") as f:
-                    json.dump(db, f, ensure_ascii=False, indent=2)
-                os.replace(tmp, DATA_FILE)
-            finally:
-                try:
-                    if os.path.exists(tmp):
-                        os.unlink(tmp)
-                except Exception:
-                    pass
+            # 1. User Data
+            user_data = {
+                "history": db.get("history", {}),
+                "users": db.get("users", {}),
+                "seq": db.get("seq", {}),
+                "broadcast": db.get("broadcast", {}),
+                "live": db.get("live", {})
+            }
+            _atomic_save(USERS_DATA_FILE, user_data)
+
+            # 2. Categories
+            cats_only = {}
+            for c_id, c_data in db.get("categories", {}).items():
+                cats_only[c_id] = {
+                    "name": c_data.get("name", ""),
+                    "hidden": c_data.get("hidden", False)
+                }
+            _atomic_save(CATEGORIES_FILE, cats_only)
+
+            # 3. Subjects & Tests (Chapters)
+            QUIZZES_DIR.mkdir(exist_ok=True)
+            for c_id, c_data in db.get("categories", {}).items():
+                cat_dir = QUIZZES_DIR / c_id
+                cat_dir.mkdir(exist_ok=True)
+
+                for s_id, s_data in c_data.get("subjects", {}).items():
+                    sub_dir = cat_dir / s_id
+                    sub_dir.mkdir(exist_ok=True)
+
+                    info_data = {"name": s_data.get("name", ""), "pdfs": s_data.get("pdfs", [])}
+                    _atomic_save(sub_dir / "subject_info.json", info_data)
+
+                    for t_id, t_data in s_data.get("tests", {}).items():
+                        _atomic_save(sub_dir / f"{t_id}.json", t_data)
+
         except Exception as e:
             logger.error(f"save failed: {e}")
+
+
+def _atomic_save(file_path: Path, data: dict):
+    fd, tmp = tempfile.mkstemp(dir=str(file_path.parent) if file_path.parent.exists() else ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, str(file_path))
+    finally:
+        try:
+            if os.path.exists(tmp):
+                os.unlink(tmp)
+        except Exception:
+            pass
 
 
 def new_id(prefix, kind):
@@ -154,109 +208,70 @@ def get_test(cid, sid, tid):
     return s.get("tests", {}).get(tid)
 
 
-def add_history(uid, entry):
+def delete_cat(cid):
     with _lock:
-        db["history"].setdefault(str(uid), []).append(entry)
-        if entry.get("name"):
-            db.setdefault("users", {})[str(uid)] = entry["name"]
-        save_data()
+        if cid in db["categories"]:
+            del db["categories"][cid]
+            cat_dir = QUIZZES_DIR / cid
+            if cat_dir.exists():
+                shutil.rmtree(cat_dir, ignore_errors=True)
+            return True
+        return False
+
+
+def delete_sub(cid, sid):
+    with _lock:
+        c = get_cat(cid)
+        if c and sid in c.get("subjects", {}):
+            del c["subjects"][sid]
+            sub_dir = QUIZZES_DIR / cid / sid
+            if sub_dir.exists():
+                shutil.rmtree(sub_dir, ignore_errors=True)
+            return True
+        return False
+
+
+def delete_test(cid, sid, tid):
+    with _lock:
+        s = get_sub(cid, sid)
+        if s and tid in s.get("tests", {}):
+            del s["tests"][tid]
+            test_file = QUIZZES_DIR / cid / sid / f"{tid}.json"
+            if test_file.exists():
+                test_file.unlink(missing_ok=True)
+            return True
+        return False
 
 
 def get_history(uid):
     return db["history"].get(str(uid), [])
 
 
-def get_leaderboard(limit=10):
-    rows = []
-    for uid, attempts in db.get("history", {}).items():
-        if not attempts:
-            continue
-        name = db.get("users", {}).get(str(uid), f"User {uid}")
-        best = max(a["score"] for a in attempts)
-        best_total = max(a["total"] for a in attempts if a["score"] == best)
-        rows.append({
-            "uid": uid, "name": name, "best": best,
-            "total": best_total, "attempts": len(attempts),
-        })
-    rows.sort(key=lambda r: (r["best"] / max(r["total"], 1), r["best"]), reverse=True)
-    return rows[:limit]
-
-
-def seed_demo():
-    if db["categories"]:
-        return
+def add_history(uid, entry):
     with _lock:
-        if db["categories"]:
-            return
-        # Simple system: ek hi category "General", uske andar Test 1, Test 2...
-        cid = f"c{db['seq'].get('cat', 0) + 1}"
-        db["seq"]["cat"] = db["seq"].get("cat", 0) + 1
-        db["categories"][cid] = {"name": "General", "subjects": {}}
-        sid = f"s{db['seq'].get('sub', 0) + 1}"
-        db["seq"]["sub"] = db["seq"].get("sub", 0) + 1
-        db["categories"][cid]["subjects"][sid] = {"name": "General", "pdfs": [], "tests": {}}
-        tid = f"t{db['seq'].get('test', 0) + 1}"
-        db["seq"]["test"] = db["seq"].get("test", 0) + 1
-        db["categories"][cid]["subjects"][sid]["tests"][tid] = {
-            "title": "Test 1",
-            "questions": [
-                {"question": "Bharat ki rajdhani?", "options": ["Mumbai", "Delhi", "Kolkata", "Chennai"], "correct": 1, "explanation": "Delhi rajdhani hai."},
-                {"question": "2 + 2 = ?", "options": ["3", "4", "5", "6"], "correct": 1, "explanation": "2+2=4."},
-                {"question": "RRB ka full form?", "options": ["Railway Recruitment Board", "Road Board", "Rural Bank", "None"], "correct": 0, "explanation": "Railway Recruitment Board."},
-            ],
-        }
-        save_data()
+        uid = str(uid)
+        db["history"].setdefault(uid, [])
+        db["history"][uid].append(entry)
 
 
-def ensure_general():
-    """Hamesha ek General/General jaga ho jisme Test 1,2,3... bante jayein."""
+def set_user_role(uid, role):
     with _lock:
-        for cid, c in db.get("categories", {}).items():
-            if (c.get("name") or "").strip().lower() == "general":
-                for sid, s in (c.get("subjects") or {}).items():
-                    if (s.get("name") or "").strip().lower() == "general":
-                        return cid, sid
-                sid = new_id("s", "sub")
-                c.setdefault("subjects", {})[sid] = {"name": "General", "pdfs": [], "tests": {}}
-                save_data()
-                return cid, sid
-        cid = new_id("c", "cat")
-        db.setdefault("categories", {})[cid] = {"name": "General", "subjects": {}}
-        sid = new_id("s", "sub")
-        db["categories"][cid]["subjects"][sid] = {"name": "General", "pdfs": [], "tests": {}}
-        save_data()
-        return cid, sid
+        uid = str(uid)
+        db["users"].setdefault(uid, {})
+        db["users"][uid]["role"] = role
 
 
-def next_test_number_in(cid, sid):
-    """Us sub-category me agla Test number (har sub me Test 1, 2... alag)."""
-    import re
-    s = get_sub(cid, sid)
-    tests = (s.get("tests", {}) or {}) if s else {}
-    nums = []
-    for t in tests.values():
-        m = re.search(r"(\d+)", t.get("title", "") or "")
-        if m:
-            try:
-                nums.append(int(m.group(1)))
-            except ValueError:
-                pass
-    return (max(nums) + 1) if nums else (len(tests) + 1)
+def get_user_role(uid):
+    return db["users"].get(str(uid), {}).get("role", "user")
 
 
-def next_test_number():
-    """Purana General wala (backward compat)."""
-    """General me agla Test number (Test 1, Test 2...)."""
-    cid, sid = ensure_general()
-    tests = db["categories"][cid]["subjects"][sid].get("tests", {})
-    import re
-    nums = []
-    for t in tests.values():
-        m = re.search(r"(\d+)", t.get("title", "") or "")
-        if m:
-            try:
-                nums.append(int(m.group(1)))
-            except ValueError:
-                pass
-    n = (max(nums) + 1) if nums else (len(tests) + 1)
-    return cid, sid, n
+def log_live_msg(mid):
+    with _lock:
+        db["live"]["msg_ids"].append(mid)
+
+
+def clear_live_msgs():
+    with _lock:
+        m = list(db["live"]["msg_ids"])
+        db["live"]["msg_ids"] = []
+        return m
