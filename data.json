@@ -111,6 +111,95 @@
         }
       },
       "hidden": false
+    },
+    "c_ssc": {
+      "name": "SSC Exams (CGL, CHSL, MTS)",
+      "subjects": {
+        "s_ssc_gs": {
+          "name": "General Studies & GK",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_ssc_sci": {
+          "name": "General Science",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_ssc_math": {
+          "name": "Quantitative Aptitude",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_ssc_eng": {
+          "name": "English Language",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_railway": {
+      "name": "Railway Exams (NTPC, Group D)",
+      "subjects": {
+        "s_rly_gs": {
+          "name": "General Studies & GK",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_rly_sci": {
+          "name": "General Science",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_rly_math": {
+          "name": "Mathematics",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_rly_reason": {
+          "name": "General Intelligence & Reasoning",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_upsc": {
+      "name": "UPSC & State PCS",
+      "subjects": {
+        "s_upsc_gs": {
+          "name": "General Studies (GS Paper 1 & 2)",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_upsc_csat": {
+          "name": "CSAT (Aptitude)",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
+    },
+    "c_defence": {
+      "name": "Defence Exams (NDA, CDS, Army)",
+      "subjects": {
+        "s_def_gs": {
+          "name": "General Studies & GK",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_def_sci": {
+          "name": "General Science",
+          "pdfs": [],
+          "tests": {}
+        },
+        "s_def_math": {
+          "name": "Mathematics",
+          "pdfs": [],
+          "tests": {}
+        }
+      },
+      "hidden": false
     }
   }
 }
