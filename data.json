@@ -774,12 +774,178 @@
         "s_sci10": {
           "name": "Science (विज्ञान)",
           "pdfs": [],
-          "tests": {}
+          "tests": {
+            "sci10_ch1": {
+              "title": "अध्याय 1: रासायनिक अभिक्रियाएँ और समीकरण (Chemical Reactions and Equations)",
+              "questions": []
+            },
+            "sci10_ch2": {
+              "title": "अध्याय 2: अम्ल, क्षार और लवण (Acids, Bases and Salts)",
+              "questions": []
+            },
+            "sci10_ch3": {
+              "title": "अध्याय 3: धातु और अधातुएँ (Metals and Non-metals)",
+              "questions": []
+            },
+            "sci10_ch4": {
+              "title": "अध्याय 4: कार्बन और उसके यौगिक (Carbon and its Compounds)",
+              "questions": []
+            },
+            "sci10_ch5": {
+              "title": "अध्याय 5: तत्वों का आवर्त-वर्गीकरण (Periodic Classification of Elements)",
+              "questions": []
+            },
+            "sci10_ch6": {
+              "title": "अध्याय 6: जीवन प्रक्रम (Life Processes)",
+              "questions": []
+            },
+            "sci10_ch7": {
+              "title": "अध्याय 7: नियंत्रण और समन्वय (Control and Coordination)",
+              "questions": []
+            },
+            "sci10_ch8": {
+              "title": "अध्याय 8: जीवों में जनन (How do Organisms Reproduce)",
+              "questions": []
+            },
+            "sci10_ch9": {
+              "title": "अध्याय 9: वंशानुक्रम और विकास (Heredity and Evolution)",
+              "questions": []
+            },
+            "sci10_ch10": {
+              "title": "अध्याय 10: प्रकाश – परावर्तन और अपवर्तन (Light – Reflection and Refraction)",
+              "questions": []
+            },
+            "sci10_ch11": {
+              "title": "अध्याय 11: मानव नेत्र तथा रंगबिरंगा संसार (The Human Eye and the Colourful World)",
+              "questions": []
+            },
+            "sci10_ch12": {
+              "title": "अध्याय 12: विद्युत (Electricity)",
+              "questions": []
+            },
+            "sci10_ch13": {
+              "title": "अध्याय 13: विद्युत धारा के चुम्बकीय प्रभाव (Magnetic Effects of Electric Current)",
+              "questions": []
+            },
+            "sci10_ch14": {
+              "title": "अध्याय 14: हमारे चारों ओर के ऊर्जा स्रोत (Sources of Energy)",
+              "questions": []
+            },
+            "sci10_ch15": {
+              "title": "अध्याय 15: हमारा पर्यावरण (Our Environment)",
+              "questions": []
+            },
+            "sci10_ch16": {
+              "title": "अध्याय 16: प्राकृतिक संसाधनों का प्रबंधन (Management of Natural Resources)",
+              "questions": []
+            }
+          }
         },
         "s_sst10": {
           "name": "Social Science (सामाजिक विज्ञान)",
           "pdfs": [],
-          "tests": {}
+          "tests": {
+            "t_sst10_hist_1": {
+              "title": "इतिहास - अध्याय 1: राष्ट्रीयता का उदय (The Rise of Nationalism in Europe)",
+              "questions": []
+            },
+            "t_sst10_hist_2": {
+              "title": "इतिहास - अध्याय 2: भारत में राष्ट्रवाद (Nationalism in India)",
+              "questions": []
+            },
+            "t_sst10_hist_3": {
+              "title": "इतिहास - अध्याय 3: वैश्विक विश्व का निर्माण (The Making of a Global World)",
+              "questions": []
+            },
+            "t_sst10_hist_4": {
+              "title": "इतिहास - अध्याय 4: औद्योगीकरण का युग (The Age of Industrialisation)",
+              "questions": []
+            },
+            "t_sst10_hist_5": {
+              "title": "इतिहास - अध्याय 5: मुद्रण संस्कृति और आधुनिक विश्व (Print Culture and the Modern World)",
+              "questions": []
+            },
+            "t_sst10_geo_1": {
+              "title": "भूगोल - अध्याय 1: संसाधन और विकास (Resources and Development)",
+              "questions": []
+            },
+            "t_sst10_geo_2": {
+              "title": "भूगोल - अध्याय 2: वन और वन्यजीव संसाधन (Forest and Wildlife Resources)",
+              "questions": []
+            },
+            "t_sst10_geo_3": {
+              "title": "भूगोल - अध्याय 3: जल संसाधन (Water Resources)",
+              "questions": []
+            },
+            "t_sst10_geo_4": {
+              "title": "भूगोल - अध्याय 4: कृषि (Agriculture)",
+              "questions": []
+            },
+            "t_sst10_geo_5": {
+              "title": "भूगोल - अध्याय 5: खनिज और ऊर्जा संसाधन (Minerals and Energy Resources)",
+              "questions": []
+            },
+            "t_sst10_geo_6": {
+              "title": "भूगोल - अध्याय 6: विनिर्माण उद्योग (Manufacturing Industries)",
+              "questions": []
+            },
+            "t_sst10_geo_7": {
+              "title": "भूगोल - अध्याय 7: देश की जीवन रेखाएँ (Lifelines of National Economy)",
+              "questions": []
+            },
+            "t_sst10_civ_1": {
+              "title": "नागरिक शास्त्र - अध्याय 1: सत्ता-साझा करना (Power Sharing)",
+              "questions": []
+            },
+            "t_sst10_civ_2": {
+              "title": "नागरिक शास्त्र - अध्याय 2: संघवाद (Federalism)",
+              "questions": []
+            },
+            "t_sst10_civ_3": {
+              "title": "नागरिक शास्त्र - अध्याय 3: लोकतंत्र और विविधता (Democracy and Diversity)",
+              "questions": []
+            },
+            "t_sst10_civ_4": {
+              "title": "नागरिक शास्त्र - अध्याय 4: लिंग, धर्म और जाति (Gender, Religion and Caste)",
+              "questions": []
+            },
+            "t_sst10_civ_5": {
+              "title": "नागरिक शास्त्र - अध्याय 5: लोकप्रिय संघर्ष और आंदोलन (Popular Struggles and Movements)",
+              "questions": []
+            },
+            "t_sst10_civ_6": {
+              "title": "नागरिक शास्त्र - अध्याय 6: राजनीतिक दल (Political Parties)",
+              "questions": []
+            },
+            "t_sst10_civ_7": {
+              "title": "नागरिक शास्त्र - अध्याय 7: लोकतंत्र के परिणाम (Outcomes of Democracy)",
+              "questions": []
+            },
+            "t_sst10_civ_8": {
+              "title": "नागरिक शास्त्र - अध्याय 8: लोकतंत्र में चुनौतियाँ (Challenges to Democracy)",
+              "questions": []
+            },
+            "t_sst10_eco_1": {
+              "title": "अर्थशास्त्र - अध्याय 1: विकास (Development)",
+              "questions": []
+            },
+            "t_sst10_eco_2": {
+              "title": "अर्थशास्त्र - अध्याय 2: भारतीय अर्थव्यवस्था के क्षेत्र (Sectors of the Indian Economy)",
+              "questions": []
+            },
+            "t_sst10_eco_3": {
+              "title": "अर्थशास्त्र - अध्याय 3: मुद्रा और ऋण (Money and Credit)",
+              "questions": []
+            },
+            "t_sst10_eco_4": {
+              "title": "अर्थशास्त्र - अध्याय 4: वैश्वीकरण और भारतीय अर्थव्यवस्था (Globalisation and the Indian Economy)",
+              "questions": []
+            },
+            "t_sst10_eco_5": {
+              "title": "अर्थशास्त्र - अध्याय 5: उपभोक्ता अधिकार (Consumer Rights)",
+              "questions": []
+            }
+          }
         }
       },
       "hidden": false
