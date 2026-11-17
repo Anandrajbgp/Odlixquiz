@@ -63,7 +63,7 @@ async def send_q(chat_id, uid, cid, sid, tid, qi, context, stop_msg_id=None):
     msg = await _safe_send_poll(
         context.bot, chat_id,
         f"[{sub_name}] Q{qi + 1}/{total}: {q['question']}",
-        q["options"], q["correct"], q.get("explanation", ""),
+        q["options"], q.get("correct", q.get("answer", 0)), q.get("explanation", ""),
         open_period=timer,
         reply_markup=stop_quiz_inline()  # Ye line add hui hai
     )
@@ -101,7 +101,7 @@ async def _timeout_watch(poll_id, uid, context):
         "qi": info["qi"],
         "question": t["questions"][info["qi"]]["question"],
         "options": t["questions"][info["qi"]]["options"],
-        "correct": t["questions"][info["qi"]]["correct"],
+        "correct": t["questions"][info["qi"]].get("correct", t["questions"][info["qi"]].get("answer", 0)),
         "picked": -1,
         "timeout": True,
         "time_taken": round(elapsed, 1),
@@ -222,7 +222,7 @@ async def handle_poll_answer(update, context):
         return
     total = len(t["questions"])
     picked = ans.option_ids[0] if ans.option_ids else -1
-    correct_idx = t["questions"][info["qi"]]["correct"]
+    correct_idx = t["questions"][info["qi"]].get("correct", t["questions"][info["qi"]].get("answer", 0))
     live = _live(context, u.id)
     live["done"] = live.get("done", 0) + 1
     if picked == correct_idx:

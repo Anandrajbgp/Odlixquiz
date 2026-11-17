@@ -88,7 +88,7 @@ async def _send_q_to_targets(context, q, qi, total, title, gap):
             msg = await _safe_send_poll(
                 context.bot, bcm._parse_chat_id(cid),
                 qtext,
-                q["options"], q["correct"], q.get("explanation", ""),
+                q["options"], q.get("correct", q.get("answer", 0)), q.get("explanation", ""),
                 open_period=gap, anonymous=False)
             sent += 1
             try:
