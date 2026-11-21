@@ -76,11 +76,10 @@ def live_tests_list() -> str:
     return "\n".join(lines)
 
 async def _send_q_to_targets(context, q, qi, total, title, gap):
-    from quiz import _safe_send_poll
+    from quiz import _safe_send_poll, live_active_poll_info
     tg = bcm.get_targets()
     sent = 0
     lv = _lv()
-    # har Q ke sath countdown: ⏱ 30s me jawab do!
     qtext = f"[LIVE {title}] Q{qi + 1}/{total} (⏱ {gap}s): {q['question']}"
     for cid in list(tg.keys()):
         try:
@@ -94,6 +93,10 @@ async def _send_q_to_targets(context, q, qi, total, title, gap):
             sent += 1
             try:
                 lv.setdefault("msg_ids", []).append(msg.message_id)
+                live_active_poll_info[msg.poll.id] = {
+                    "correct": q.get("correct", q.get("answer", 0)),
+                    "title": title
+                }
             except Exception:
                 pass
         except Exception as e:
@@ -101,6 +104,8 @@ async def _send_q_to_targets(context, q, qi, total, title, gap):
     return sent
 
 async def run_live(context, cid, sid, tid, gap: int | None, admin_chat_id: int):
+    from quiz import live_user_scores
+    live_user_scores.clear()
     lv = _lv()
     if lv.get("active"):
         try:
@@ -168,6 +173,24 @@ async def run_live(context, cid, sid, tid, gap: int | None, admin_chat_id: int):
     _lv()["active"] = False
     dbm.save_data()
     if still_on:
+        from quiz import live_active_poll_info, live_user_scores
+        if live_user_scores:
+            sorted_scores = sorted(live_user_scores.values(), key=lambda x: x["score"], reverse=True)
+            lb_lines = [
+                f"🏆 <b>LIVE TEST LEADERBOARD: {title}</b> 🏆\n",
+                f"Khatam! Total {total} Questions. Sabhi participants ke scores:\n"
+            ]
+            for rank, st in enumerate(sorted_scores[:15], 1):
+                em = "🥇" if rank == 1 else ("🥈" if rank == 2 else ("🥉" if rank == 3 else f"{rank}."))
+                lb_lines.append(f"{em} <b>{st['name']}</b> — Score: <b>{st['score']}</b>/{total}")
+            lb_text = "\n".join(lb_lines)
+            try:
+                await bcm.broadcast_text(context, lb_text)
+            except Exception:
+                pass
+            live_user_scores.clear()
+        live_active_poll_info.clear()
+
         try:
             await bcm.broadcast_text(context, f"LIVE TEST khatm! <b>{title}</b> - {total} Q ho gaye.")
         except Exception:

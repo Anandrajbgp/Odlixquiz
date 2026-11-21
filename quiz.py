@@ -202,10 +202,31 @@ def clear_paused(uid, context):
     context.user_data.pop("stop_msg_id", None)
 
 
+live_user_scores: dict = {}
+live_active_poll_info: dict = {}
+
+
 async def handle_poll_answer(update, context):
     ans = update.poll_answer
     u = ans.user
-    if not u or ans.poll_id not in active_polls:
+    if not u:
+        return
+
+    if ans.poll_id in live_active_poll_info:
+        info = live_active_poll_info[ans.poll_id]
+        picked = ans.option_ids[0] if ans.option_ids else -1
+        correct_idx = info["correct"]
+        name = u.first_name or f"User {u.id}"
+        if u.username:
+            name = f"@{u.username}"
+        user_stat = live_user_scores.setdefault(u.id, {"name": name, "score": 0, "answered": 0})
+        user_stat["name"] = name
+        user_stat["answered"] += 1
+        if picked == correct_idx:
+            user_stat["score"] += 1
+        return
+
+    if ans.poll_id not in active_polls:
         return
     info = active_polls.pop(ans.poll_id)
     if info["uid"] != u.id:
