@@ -48,8 +48,12 @@ def main():
     except Exception as e:
         print(f"Health server start nahi hua: {e}")
     dbm.load_data()
+
+    async def post_init(application):
+        lvm.start_scheduler(application)
+
     # seed_demo band: admin khud category + PDF se banayega
-    app = Application.builder().token(BOT_TOKEN).build()
+    app = Application.builder().token(BOT_TOKEN).post_init(post_init).build()
     app.add_handler(CommandHandler("start", start_or_menu))
     app.add_handler(CommandHandler("home", cmd_home))
     app.add_handler(CommandHandler("test", cmd_test))
@@ -75,6 +79,9 @@ def main():
     app.add_handler(CommandHandler("live", lvm.cmd_live))
     app.add_handler(CommandHandler("livestop", lvm.cmd_livestop))
     app.add_handler(CommandHandler("livestatus", lvm.cmd_livestatus))
+    app.add_handler(CommandHandler("schedule", lvm.cmd_schedule))
+    app.add_handler(CommandHandler("schedules", lvm.cmd_schedules))
+    app.add_handler(CommandHandler("cancelschedule", lvm.cmd_cancelschedule))
     app.add_handler(CallbackQueryHandler(on_callback))
     app.add_handler(PollAnswerHandler(handle_poll_answer))
     app.add_handler(MessageHandler(filters.Document.PDF, handle_pdf))

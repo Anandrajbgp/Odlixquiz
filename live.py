@@ -227,3 +227,156 @@ async def cmd_livestatus(update, context):
     if update.effective_user.id != ADMIN_ID:
         return
     await update.effective_message.reply_text(live_status_text(), parse_mode="HTML")
+
+
+def parse_schedule_time(s: str) -> datetime | None:
+    s = s.strip()
+    try:
+        return datetime.strptime(s, "%Y-%m-%d %H:%M")
+    except ValueError:
+        pass
+    try:
+        from datetime import time as dtime, timedelta
+        t = datetime.strptime(s, "%H:%M").time()
+        now = datetime.now()
+        dt = datetime.combine(now.date(), t)
+        if dt <= now:
+            dt += timedelta(days=1)
+        return dt
+    except ValueError:
+        pass
+    return None
+
+
+async def scheduler_worker(context):
+    while True:
+        try:
+            await asyncio.sleep(30)
+            schedules = dbm.db.get("schedules", [])
+            if not schedules:
+                continue
+            now = datetime.now()
+            remaining = []
+            for sch in schedules:
+                try:
+                    run_dt = datetime.fromisoformat(sch["run_time"])
+                except Exception:
+                    continue
+                if now >= run_dt:
+                    logger.info(f"Triggering scheduled live test: {sch.get('title')}")
+                    start_live_task(context, sch["cid"], sch["sid"], sch["tid"], None, sch["admin_chat_id"])
+                    try:
+                        await context.bot.send_message(
+                            chat_id=sch["admin_chat_id"],
+                            text=f"⏰ <b>Scheduled Live Test Shuru Ho Gaya!</b>\nTest: <b>{sch.get('title')}</b>",
+                            parse_mode="HTML"
+                        )
+                    except Exception:
+                        pass
+                else:
+                    remaining.append(sch)
+            if len(remaining) != len(schedules):
+                dbm.db["schedules"] = remaining
+                dbm.save_data()
+        except Exception as e:
+            logger.error(f"Scheduler worker error: {e}")
+
+
+def start_scheduler(context):
+    context.application.create_task(scheduler_worker(context))
+
+
+async def cmd_schedule(update, context):
+    if update.effective_user.id != ADMIN_ID:
+        await update.effective_message.reply_text("Admin only.")
+        return
+    args_text = " ".join(context.args).strip() if context.args else ""
+    if not args_text or "|" not in args_text:
+        await update.effective_message.reply_text(
+            "📅 <b>Test Schedule Karne ka Tarika:</b>\n"
+            "Format: <code>/schedule [Test Number] | [Time]</code>\n"
+            "Example: <code>/schedule 1 | 2025-05-15 18:30</code> ya <code>/schedule 1 | 18:30</code>\n\n"
+            "Neeche available tests ki list hai:\n\n" + live_tests_list(),
+            parse_mode="HTML"
+        )
+        return
+
+    parts = [p.strip() for p in args_text.split("|", 1)]
+    test_query = parts[0]
+    time_query = parts[1]
+
+    found = None
+    if test_query.isdigit():
+        found = live_index_map().get(int(test_query))
+    if not found:
+        found = find_test_by_name(test_query)
+    if not found:
+        await update.effective_message.reply_text(f"'{test_query}' test nahi mila. Sahi test number ya naam dein.")
+        return
+
+    run_dt = parse_schedule_time(time_query)
+    if not run_dt:
+        await update.effective_message.reply_text("❌ Invalid time format! Use `YYYY-MM-DD HH:MM` or `HH:MM` (e.g. 18:30).")
+        return
+
+    cid, sid, tid = found
+    t = dbm.get_test(cid, sid, tid)
+    title = t.get("title", "Test")
+
+    schedule_item = {
+        "cid": cid,
+        "sid": sid,
+        "tid": tid,
+        "title": title,
+        "run_time": run_dt.isoformat(),
+        "admin_chat_id": update.effective_chat.id,
+    }
+
+    dbm.db.setdefault("schedules", []).append(schedule_item)
+    dbm.save_data()
+
+    await update.effective_message.reply_text(
+        f"✅ <b>Test Successfully Schedule Ho Gaya!</b>\n"
+        f"📝 Test: <b>{title}</b>\n"
+        f"⏰ Time: <b>{run_dt.strftime('%d-%m-%Y %H:%M')}</b>\n\n"
+        f"Tay samay par bot automatically live kar dega.",
+        parse_mode="HTML"
+    )
+
+
+async def cmd_schedules(update, context):
+    if update.effective_user.id != ADMIN_ID:
+        return
+    schedules = dbm.db.get("schedules", [])
+    if not schedules:
+        await update.effective_message.reply_text("📅 Koi bhi test schedule nahi hai.\nSchedule karne ke liye: `/schedule [test] | [time]`", parse_mode="HTML")
+        return
+
+    lines = ["📅 <b>Active Scheduled Tests:</b>"]
+    for i, sch in enumerate(schedules, 1):
+        try:
+            dt = datetime.fromisoformat(sch["run_time"]).strftime("%d-%m-%Y %H:%M")
+        except Exception:
+            dt = sch.get("run_time", "")
+        lines.append(f"{i}. <b>{sch.get('title')}</b> — ⏱ {dt}")
+    lines.append("\nKisi schedule ko hatane ke liye: <code>/cancelschedule [number]</code>")
+    await update.effective_message.reply_text("\n".join(lines), parse_mode="HTML")
+
+
+async def cmd_cancelschedule(update, context):
+    if update.effective_user.id != ADMIN_ID:
+        return
+    arg = context.args[0] if context.args else ""
+    if not arg.isdigit():
+        await update.effective_message.reply_text("Use: `/cancelschedule 1` (Schedule number dein)")
+        return
+    idx = int(arg) - 1
+    schedules = dbm.db.get("schedules", [])
+    if 0 <= idx < len(schedules):
+        removed = schedules.pop(idx)
+        dbm.save_data()
+        await update.effective_message.reply_text(f"🗑️ Schedule hata diya: <b>{removed.get('title')}</b>", parse_mode="HTML")
+    else:
+        await update.effective_message.reply_text("❌ Galat schedule number.")
+
+

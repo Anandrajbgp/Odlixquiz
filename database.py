@@ -36,6 +36,7 @@ def default_db():
             "source_channel": 0
         },
         "live": {"active": False, "cid": "", "sid": "", "tid": "", "gap": 30, "msg_ids": []},
+        "schedules": [],
     }
 
 
@@ -60,6 +61,7 @@ def load_data():
                 db["seq"] = user_d.get("seq", {"cat": 0, "sub": 0, "test": 0})
                 db["broadcast"] = user_d.get("broadcast", default_db()["broadcast"])
                 db["live"] = user_d.get("live", default_db()["live"])
+                db["schedules"] = user_d.get("schedules", [])
             except Exception as e:
                 logger.error(f"Error loading {USERS_DATA_FILE}: {e}")
 
@@ -137,7 +139,8 @@ def save_data():
                 "users": db.get("users", {}),
                 "seq": db.get("seq", {}),
                 "broadcast": db.get("broadcast", {}),
-                "live": db.get("live", {})
+                "live": db.get("live", {}),
+                "schedules": db.get("schedules", [])
             }
             _atomic_save(USERS_DATA_FILE, user_data)
 
