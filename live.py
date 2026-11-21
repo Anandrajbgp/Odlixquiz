@@ -285,8 +285,11 @@ async def scheduler_worker(context):
 
 class SimpleContext:
     def __init__(self, application):
-        self.application = application
         self.bot = application.bot
+        self.application = self
+
+    def create_task(self, coro):
+        return asyncio.create_task(coro)
 
 
 def start_scheduler(app_or_context):
