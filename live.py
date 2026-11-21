@@ -283,8 +283,16 @@ async def scheduler_worker(context):
             logger.error(f"Scheduler worker error: {e}")
 
 
-def start_scheduler(context):
-    context.application.create_task(scheduler_worker(context))
+class SimpleContext:
+    def __init__(self, application):
+        self.application = application
+        self.bot = application.bot
+
+
+def start_scheduler(app_or_context):
+    app = getattr(app_or_context, "application", app_or_context)
+    ctx = SimpleContext(app)
+    app.create_task(scheduler_worker(ctx))
 
 
 async def cmd_schedule(update, context):
