@@ -1,0 +1,605 @@
+{
+  "title": "English Language Test 9",
+  "questions": [
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"ADVERSE\"",
+      "options": [
+        "Advantageous",
+        "Unfavorable / Hostile",
+        "Favorable",
+        "Beneficial"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "ADVERSE का अर्थ होता है प्रतिकूल, विपरीत या अहितकर। Synonym: Unfavorable, Hostile, Harmful."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"ADVERSE\"",
+      "options": [
+        "Harmful",
+        "Hostile",
+        "Unfavorable",
+        "Favorable / Beneficial"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "ADVERSE (प्रतिकूल) का Antonym है Favorable (अनुकूल) या Beneficial."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"BENEVOLENT\"",
+      "options": [
+        "Generous / Altruistic",
+        "Malevolent",
+        "Selfish",
+        "Miserly"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "BENEVOLENT का अर्थ होता है परोपकारी, दयालु या उदार। Synonym: Generous, Altruistic, Kind."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"BENEVOLENT\"",
+      "options": [
+        "Altruistic",
+        "Generous",
+        "Kind",
+        "Malevolent / Miserly"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "BENEVOLENT (उदार/दयालु) का Antonym है Malevolent (द्वेषी) या Miserly."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"CALLOUS\"",
+      "options": [
+        "Insensitive / Unfeeling",
+        "Compassionate",
+        "Sensitive",
+        "Sympathetic"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "CALLOUS का अर्थ होता है कठोर, संवेदनशील न होना या निर्दयी। Synonym: Insensitive, Unfeeling, Hardened."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"CALLOUS\"",
+      "options": [
+        "Hardened",
+        "Sensitive / Compassionate",
+        "Insensitive",
+        "Unfeeling"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "CALLOUS (निर्दयी/कठोर) का Antonym है Sensitive (संवेदनशील) या Compassionate."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"DEVIOUS\"",
+      "options": [
+        "Direct",
+        "Straightforward",
+        "Honest",
+        "Deceitful / Cunning"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "DEVIOUS का अर्थ होता है चालाक, कपटी या घुमावदार। Synonym: Deceitful, Cunning, Dishonest."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"DEVIOUS\"",
+      "options": [
+        "Deceitful",
+        "Dishonest",
+        "Honest / Straightforward",
+        "Cunning"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "DEVIOUS (कपटी/चालाक) का Antonym है Honest (ईमानदार) या Straightforward."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A place where government or historic public records and documents are kept\"",
+      "options": [
+        "Archives",
+        "Library",
+        "Museum",
+        "Armory"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "ऐतिहासिक सार्वजनिक अभिलेखों को सुरक्षित रखने के स्थान को Archives (अभिलेखागार) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A place or establishment where milk is stored and processed into butter or cheese\"",
+      "options": [
+        "Distillery",
+        "Bakery",
+        "Creamery / Dairy",
+        "Brewery"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "दुग्ध प्रसंस्करण केंद्र को Creamery या Dairy कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"An extreme or morbid fear of water\"",
+      "options": [
+        "Acrophobia",
+        "Claustrophobia",
+        "Xenophobia",
+        "Hydrophobia / Aquaphobia"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "पानी से अत्यधिक भय को Hydrophobia कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"An extreme, irrational fear of spiders\"",
+      "options": [
+        "Arachnophobia",
+        "Agoraphobia",
+        "Acrophobia",
+        "Cynophobia"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "मकड़ियों से अत्यधिक डर को Arachnophobia कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"An extreme or irrational fear of dogs\"",
+      "options": [
+        "Cynophobia",
+        "Arachnophobia",
+        "Hydrophobia",
+        "Acrophobia"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "कुत्तों से अत्यधिक डर को Cynophobia कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"At the drop of a hat\"",
+      "options": [
+        "Instantly / without any delay or hesitation",
+        "Very slowly",
+        "When a hat falls",
+        "After long delay"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "At the drop of a hat = बिना किसी हिचकिचाहट के, तुरंत।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Barking up the wrong tree\"",
+      "options": [
+        "Pursuing a wrong course of action or accusing wrong person",
+        "Barking at a dog under tree",
+        "To reach correct conclusion",
+        "Cutting down wrong tree"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Barking up the wrong tree = गलत दिशा या गलत व्यक्ति पर प्रयास करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Bite off more than you can chew\"",
+      "options": [
+        "Taste different foods",
+        "Accept small challenge",
+        "Eat food without chewing",
+        "Take on a task that is too big for one's capacity"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Bite off more than you can chew = क्षमता से अधिक काम हाथ में लेना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Burn the candle at both ends\"",
+      "options": [
+        "Light a room with candles",
+        "To waste candles",
+        "Work tirelessly late at night and early morning",
+        "Burn with anger"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Burn the candle at both ends = दिन-रात अत्यधिक परिश्रम करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Cry over spilt milk\"",
+      "options": [
+        "Waste milk",
+        "Regret or complain about something in past that cannot be undone",
+        "Feel happy after loss",
+        "Cry while drinking milk"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Cry over spilt milk = जो हो गया उस पर व्यर्थ में पछताना।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"He is one of the most intelligent boy in our class.\"",
+      "options": [
+        "intelligent boy in our class",
+        "No error",
+        "He is one of",
+        "the most"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: 'One of the' के बाद Plural Noun ('boys') का प्रयोग होता है।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"Neither Ram nor his brothers was invited to the party.\"",
+      "options": [
+        "Neither Ram",
+        "nor his brothers",
+        "was invited to the party",
+        "No error"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: Neither...nor में निकटतम सब्जेक्ट ('brothers' प्लुरल) के अनुसार Plural Verb 'were' आएगी।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"She has been waiting here since ten minutes.\"",
+      "options": [
+        "No error",
+        "She has been",
+        "since ten minutes",
+        "waiting here"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: समय की अवधि ('ten minutes') के लिए प्रपोजिशन 'for' आता है (for ten minutes)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He was accused _____ stealing the gold watch.\"",
+      "options": [
+        "with",
+        "for",
+        "in",
+        "of"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: Verb 'Accuse' के साथ हमेशा 'of' आता है (accused of stealing)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"She prefers tea _____ coffee in winter.\"",
+      "options": [
+        "to",
+        "from",
+        "over",
+        "than"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: Verb 'Prefer' के साथ प्रपोजिशन 'to' आता है।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"The police are searching _____ the missing child.\"",
+      "options": [
+        "about",
+        "after",
+        "at",
+        "for"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: किसी खोई हुई वस्तु/व्यक्ति को खोजने के लिए 'search for' प्रयुक्त होता है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "BUREAUCRASY",
+        "BEUREAUCRACY",
+        "BUREUCRACY",
+        "BUREAUCRACY"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "सही वर्तनी BUREAUCRACY (नौकरशाही) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "NECESSERRY",
+        "NECESSERY",
+        "NECESSARY",
+        "NECESARY"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी NECESSARY (आवश्यक) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "PRIVILEGE",
+        "PRIVELEGE",
+        "PRIVILEDGE",
+        "PRIVLEGE"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी PRIVILEGE (विशेषाधिकार) है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"EPHEMERAL\"",
+      "options": [
+        "Transient / Short-lived",
+        "Permanent",
+        "Enduring",
+        "Eternal"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "EPHEMERAL का अर्थ होता है अल्पकालिक या क्षणिक। Synonym: Transient, Short-lived, Fleeting."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"EPHEMERAL\"",
+      "options": [
+        "Eternal / Permanent",
+        "Transient",
+        "Short-lived",
+        "Fleeting"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "EPHEMERAL (क्षणिक) का Antonym है Eternal (शाश्वत) या Permanent."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"GULLIBLE\"",
+      "options": [
+        "Credulous / Naive",
+        "Cynical",
+        "Suspicious",
+        "Shrewd"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "GULLIBLE का अर्थ होता है सीधा-साधा, जिसे आसानी से धोखा दिया जा सके। Synonym: Credulous, Naive."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"GULLIBLE\"",
+      "options": [
+        "Suspicious / Cynical",
+        "Trusting",
+        "Credulous",
+        "Naive"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "GULLIBLE (भोला) का Antonym है Suspicious (शक्की) या Cynical."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who collects or is interested in postage stamps\"",
+      "options": [
+        "Philatelist",
+        "Numismatist",
+        "Botanist",
+        "Bibliophile"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "डाक टिकट संग्रही को Philatelist कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who collects or studies coins and currency\"",
+      "options": [
+        "Bibliophile",
+        "Philatelist",
+        "Numismatist",
+        "Archaeologist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सिक्कों के संग्रहकर्ता को Numismatist कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who loves, collects or reads books with passion\"",
+      "options": [
+        "Linguist",
+        "Philatelist",
+        "Bibliophile",
+        "Numismatist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "पुस्तक प्रेमी को Bibliophile कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"One who is present everywhere at the same time\"",
+      "options": [
+        "Omniscient",
+        "Universal",
+        "Omnipresent",
+        "Omnipotent"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सर्वव्यापी को Omnipresent कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Costs an arm and a leg\"",
+      "options": [
+        "A physical injury",
+        "Extremely expensive / costly",
+        "Worth doing",
+        "A cheap bargain"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Costs an arm and a leg = अत्यधिक महँगा होना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Every cloud has a silver lining\"",
+      "options": [
+        "Dark clouds bring rain",
+        "There is something good in every bad or difficult situation",
+        "Bad events bring worse results",
+        "Silver is in clouds"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Every cloud has a silver lining = निराशा में भी आशा की किरण छिपी होती है।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Get out of hand\"",
+      "options": [
+        "Shake hands",
+        "Get out of control",
+        "Lose a ring",
+        "Give away something"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Get out of hand = नियंत्रण से बाहर होना।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"No sooner had I reached <u>when</u> the train left.\"",
+      "options": [
+        "then",
+        "No improvement",
+        "before",
+        "than"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: 'No sooner' के साथ कंजंक्शन 'than' आता है ('when' गलत है)."
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"If I <u>was</u> a king, I would help all.\"",
+      "options": [
+        "were",
+        "had been",
+        "No improvement",
+        "am"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: काल्पनिक वाक्य में Subject के साथ हमेशा 'were' आता है।"
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"She has completed the work.\"",
+      "options": [
+        "The work had been completed by her.",
+        "The work was completed by her.",
+        "The work has been completed by her.",
+        "The work is completed by her."
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Present Perfect का Passive = Object + has/have + been + V3 + by + Subject."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"Close the door.\"",
+      "options": [
+        "Let the door be closed.",
+        "You are requested to close door.",
+        "Let door close.",
+        "The door should close."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Imperative sentence का Passive = Let + Object + be + V3."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: He said to me, \"Where are you going?\"",
+      "options": [
+        "He asked me where I was going.",
+        "He asked me that where I was going.",
+        "He asked me where was I going.",
+        "He told me where I am going."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "WH- question का Indirect = asked + me + where + I + was going."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: The teacher said, \"The earth is round.\"",
+      "options": [
+        "The teacher said that the earth is round.",
+        "The teacher said that the earth was round.",
+        "The teacher said that earth revolved.",
+        "The teacher told that earth is round."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Universal truth वाक्यों का Tense Indirect Speech में परिवर्तित नहीं होता।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"LUCID\"",
+      "options": [
+        "Vague",
+        "Clear / Understandable",
+        "Obscure",
+        "Confused"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "LUCID का अर्थ होता है स्पष्ट या समझने में आसान। Synonym: Clear, Understandable."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"LUCID\"",
+      "options": [
+        "Vague / Obscure",
+        "Understandable",
+        "Clear",
+        "Transparent"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "LUCID (स्पष्ट) का Antonym है Vague (अस्पष्ट) या Obscure."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A medicine or substance given to counteract the effects of a poison\"",
+      "options": [
+        "Antidote",
+        "Antiseptic",
+        "Antigen",
+        "Antibiotic"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "विष काट की दवा को Antidote कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A word, law or custom that is no longer in active general use\"",
+      "options": [
+        "Ancient",
+        "Obsolete",
+        "Outdated",
+        "Extinct"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "अप्रचलित वस्तु या शब्द को Obsolete कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"Food or water fit to be eaten or consumed safely\"",
+      "options": [
+        "Edible",
+        "Potable",
+        "Audible",
+        "Eligible"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "खाने योग्य भोजन/सामग्री को Edible कहते हैं (पीने योग्य जल = Potable)."
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "GUARANTEE",
+        "GARANTEE",
+        "GARRANTEE",
+        "GUARANTE"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी GUARANTEE (गारंटी) है।"
+    }
+  ]
+}

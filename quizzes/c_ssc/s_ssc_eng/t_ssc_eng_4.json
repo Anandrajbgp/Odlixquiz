@@ -1,0 +1,605 @@
+{
+  "title": "English Language Test 4",
+  "questions": [
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"METICULOUS\"",
+      "options": [
+        "Careful / Thorough",
+        "Negligent",
+        "Careless",
+        "Sloppy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "METICULOUS का अर्थ होता है अत्यंत सावधान, सतर्क या सूक्ष्म। Synonym: Careful, Thorough, Precise, Fastidious."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"METICULOUS\"",
+      "options": [
+        "Careful",
+        "Careless / Sloppy",
+        "Precise",
+        "Thorough"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "METICULOUS (सावधान) का Antonym है Careless (लापरवाह) या Sloppy."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"CANDID\"",
+      "options": [
+        "Deceitful",
+        "Frank / Honest",
+        "Secretive",
+        "Crafty"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "CANDID का अर्थ होता है निष्कपट, खरा या स्पष्टवादी। Synonym: Frank, Honest, Forthright."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"CANDID\"",
+      "options": [
+        "Open",
+        "Honest",
+        "Deceitful / Secretive",
+        "Frank"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "CANDID (खरा/स्पष्ट) का Antonym है Deceitful (कपटी) या Secretive."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"FUGITIVE\"",
+      "options": [
+        "Escapee / Runaway",
+        "Captive",
+        "Prisoner",
+        "Hostage"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "FUGITIVE का अर्थ होता है भगोड़ा या कानून से भागा हुआ व्यक्ति। Synonym: Escapee, Runaway, Absconder."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"FUGITIVE\"",
+      "options": [
+        "Absconder",
+        "Captive / Prisoner",
+        "Runaway",
+        "Escapee"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "FUGITIVE (भगोड़ा) का Antonym है Captive (बंदी) या Prisoner."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"INNOCUOUS\"",
+      "options": [
+        "Harmless / Inoffensive",
+        "Dangerous",
+        "Toxic",
+        "Harmful"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "INNOCUOUS का अर्थ होता है अहानिकर या सीधा-साधा। Synonym: Harmless, Inoffensive, Safe."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"INNOCUOUS\"",
+      "options": [
+        "Inoffensive",
+        "Harmful / Toxic",
+        "Safe",
+        "Harmless"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "INNOCUOUS (अहानिकर) का Antonym है Harmful (हानिकारक) या Toxic."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A statement or expression open to more than one interpretation; unclear\"",
+      "options": [
+        "Definite",
+        "Explicit",
+        "Lucid",
+        "Ambiguous / Equivocal"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "दोगुने अर्थ वाले या अस्पष्ट कथन को Ambiguous (द्व्यर्थक/अस्पष्ट) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"The murder or killing of one's own father\"",
+      "options": [
+        "Matricide",
+        "Fratricide",
+        "Patricide",
+        "Regicide"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "पिता की हत्या करने की क्रिया/व्यक्ति को Patricide कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"The murder or killing of one's own mother\"",
+      "options": [
+        "Matricide",
+        "Sororicide",
+        "Uxoricide",
+        "Patricide"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "माता की हत्या करने को Matricide कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"The murder or killing of a king or queen\"",
+      "options": [
+        "Genocide",
+        "Homicide",
+        "Patricide",
+        "Regicide"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "राजा या रानी की हत्या को Regicide राजहत्या कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"The murder or killing of a newly born infant/child\"",
+      "options": [
+        "Infanticide",
+        "Suicide",
+        "Patricide",
+        "Foeticide"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "नवजात शिशु की हत्या को Infanticide कहते हैं (भ्रूण हत्या = Foeticide)."
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"A leopard cannot change its spots\"",
+      "options": [
+        "It is easy to reform bad habits",
+        "Animals always remain dangerous",
+        "A leopard changes color in winter",
+        "People cannot change their inherent basic character"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "A leopard cannot change its spots = कुत्ते की दुम कभी सीधी नहीं होती, इंसान अपना मूल स्वभाव नहीं बदल सकता।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Beat around the bush\"",
+      "options": [
+        "To clean the garden",
+        "Avoid coming directly to the main point",
+        "To hit the trees with stick",
+        "To speak clearly and directly"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Beat around the bush = मुद्दे पर सीधे न आकर घुमा फिराकर बात करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Bite the dust\"",
+      "options": [
+        "To clean a dusty room",
+        "To suffer defeat or to die",
+        "To eat dirty food",
+        "To fall on the ground and get dirty"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Bite the dust = धूल चाटना, पराजित होना या मारा जाना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Burn bridges\"",
+      "options": [
+        "To build strong connections",
+        "To destroy relationships so there is no way back",
+        "To cross a dangerous river",
+        "To set fire to a wooden bridge"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Burn bridges = वापसी के सभी रास्ते बंद कर देना/संबंध समाप्त कर लेना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Call it a day\"",
+      "options": [
+        "To stop working on something for the day",
+        "To start a new project",
+        "To declare a national holiday",
+        "To work throughout the day"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Call it a day = उस दिन के लिए काम बंद करना/इतिश्री करना।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"He is one of those men who does not lie.\"",
+      "options": [
+        "those men",
+        "He is one of",
+        "who does not lie",
+        "No error"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: Relative pronoun ('who') से पहले आने वाले Antecedent ('men' प्लुरल) के अनुसार वर्ब 'do' आएगी (who do not lie)."
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"I, you and he will go to the party tonight.\"",
+      "options": [
+        "I, you and he",
+        "will go to",
+        "No error",
+        "the party tonight"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: सामान्य वाक्यों में पर्शनल प्रोनाउन का क्रम 2-3-1 (You, he and I) होता है।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"The cattle is grazing in the green field.\"",
+      "options": [
+        "No error",
+        "The cattle is",
+        "the green field",
+        "grazing in"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: Noun 'Cattle' (मवेशी) सदैव प्लुरल नाउन है, इसके साथ प्लुरल वर्ब 'are' आएगी (The cattle are grazing)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He congratulated me _____ my success.\"",
+      "options": [
+        "with",
+        "for",
+        "at",
+        "on"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: Verb 'Congratulate' के साथ प्रपोजिशन 'on' आता है (Congratulated me on my success)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"She is married _____ a famous doctor.\"",
+      "options": [
+        "from",
+        "with",
+        "to",
+        "by"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: Passive Voice में 'Married' के साथ हमेशा 'to' आता है (Married to a doctor)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He insisted _____ going there immediately.\"",
+      "options": [
+        "at",
+        "on",
+        "for",
+        "to"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: Verb 'Insist' के साथ हमेशा प्रपोजिशन 'on' + Gerund आता है (Insisted on going)."
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "QUESTIONAIRE",
+        "QUESTIONNAIRE",
+        "QUESTIONARE",
+        "QUESTIONNAIR"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "सही वर्तनी QUESTIONNAIRE (प्रश्नावली - double N) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "RENAISSANCE",
+        "RENASSANCE",
+        "RENAISSANSE",
+        "RENAISANCE"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी RENAISSANCE (पुनर्जागरण - double S) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "PARALLELL",
+        "PARALEL",
+        "PARRALLEL",
+        "PARALLEL"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "सही वर्तनी PARALLEL (समानांतर - double L) है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"EPHEMERAL\"",
+      "options": [
+        "Permanent",
+        "Enduring",
+        "Eternal",
+        "Short-lived / Transient"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "EPHEMERAL का अर्थ होता है अल्पकालिक, क्षणिक। Synonym: Short-lived, Transient, Fleeting."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"EPHEMERAL\"",
+      "options": [
+        "Eternal / Permanent",
+        "Fleeting",
+        "Short-lived",
+        "Transient"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "EPHEMERAL (क्षणिक) का Antonym है Eternal (शाश्वत/अनंत) या Permanent."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"SAGACIOUS\"",
+      "options": [
+        "Wise / Shrewd",
+        "Foolish",
+        "Ignorant",
+        "Stupid"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "SAGACIOUS का अर्थ होता है बुद्धिमान, चतुर या विवेकपूर्ण। Synonym: Wise, Shrewd, Intelligent, Insightful."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"SAGACIOUS\"",
+      "options": [
+        "Wise",
+        "Foolish / Ignorant",
+        "Shrewd",
+        "Smart"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "SAGACIOUS (बुद्धिमान) का Antonym है Foolish (मूर्ख) या Ignorant."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A doctor who specializes in the treatment of skin diseases\"",
+      "options": [
+        "Cardiologist",
+        "Dermatologist",
+        "Neurologist",
+        "Pediatrician"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "त्वचा विशेषज्ञ डॉक्टर को Dermatologist कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A medical specialist who treats diseases of the heart\"",
+      "options": [
+        "Oncologist",
+        "Cardiologist",
+        "Dermatologist",
+        "Neurologist"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "हृदय रोग विशेषज्ञ को Cardiologist कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A doctor who specializes in diseases of the eye\"",
+      "options": [
+        "Otologist",
+        "Ophthalmologist",
+        "Urologist",
+        "Neurologist"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "नेत्र रोग विशेषज्ञ डॉक्टर को Ophthalmologist कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A medical doctor specializing in the care and treatment of children\"",
+      "options": [
+        "Podiatrist",
+        "Pathologist",
+        "Pediatrician",
+        "Psychiatrist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "शिशु व बाल रोग विशेषज्ञ को Pediatrician कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Fit as a fiddle\"",
+      "options": [
+        "A skilled violin player",
+        "An old musical instrument",
+        "In very good physical health and condition",
+        "Very weak and sick"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Fit as a fiddle = पूर्णतः स्वस्थ व तंदुरुस्त।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"In hot water\"",
+      "options": [
+        "Taking a hot bath",
+        "Feeling very hot in summer",
+        "Boiling water in kitchen",
+        "In trouble or difficulty"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "In hot water = मुसीबत या परेशानी में होना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Let the cat out of the bag\"",
+      "options": [
+        "To lose a pet animal",
+        "To reveal a secret prematurely or by mistake",
+        "To release a cat from a bag",
+        "To keep a secret carefully"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Let the cat out of the bag = जाने-अनजाने कोई गुप्त रहस्य उजागर कर देना।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"The patient <u>died</u> before the doctor arrived.\"",
+      "options": [
+        "No improvement",
+        "had died",
+        "has died",
+        "dies"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: भूतकाल में दो कार्य होने पर पहले समाप्त कार्य Past Perfect (had died) तथा बाद का Past Simple (arrived) बनता है।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"<u>Unless you do not hurry</u>, you will miss the train.\"",
+      "options": [
+        "Unless you hurry",
+        "Until you don't hurry",
+        "No improvement",
+        "Unless you don't hurry"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: 'Unless' नकारात्मक शब्द है, इसके साथ 'do not' हटाकर केवल 'Unless you hurry' प्रयोग होगा।"
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"She wrote a poem.\"",
+      "options": [
+        "A poem had been written by her.",
+        "A poem has been written by her.",
+        "A poem is written by her.",
+        "A poem was written by her."
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Past Simple का Passive = Object + was/were + V3 + by + Subject."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"People speak English all over the world.\"",
+      "options": [
+        "People are spoken English all over the world.",
+        "English was spoken all over the world.",
+        "English is spoken all over the world.",
+        "English is being spoken all over the world."
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Present Simple का Passive = Object (English) + is + V3 (spoken) + remaining sentence."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: He said, \"I have been waiting here for two hours.\"",
+      "options": [
+        "He said that I had been waiting here for two hours.",
+        "He asked if he was waiting there.",
+        "He told he has been waiting there for two hours.",
+        "He said that he had been waiting there for two hours."
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Present Perfect Continuous (have been waiting) बदलकर Past Perfect Continuous (had been waiting) तथा 'here' का 'there' बनेगा।"
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: She said to him, \"Don't shout.\"",
+      "options": [
+        "She ordered/told him not to shout.",
+        "She said to him don't shout.",
+        "She asked him to not shout.",
+        "She told him that don't shout."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Imperative Negative ('Don't...') का Indirect = told/ordered + him + not to shout."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"LACONIC\"",
+      "options": [
+        "Concise / Brief / Terse",
+        "Verbose",
+        "Lengthy",
+        "Wordy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "LACONIC का अर्थ होता है संक्षिप्त, मितभाषी या कम शब्दों में। Synonym: Concise, Terse, Brief."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"LACONIC\"",
+      "options": [
+        "Terse",
+        "Brief",
+        "Concise",
+        "Verbose / Wordy"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "LACONIC (संक्षिप्त) का Antonym है Verbose (शब्द-बहुल/बातूनी) या Wordy."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A vehicle specialized for carrying a dead body to a funeral\"",
+      "options": [
+        "Van",
+        "Hearse",
+        "Cart",
+        "Ambulance"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "शव ले जाने वाली विशेष गाड़ी को Hearse (शववाहन) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A room or building where dead bodies are kept for post-mortem analysis\"",
+      "options": [
+        "Morgue",
+        "Mortuary",
+        "Cemetery",
+        "Crematorium"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "पोस्टमार्टम हेतु शवों को रखने के कक्ष को Mortuary कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A place where dead bodies are kept for identification before burial/cremation\"",
+      "options": [
+        "Mortuary",
+        "Morgue",
+        "Graveyard",
+        "Catacomb"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "पहचान हेतु लावारिस शवों को रखने के स्थान को Morgue (शवगृह) कहते हैं।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "SUPRINTENDENT",
+        "SUPERINTENDENT",
+        "SUPERINTENDANT",
+        "SUPERINTENDENAT"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "सही वर्तनी SUPERINTENDENT (अधीक्षक) है।"
+    }
+  ]
+}

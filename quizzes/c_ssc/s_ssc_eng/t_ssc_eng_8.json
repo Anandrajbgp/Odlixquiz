@@ -1,0 +1,605 @@
+{
+  "title": "English Language Test 8",
+  "questions": [
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"CANDID\"",
+      "options": [
+        "Crafty",
+        "Secretive",
+        "Frank / Outspoken",
+        "Deceitful"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "CANDID का अर्थ होता है निष्कपट, खरा या स्पष्टवादी। Synonym: Frank, Outspoken, Honest."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"CANDID\"",
+      "options": [
+        "Honest",
+        "Frank",
+        "Secretive / Deceitful",
+        "Outspoken"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "CANDID (स्पष्टवादी) का Antonym है Secretive (छिपाने वाला) या Deceitful."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"DILIGENT\"",
+      "options": [
+        "Hardworking / Industrious",
+        "Indolent",
+        "Careless",
+        "Lazy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "DILIGENT का अर्थ होता है मेहनती या परिश्रमी। Synonym: Hardworking, Industrious, Assiduous."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"DILIGENT\"",
+      "options": [
+        "Lazy / Indolent",
+        "Industrious",
+        "Active",
+        "Hardworking"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "DILIGENT (परिश्रमी) का Antonym है Lazy (आलसी) या Indolent."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"ELOQUENT\"",
+      "options": [
+        "Inarticulate",
+        "Fluent / Expressive",
+        "Silent",
+        "Unexpressive"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "ELOQUENT का अर्थ होता है वाकपटु, सुवक्ता या प्रभावकारी। Synonym: Fluent, Expressive, Articulate."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"ELOQUENT\"",
+      "options": [
+        "Inarticulate / Unexpressive",
+        "Articulate",
+        "Expressive",
+        "Fluent"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "ELOQUENT (वाकपटु) का Antonym है Inarticulate (अस्पष्ट/अवाक) या Unexpressive."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"GARRULOUS\"",
+      "options": [
+        "Silent",
+        "Reticent",
+        "Taciturn",
+        "Talkative / Voluble"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "GARRULOUS का अर्थ होता है बातूनी या वाचाल। Synonym: Talkative, Voluble, Loquacious."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"GARRULOUS\"",
+      "options": [
+        "Talkative",
+        "Voluble",
+        "Reticent / Silent",
+        "Loquacious"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "GARRULOUS (बातूनी) का Antonym है Reticent (कम बोलने वाला) या Silent."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A decision, law or action that cannot be recalled, revoked or changed\"",
+      "options": [
+        "Irresistible",
+        "Irrevocable",
+        "Irreparable",
+        "Revocable"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "जिसे बदला या वापस न लिया जा सके उसे Irrevocable (अटल) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who is unable to pay off his financial debts or loans\"",
+      "options": [
+        "Aristocrat",
+        "Solvent",
+        "Insolvent / Bankrupt",
+        "Wealthy"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "ऋण न चुका पाने वाले दिवालिया व्यक्ति को Insolvent या Bankrupt कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who collects or is intensely interested in postage stamps\"",
+      "options": [
+        "Botanist",
+        "Bibliophile",
+        "Philatelist",
+        "Numismatist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "डाक टिकटों के संग्रहकर्ता को Philatelist कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who collects or studies coins, medals and tokens\"",
+      "options": [
+        "Philatelist",
+        "Bibliophile",
+        "Numismatist",
+        "Archaeologist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सिक्कों के संग्रहकर्ता को Numismatist (मुद्राशास्त्री) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who loves, collects or reads books with passion\"",
+      "options": [
+        "Bibliophile",
+        "Linguist",
+        "Numismatist",
+        "Philatelist"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "पुस्तकों के प्रेमी को Bibliophile कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Break the ice\"",
+      "options": [
+        "To cause damage",
+        "To melt frozen ice",
+        "To end a relationship",
+        "Make people feel more comfortable in a conversation"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Break the ice = चुप्पी तोड़ना, बातचीत सहज बनाना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Burn the midnight oil\"",
+      "options": [
+        "To sleep late in the morning",
+        "Work or study late into the night",
+        "To waste lamp oil",
+        "To burn a candle"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Burn the midnight oil = देर रात तक मेहनत करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Bite the bullet\"",
+      "options": [
+        "To get shot in war",
+        "To swallow something",
+        "To show fear in trouble",
+        "Face a hard situation with bravery and patience"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Bite the bullet = कठिन परिस्थिति का हिम्मत से सामना करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Call it a day\"",
+      "options": [
+        "To start a new project",
+        "To work throughout the night",
+        "Stop working on a task for the rest of the day",
+        "To declare a national holiday"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Call it a day = उस दिन के लिए काम बंद करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Cry over spilt milk\"",
+      "options": [
+        "To cry while drinking milk",
+        "Complain or regret about a past loss that cannot be fixed",
+        "To feel happy",
+        "To waste milk in kitchen"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Cry over spilt milk = व्यर्थ में पछताना।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"He is senior than me in the office.\"",
+      "options": [
+        "senior",
+        "No error",
+        "He is",
+        "than me in the office"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: Senior के साथ प्रपोजिशन 'to' आता है (senior to me)."
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"Neither the chairman nor the directors was present.\"",
+      "options": [
+        "nor the directors",
+        "was present",
+        "Neither the chairman",
+        "No error"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: Neither...nor में निकटतम सब्जेक्ट ('directors' प्लुरल) के अनुसार Plural Verb 'were' आएगी।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"She is working here since five years.\"",
+      "options": [
+        "No error",
+        "is working here since",
+        "She is",
+        "five years"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: समय की अवधि ('five years') के लिए 'has been working for five years' आएगा।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He died _____ cancer after a long illness.\"",
+      "options": [
+        "with",
+        "of",
+        "from",
+        "by"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: बीमारी से मृत्यु होने पर 'die of' का प्रयोग होता है।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"She prefers tea _____ coffee in the morning.\"",
+      "options": [
+        "from",
+        "over",
+        "than",
+        "to"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: Verb 'Prefer' के साथ प्रपोजिशन 'to' आता है।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He was accused _____ theft by the police.\"",
+      "options": [
+        "in",
+        "with",
+        "of",
+        "for"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: Verb 'Accuse' के साथ हमेशा 'of' आता है (accused of theft)."
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "ACCOMMODATE",
+        "ACCOMODATE",
+        "ACOMMODATE",
+        "ACOMMODATT"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी ACCOMMODATE (double C, double M) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "EMBARRASS",
+        "EMBARRAS",
+        "EMBARASS",
+        "EMBARAS"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी EMBARRASS (double R, double S) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "OCCURENCE",
+        "OCCURRANCE",
+        "OCCURRENCE",
+        "OCURRENCE"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी OCCURRENCE (double C, double R) है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"FRUGAL\"",
+      "options": [
+        "Wasteful",
+        "Extravagant",
+        "Thrifty / Economical",
+        "Spendthrift"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "FRUGAL का अर्थ होता है मितव्ययी या किफायती। Synonym: Thrifty, Economical."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"FRUGAL\"",
+      "options": [
+        "Miserly",
+        "Economical",
+        "Thrifty",
+        "Extravagant / Wasteful"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "FRUGAL (किफायती) का Antonym है Extravagant (फिजूलखर्च)."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"HARMONY\"",
+      "options": [
+        "Discord",
+        "Conflict",
+        "Hostility",
+        "Concord / Unity"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "HARMONY का अर्थ होता है सामंजस्य या एकता। Synonym: Concord, Unity, Agreement."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"HARMONY\"",
+      "options": [
+        "Unity",
+        "Concord",
+        "Discord / Conflict",
+        "Agreement"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "HARMONY (सामंजस्य) का Antonym है Discord (कलह) या Conflict."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A government ruled by the wealthy and rich class of society\"",
+      "options": [
+        "Plutocracy",
+        "Democracy",
+        "Bureaucracy",
+        "Autocracy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "धनी वर्ग के शासन को Plutocracy कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A system of government run by unelected civil officials\"",
+      "options": [
+        "Plutocracy",
+        "Autocracy",
+        "Bureaucracy",
+        "Democracy"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "नौकरशाही को Bureaucracy कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"Government by a single ruler with absolute power\"",
+      "options": [
+        "Anarchy",
+        "Democracy",
+        "Oligarchy",
+        "Autocracy"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "निरंकुश एकतंत्र शासन को Autocracy कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A system of government elected by the whole population\"",
+      "options": [
+        "Democracy",
+        "Oligarchy",
+        "Autocracy",
+        "Plutocracy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "लोकतंत्र को Democracy कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Face the music\"",
+      "options": [
+        "Enjoy a music concert",
+        "Accept the negative results of one's actions",
+        "Sing a song",
+        "Play an instrument"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Face the music = परिणाम भुगतना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Hit the nail on the head\"",
+      "options": [
+        "Hit one's finger",
+        "Say or do something exactly right",
+        "Argue loudly",
+        "Make a mistake"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Hit the nail on the head = सटीक बात कहना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"In the nick of time\"",
+      "options": [
+        "Far too late",
+        "Just in time at the last moment",
+        "Much earlier",
+        "A long time ago"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "In the nick of time = ठीक समय पर।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"Hardly had he left <u>than</u> the rain started.\"",
+      "options": [
+        "before",
+        "No improvement",
+        "then",
+        "when"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: 'Hardly' के साथ कंजंक्शन 'when' प्रयुक्त होता है।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"If I <u>was</u> you, I would accept the offer.\"",
+      "options": [
+        "am",
+        "had been",
+        "No improvement",
+        "were"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: काल्पनिक वाक्य में Subject के साथ 'were' आता है।"
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"He wrote a letter.\"",
+      "options": [
+        "A letter was written by him.",
+        "A letter has been written by him.",
+        "A letter is written by him.",
+        "A letter was being written by him."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Past Simple का Passive = Object + was/were + V3 + by + Subject."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"They are playing football.\"",
+      "options": [
+        "Football was played by them.",
+        "Football has been played by them.",
+        "Football is being played by them.",
+        "Football is played by them."
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Present Continuous का Passive = Object + is/am/are + being + V3 + by + Subject."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: He said, \"I am going to market.\"",
+      "options": [
+        "He asked if he was going to market.",
+        "He said that he was going to market.",
+        "He said that I am going to market.",
+        "He told that he is going to market."
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Present Continuous बदलकर Past Continuous (was going) बनता है।"
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: She said to me, \"What is your name?\"",
+      "options": [
+        "She asked me what my name was.",
+        "She asked me what is my name.",
+        "She asked me what was my name.",
+        "She told me what my name is."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "WH- question का Indirect = asked + me + what my name was."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"OBNOXIOUS\"",
+      "options": [
+        "Pleasant",
+        "Offensive / Disgusting",
+        "Delightful",
+        "Charming"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "OBNOXIOUS का अर्थ होता है अप्रिय या घिनौना। Synonym: Offensive, Disgusting."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"OBNOXIOUS\"",
+      "options": [
+        "Offensive",
+        "Disgusting",
+        "Repulsive",
+        "Pleasant / Delightful"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "OBNOXIOUS (अप्रिय) का Antonym है Pleasant (सुहावना) या Delightful."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A poem written in lamentation on the death of someone\"",
+      "options": [
+        "Epic",
+        "Sonnet",
+        "Epitaph",
+        "Elegy"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "शोक कविता को Elegy कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A speech made without any previous preparation\"",
+      "options": [
+        "Extempore",
+        "Elocution",
+        "Maiden speech",
+        "Debate"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "बिना तैयारी के दिए भाषण को Extempore कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"That which is impossible to be satisfied\"",
+      "options": [
+        "Incredible",
+        "Satiable",
+        "Incurable",
+        "Insatiable"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "जिसकी तृप्ति न हो सके उसे Insatiable कहते हैं।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "NEIGHBORU",
+        "NIEGHBOUR",
+        "NEIGHBOUR",
+        "NAIGHBOUR"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी NEIGHBOUR (पड़ोसी) है।"
+    }
+  ]
+}

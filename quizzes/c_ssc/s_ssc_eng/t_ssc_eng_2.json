@@ -1,0 +1,605 @@
+{
+  "title": "English Language Test 2",
+  "questions": [
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"AFFLUENT\"",
+      "options": [
+        "Destitute",
+        "Poor",
+        "Wealthy / Prosperous",
+        "Needy"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "AFFLUENT का अर्थ होता है धनी, समृद्ध या सम्पन्न। Synonym: Wealthy, Prosperous, Opulent."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"AFFLUENT\"",
+      "options": [
+        "Prosperous",
+        "Rich",
+        "Wealthy",
+        "Poor / Destitute"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "AFFLUENT (समृद्ध) का Antonym है Poor (गरीब) या Destitute (दरिद्र)."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"ADVERSITY\"",
+      "options": [
+        "Happiness",
+        "Prosperity",
+        "Fortune",
+        "Hardship / Misfortune"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "ADVERSITY का अर्थ होता है विपत्ति, आपदा या तंगी। Synonym: Hardship, Misfortune, Calamity."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"ADVERSITY\"",
+      "options": [
+        "Misfortune",
+        "Poverty",
+        "Hardship",
+        "Prosperity / Fortune"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "ADVERSITY (विपत्ति) का Antonym है Prosperity (समृद्धि) या Fortune."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"CONCISE\"",
+      "options": [
+        "Verbose",
+        "Detailed",
+        "Lengthy",
+        "Brief / Succinct"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "CONCISE का अर्थ होता है संक्षिप्त या कम शब्दों में। Synonym: Brief, Succinct, Tersely worded."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"CONCISE\"",
+      "options": [
+        "Brief",
+        "Succinct",
+        "Verbose / Lengthy",
+        "Short"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "CONCISE (संक्षिप्त) का Antonym है Verbose (शब्द-बहुल) या Lengthy."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"GARRULOUS\"",
+      "options": [
+        "Taciturn",
+        "Reticent",
+        "Talkative / Loquacious",
+        "Silent"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "GARRULOUS का अर्थ होता है वाचाल या बहुत बातें करने वाला। Synonym: Talkative, Loquacious, Voluble."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"GARRULOUS\"",
+      "options": [
+        "Chatty",
+        "Taciturn / Reticent",
+        "Loquacious",
+        "Talkative"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "GARRULOUS (बातूनी) का Antonym है Taciturn (अल्पभाषी) या Reticent."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A cure or remedy for all diseases, difficulties or ills\"",
+      "options": [
+        "Panacea",
+        "Antidote",
+        "Placebo",
+        "Elixir"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सभी रोगों का रामबाण इलाज को Panacea (संजीवनी/रामबाण) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"An extreme or irrational fear of high places or heights\"",
+      "options": [
+        "Claustrophobia",
+        "Acrophobia",
+        "Agoraphobia",
+        "Hydrophobia"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "ऊँचाई से अत्यधिक डर को Acrophobia कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"An extreme or irrational fear of confined or small closed spaces\"",
+      "options": [
+        "Claustrophobia",
+        "Hydrophobia",
+        "Xenophobia",
+        "Acrophobia"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "बंद या संकीर्ण जगहों के डर को Claustrophobia कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A decision, action or statement that cannot be changed or called back\"",
+      "options": [
+        "Irreparable",
+        "Irrevocable",
+        "Irresistible",
+        "Revocable"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "जिसे बदला या वापस न लिया जा सके उसे Irrevocable (अटल/अपरिवर्तनीय) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A sound or voice that is impossible to be heard\"",
+      "options": [
+        "Incredible",
+        "Illegible",
+        "Audible",
+        "Inaudible"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "जो ध्वनि सुनाई न दे उसे Inaudible (अश्रव्य) कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"At the eleventh hour\"",
+      "options": [
+        "Early in the morning",
+        "At 11 o'clock precisely",
+        "At the last possible moment",
+        "At midnight"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "At the eleventh hour = अंतिम क्षण में, एकदम आखिरी समय पर।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Bite off more than you can chew\"",
+      "options": [
+        "To take on a task or responsibility that is too big",
+        "To eat too fast without chewing",
+        "To waste food",
+        "To taste different foods"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Bite off more than you can chew = क्षमता से अधिक काम का बोझ अपने ऊपर लेना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Cry over spilt milk\"",
+      "options": [
+        "To cry while drinking milk",
+        "To feel happy after a loss",
+        "To waste precious milk",
+        "To regret or complain about something in the past that cannot be undone"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Cry over spilt milk = व्यर्थ में पछताना (अब पछताए होत क्या जब चिड़िया चुग गई खेत)।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Face the music\"",
+      "options": [
+        "To accept the unpleasant consequences of one's actions",
+        "To listen to soft music",
+        "To attend a concert",
+        "To play a musical instrument"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Face the music = किए गए कर्मों के अप्रिय परिणामों को भुगतना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Hit the nail on the head\"",
+      "options": [
+        "To describe or do something exactly right",
+        "To miss the target completely",
+        "To argue forcefully",
+        "To injure one's head with a hammer"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Hit the nail on the head = एकदम सटीक बात कहना या सही निशाना साधना।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"Scarcely had I entered the room than the phone rang.\"",
+      "options": [
+        "entered the room",
+        "No error",
+        "than the phone rang",
+        "Scarcely had I"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: Scarcely/Hardly के साथ कंजंक्शन 'when' आता है, 'than' नहीं। (Correct: when the phone rang)."
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"The scenery of Kashmir are very charming.\"",
+      "options": [
+        "of Kashmir",
+        "No error",
+        "are very charming",
+        "The scenery"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: 'Scenery' अनकाउंटेबल सिंगुलर नाउन है, अतः प्लुरल वर्ब 'are' की जगह 'is' का प्रयोग होगा।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"He gave me a five-hundred rupees note.\"",
+      "options": [
+        "rupees note",
+        "No error",
+        "a five-hundred",
+        "He gave me"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: जब कोई संख्या और नाउन एडजेक्टिव के रूप में कार्य करें (Hyphenated Adjective) तो सिंगुलर रहता है (a five-hundred rupee note)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"The teacher distributed the sweets _____ the students.\"",
+      "options": [
+        "among",
+        "between",
+        "in",
+        "with"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: दो से अधिक व्यक्तियों या वस्तुओं में बांटने के लिए 'among' का प्रयोग होता है (दो के लिए 'between')."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He was accused _____ theft.\"",
+      "options": [
+        "of",
+        "in",
+        "for",
+        "with"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: Verb 'Accuse' के साथ हमेशा preposition 'of' का प्रयोग होता है (Accused of crime)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"She died _____ malaria.\"",
+      "options": [
+        "of",
+        "from",
+        "with",
+        "by"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: बीमारी से मौत होने पर 'die of' (die of disease) और घाव/भूख से मृत्यु होने पर 'die from' आता है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "LIEUTENENAT",
+        "LEUTENANT",
+        "LIEUTENANT",
+        "LEUFTENANT"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी LIEUTENANT (सैन्य अधिकारी/लेफ्टिनेंट) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "COMISION",
+        "COMISSION",
+        "COMMISION",
+        "COMMISSION"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "सही वर्तनी COMMISSION (double M, double S) है, जिसका अर्थ आयोग होता है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "MAINTENENCE",
+        "MAINTINANCE",
+        "MAINTAINANCE",
+        "MAINTENANCE"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "सही वर्तनी MAINTENANCE (रखरखाव) है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"METICULOUS\"",
+      "options": [
+        "Sloppy",
+        "Negligent",
+        "Careless",
+        "Careful / Painstaking"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "METICULOUS का अर्थ होता है अत्यधिक सतर्क, सूक्ष्म या सावधान। Synonym: Careful, Painstaking, Fastidious."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"METICULOUS\"",
+      "options": [
+        "Careful",
+        "Precise",
+        "Careless / Sloppy",
+        "Painstaking"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "METICULOUS (सावधान) का Antonym है Careless (लापरवाह) या Sloppy."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"PRUDENT\"",
+      "options": [
+        "Reckless",
+        "Wise / Cautious",
+        "Foolish",
+        "Rash"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "PRUDENT का अर्थ होता है बुद्धिमान, चतुर या सावधान। Synonym: Wise, Cautious, Judicious."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"PRUDENT\"",
+      "options": [
+        "Foolish / Reckless",
+        "Sensible",
+        "Wise",
+        "Cautious"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "PRUDENT (बुद्धिमान/सावधान) का Antonym है Foolish (मूर्ख) या Reckless (बेपरवाह)."
+    },
+    {
+      "question": "Select the ONE WORD for: \"One who eats too much food greedily\"",
+      "options": [
+        "Glutton",
+        "Omnivore",
+        "Carnivore",
+        "Gourmet"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "बहुत अधिक पेटू बनकर खाने वाले व्यक्ति को Glutton कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who knows or speaks many languages\"",
+      "options": [
+        "Polygamist",
+        "Linguist",
+        "Polyandrist",
+        "Polyglot / Multilingual"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "अनेक भाषाएँ जानने/बोलने वाले व्यक्ति को Polyglot या Multilingual (बहुभाषी) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A book, award or child born after the death of its father/author\"",
+      "options": [
+        "Premature",
+        "Postponed",
+        "Posthumous",
+        "Antecedent"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "मृत्यु के उपरांत मिलने वाले पुरस्कार, प्रकाशन या शिशु को Posthumous (मरणोपरांत) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A place where weapons, arms and military equipment are stored\"",
+      "options": [
+        "Archives",
+        "Granary",
+        "Armory",
+        "Arsenal"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "शस्त्रागार जहाँ हथियार और गोला-बारूद रखे जाते हैं, उसे Arsenal कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"In the nick of time\"",
+      "options": [
+        "Far too late",
+        "A long time ago",
+        "Just in time / at the last moment",
+        "Early in the morning"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "In the nick of time = ठीक समय पर, अंतिम क्षण में।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Pull someone's leg\"",
+      "options": [
+        "To stretch someone's leg",
+        "To trip someone making him fall",
+        "To help someone in trouble",
+        "To tease or joke with someone"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Pull someone's leg = टाँग खींचना, मज़ाक उड़ाना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Through thick and thin\"",
+      "options": [
+        "Through a dense forest",
+        "Under all circumstances and conditions",
+        "During thin and fat days",
+        "Only in good times"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Through thick and thin = हर सुख-दुख और परिस्थिति में साथ रहना।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"No sooner did he see the police <u>when</u> he ran away.\"",
+      "options": [
+        "as",
+        "No improvement",
+        "then",
+        "than"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: 'No sooner' के साथ कंजंक्शन के रूप में सदैव 'than' का प्रयोग होता है, 'when' नहीं।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"Each of the boys <u>have done their</u> homework.\"",
+      "options": [
+        "have done his",
+        "has done his",
+        "has done their",
+        "No improvement"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: 'Each of' के बाद नाउन प्लुरल आता है परंतु वर्ब और प्रोनाउन सिंगुलर (has done his) आते हैं।"
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"They are playing cricket.\"",
+      "options": [
+        "Cricket is being played by them.",
+        "Cricket was played by them.",
+        "Cricket is played by them.",
+        "Cricket has been played by them."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Present Continuous का Passive = Object + is/am/are + being + V3 + by + Subject."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"Who broke this glass?\"",
+      "options": [
+        "By whom this glass was broken?",
+        "Who was broken this glass?",
+        "By whom is this glass broken?",
+        "By whom was this glass broken?"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "'Who' से शुरू होने वाले वाक्य का Passive = By whom + was/were + Object + V3?"
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: The teacher said, \"The earth revolves round the sun.\"",
+      "options": [
+        "The teacher said that the earth revolved round the sun.",
+        "The teacher said that the earth revolves round the sun.",
+        "The teacher said the earth revolves.",
+        "The teacher told that the earth is revolving round the sun."
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: सार्वभौमिक सत्य (Universal Truth) वाले वाक्यों का Tense परोक्ष कथन (Indirect Speech) में नहीं बदलता।"
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: He said to her, \"Please give me your book.\"",
+      "options": [
+        "He ordered her to give him her book.",
+        "He requested her to give him her book.",
+        "He asked her please give my book.",
+        "He requested her giving him her book."
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Imperative sentence में 'Please' हटने पर verb 'requested' बनेगी तथा रिपोर्टेड स्पीच imperative (to give...) बनेगी।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"LUCID\"",
+      "options": [
+        "Obscure",
+        "Confused",
+        "Vague",
+        "Clear / Understandable"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "LUCID का अर्थ होता है स्पष्ट, सुगम या समझने में आसान। Synonym: Clear, Understandable, Transparent."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"LUCID\"",
+      "options": [
+        "Understandable",
+        "Confused / Obscure",
+        "Bright",
+        "Clear"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "LUCID (स्पष्ट) का Antonym है Confused, Obscure (अस्पष्ट) या Vague."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A poem of lamentation written on the death of a near and dear one\"",
+      "options": [
+        "Elegy",
+        "Epitaph",
+        "Sonnet",
+        "Epic"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "किसी व्यक्ति के निधन पर लिखी जाने वाली शोक कविता को Elegy कहते हैं (Epitaph = समाधि लेख)।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A speech or presentation made without any prior preparation\"",
+      "options": [
+        "Elocution",
+        "Extempore / Impromptu",
+        "Debate",
+        "Maiden speech"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "बिना किसी पूर्व तैयारी के दिए गए भाषण को Extempore या Impromptu कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A collection of poems, stories or literary writings\"",
+      "options": [
+        "Anthology",
+        "Encyclopedia",
+        "Compendium",
+        "Ensemble"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "विभिन्न कवियों या लेखकों की चुनिंदा कविताओं/कहानियों के संग्रह को Anthology कहते हैं।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "SEPPERATE",
+        "SEPERATE",
+        "SEPARATE",
+        "SEPARAT"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी SEPARATE (अलग) है।"
+    }
+  ]
+}

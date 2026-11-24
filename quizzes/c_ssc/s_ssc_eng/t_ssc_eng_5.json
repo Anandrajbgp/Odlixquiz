@@ -1,0 +1,605 @@
+{
+  "title": "English Language Test 5",
+  "questions": [
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"ADAMANT\"",
+      "options": [
+        "Stubborn / Inflexible",
+        "Yielding",
+        "Pliable",
+        "Flexible"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "ADAMANT का अर्थ होता है अटल, अडिग या हठी। Synonym: Stubborn, Inflexible, Unyielding, Rigid."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"ADAMANT\"",
+      "options": [
+        "Flexible / Yielding",
+        "Stubborn",
+        "Unyielding",
+        "Inflexible"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "ADAMANT (अडिग/हठी) का Antonym है Flexible (लचीला) या Yielding (नम्र)."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"ALACRITY\"",
+      "options": [
+        "Apathy",
+        "Hesitation",
+        "Eagerness / Readiness",
+        "Reluctance"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "ALACRITY का अर्थ होता है तत्परता, उत्सुकता या फुर्ती। Synonym: Eagerness, Readiness, Promptness."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"ALACRITY\"",
+      "options": [
+        "Apathy / Reluctance",
+        "Promptness",
+        "Readiness",
+        "Eagerness"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "ALACRITY (तत्परता) का Antonym है Apathy (उदासीनता) या Reluctance (अनिच्छा)."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"BENIGN\"",
+      "options": [
+        "Gentle / Harmless",
+        "Harmful",
+        "Malignant",
+        "Hostile"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "BENIGN का अर्थ होता है सौम्य, दयालु या अहानिकर। Synonym: Gentle, Kind, Harmless, Favorable."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"BENIGN\"",
+      "options": [
+        "Kind",
+        "Harmless",
+        "Malignant / Harmful",
+        "Gentle"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "BENIGN (सौम्य/अहानिकर) का Antonym है Malignant (घातक/हानिकारक) या Hostile."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"CAPRICIOUS\"",
+      "options": [
+        "Predictable",
+        "Fickle / Unpredictable",
+        "Constant",
+        "Stable"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "CAPRICIOUS का अर्थ होता है सनकी, चंचल या परिवर्तनशील। Synonym: Fickle, Whimsical, Unpredictable."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"CAPRICIOUS\"",
+      "options": [
+        "Stable / Constant",
+        "Whimsical",
+        "Changeable",
+        "Fickle"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "CAPRICIOUS (परिवर्तनशील/सनकी) का Antonym है Stable (स्थिर) या Constant."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A place where animals are slaughtered for human consumption/food\"",
+      "options": [
+        "Cemetery",
+        "Tannery",
+        "Mortuary",
+        "Abattoir / Slaughterhouse"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "पशुवधशाला जहाँ पशु काटे जाते हैं उसे Abattoir कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who devotes his life to the unselfish welfare and service of others\"",
+      "options": [
+        "Egoist",
+        "Altruist / Philanthropist",
+        "Narcissist",
+        "Misanthrope"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "परोपकारी व्यक्ति को Altruist या Philanthropist कहते हैं (Misanthrope = मानवद्वेषी)।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who is incapable of making mistakes or committing errors\"",
+      "options": [
+        "Invincible",
+        "Infallacious",
+        "Infallible",
+        "Incorrigible"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "जिससे कभी गलती न हो उसे Infallible (अचूक/अचूक व्यक्ति) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"That which is impossible to be conquered, defeated or overcome\"",
+      "options": [
+        "Incurable",
+        "Invincible",
+        "Indelible",
+        "Invisible"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "जिसे जीता या पराजित न किया जा सके उसे Invincible (अजेय) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"One who is beyond reform or impossible to be corrected\"",
+      "options": [
+        "Infallible",
+        "Irrevocable",
+        "Incurable",
+        "Incorrigible"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "जिसे सुधारा न जा सके उसे Incorrigible (असुधार्य) कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Actions speak louder than words\"",
+      "options": [
+        "What someone actually does has more impact than what they merely say",
+        "To shout loudly to make an impression",
+        "To perform actions in silence",
+        "Words are more important than deeds"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Actions speak louder than words = कथनी से करनी भारी, काम बोलता है।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"At the end of one's tether\"",
+      "options": [
+        "To win a difficult race",
+        "To tie something securely",
+        "Having no more patience, energy or endurance left",
+        "At the end of a long rope"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "At the end of one's tether = सहनशक्ति की अंतिम सीमा पर होना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Beat a dead horse\"",
+      "options": [
+        "To revive a dead tradition",
+        "Waste effort on a futile task that cannot be changed",
+        "To mistreat an animal",
+        "To achieve an impossible victory"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Beat a dead horse = गड़े मुर्दे उखाड़ना या व्यर्थ का प्रयास करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Best of both worlds\"",
+      "options": [
+        "All the advantages and benefits of two different situations at once",
+        "Living in two different places",
+        "A choice between good and evil",
+        "To travel across the globe"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Best of both worlds = दोनों हाथों में लड्डू होना, दोनों परिस्थितियों का लाभ उठाना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Bite off more than you can chew\"",
+      "options": [
+        "To eat too much at once",
+        "To accept a small challenge",
+        "Take on a responsibility or task that is beyond one's capacity",
+        "To chew food with difficulty"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Bite off more than you can chew = औकात/क्षमता से अधिक काम अपने सिर लेना।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"He has been living in Delhi since five years.\"",
+      "options": [
+        "He has been",
+        "No error",
+        "living in Delhi",
+        "since five years"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: निश्चित समय (Point of time) के साथ 'since' तथा अनिश्चित अवधि (Period of time) के साथ 'for' आता है (for five years)."
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"Unless you do not tell the truth, I will punish you.\"",
+      "options": [
+        "No error",
+        "Unless you do not tell",
+        "I will punish you",
+        "the truth"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: 'Unless' स्वयं नकारात्मक है, इसके साथ 'do not' हटाकर 'Unless you tell' प्रयुक्त होगा।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"The furniture in his room are very old.\"",
+      "options": [
+        "are very old",
+        "The furniture",
+        "in his room",
+        "No error"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: 'Furniture' अनकाउंटेबल सिंगुलर नाउन है, अतः प्लुरल वर्ब 'are' की जगह 'is' आएगा।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He is addicted _____ gambling and alcohol.\"",
+      "options": [
+        "with",
+        "to",
+        "in",
+        "for"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: 'Addicted to' (किसी लत/बुरी आदत का शिकार होना) के साथ preposition 'to' + V-ing/noun आता है।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"Beware _____ stray dogs at night.\"",
+      "options": [
+        "of",
+        "for",
+        "with",
+        "from"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: Adjective/Verb 'Beware' के साथ हमेशा preposition 'of' का प्रयोग होता है (Beware of dogs)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"She complies _____ all the college regulations.\"",
+      "options": [
+        "with",
+        "by",
+        "to",
+        "for"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: Verb 'Comply' के साथ हमेशा 'with' आता है (Comply with rules/regulations)."
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "MISCHIEVOUS",
+        "MISCHIVOUS",
+        "MISCHIEVIOUS",
+        "MISCHEVOUS"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी MISCHIEVOUS (शरारती/उपद्रवी - no 'i' after v) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "SATTELLITE",
+        "SATELITE",
+        "SATELLITE",
+        "SATTELITE"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी SATELLITE (उपग्रह - double L) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "SURVEILLANCE",
+        "SURVAILLANCE",
+        "SURVELLANCE",
+        "SURVEILANCE"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी SURVEILLANCE (निगरानी - double L) है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"METICULOUS\"",
+      "options": [
+        "Careful / Fastidious",
+        "Negligent",
+        "Sloppy",
+        "Careless"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "METICULOUS का अर्थ होता है सूक्ष्म, अतिसावधान या सतर्क। Synonym: Careful, Fastidious, Precise."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"METICULOUS\"",
+      "options": [
+        "Fastidious",
+        "Precise",
+        "Careful",
+        "Careless / Negligent"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "METICULOUS (सावधान) का Antonym है Careless (लापरवाह) या Negligent."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"TRANSIENT\"",
+      "options": [
+        "Ephemeral / Temporary",
+        "Perpetual",
+        "Lasting",
+        "Permanent"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "TRANSIENT का अर्थ होता है क्षणिक या अस्थाई। Synonym: Ephemeral, Temporary, Fleeting."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"TRANSIENT\"",
+      "options": [
+        "Ephemeral",
+        "Permanent / Perpetual",
+        "Fleeting",
+        "Temporary"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "TRANSIENT (अस्थाई) का Antonym है Permanent (स्थाई) या Perpetual."
+    },
+    {
+      "question": "Select the ONE WORD for: \"One who deserts and abandons his religious or political faith\"",
+      "options": [
+        "Traitor",
+        "Renegade",
+        "Apostate",
+        "Deserter"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "अपने धर्म या राजनीतिक विश्वास को त्यागने वाले स्वधर्मत्यागी को Apostate कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person or animal that eats human flesh\"",
+      "options": [
+        "Cannibal",
+        "Herbivore",
+        "Omnivore",
+        "Carnivore"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "नरभक्षी (अपनी ही प्रजाति/इंसान का मांस खाने वाले) को Cannibal कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who compiles or writes dictionaries\"",
+      "options": [
+        "Lexicographer",
+        "Cartographer",
+        "Biographer",
+        "Calligrapher"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "शब्दकोश (Dictionary) संकलित करने वाले व्यक्ति को Lexicographer कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who draws, designs or produces geographical maps\"",
+      "options": [
+        "Calligrapher",
+        "Lexicographer",
+        "Cartographer",
+        "Demographer"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "मानचित्र (Maps) बनाने वाले मानचित्रकार को Cartographer कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Cross that bridge when you come to it\"",
+      "options": [
+        "To avoid a problem completely",
+        "To cross a dangerous pathway",
+        "To build a bridge over a river",
+        "Deal with a problem only when it actually occurs, not beforehand"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Cross that bridge when you come to it = जब मुसीबत आएगी तब उससे निपटेंगे, पहले से चिंता न करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Every cloud has a silver lining\"",
+      "options": [
+        "Dark clouds bring rain",
+        "Silver is found in clouds",
+        "A bad event leads to worse consequences",
+        "Every difficult or sad situation has a hopeful/positive side"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Every cloud has a silver lining = निराशा में भी आशा की किरण छिपी होती है।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Get out of hand\"",
+      "options": [
+        "To give away something",
+        "To get out of control",
+        "To shake hands with someone",
+        "To lose a ring from finger"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Get out of hand = हाथ से निकल जाना, नियंत्रण से बाहर हो जाना।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"I <u>am working</u> in this company for ten years.\"",
+      "options": [
+        "No improvement",
+        "was working",
+        "had worked",
+        "have been working"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: समय की अवधि ('for ten years') के साथ घटना वर्तमान तक जारी होने पर Present Perfect Continuous (have been working) आएगा।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"Scarcely had the bell rung <u>than</u> the students rushed out.\"",
+      "options": [
+        "then",
+        "before",
+        "No improvement",
+        "when"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: 'Scarcely' के साथ कंजंक्शन सदैव 'when' आता है (Scarcely had... when...)."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"They have built a new bridge.\"",
+      "options": [
+        "A new bridge is built by them.",
+        "A new bridge had been built by them.",
+        "A new bridge was built by them.",
+        "A new bridge has been built by them."
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Present Perfect (have + V3) का Passive = Object + has/have + been + V3 + by + Subject."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"She sings a beautiful song.\"",
+      "options": [
+        "A beautiful song is sung by her.",
+        "A beautiful song has been sung by her.",
+        "A beautiful song was sung by her.",
+        "A beautiful song is being sung by her."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Present Simple (V1) का Passive = Object + is/am/are + V3 + by + Subject."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: He said, \"I am reading a book.\"",
+      "options": [
+        "He asked if he was reading a book.",
+        "He said that he was reading a book.",
+        "He told that he is reading a book.",
+        "He said that I am reading a book."
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Reporting verb Past Tense में होने से Present Continuous (am reading) बदलकर Past Continuous (was reading) बनेगा।"
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: She said to her brother, \"Where are you going?\"",
+      "options": [
+        "She asked her brother that where he was going.",
+        "She asked her brother where he was going.",
+        "She asked her brother where was he going.",
+        "She told her brother where you are going."
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Interrogative WH- sentence का Indirect = asked + her brother + where + he (Subject) + was going."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"REPUBLIC\"",
+      "options": [
+        "Democracy / Elected government",
+        "Dictatorship",
+        "Autocracy",
+        "Monarchy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "REPUBLIC का अर्थ होता है गणतंत्र या प्रजातंत्र जहाँ शासन का प्रमुख निर्वाचित होता है।"
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"AUTOCRACY\"",
+      "options": [
+        "Totalitarianism",
+        "Dictatorship",
+        "Democracy / Republic",
+        "Monarchy"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "AUTOCRACY (निरंकुश एकतंत्र) का Antonym है Democracy (लोकतंत्र/प्रजातन्त्र) या Republic."
+    },
+    {
+      "question": "Select the ONE WORD for: \"An underground room or vault used for storing grain, wine or coal\"",
+      "options": [
+        "Garret",
+        "Attic",
+        "Basement",
+        "Cellar"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "जमीन के नीचे अनाज, शराब या कोयला रखने के तहखाने को Cellar कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"An extreme or irrational fear or hatred of foreigners or strangers\"",
+      "options": [
+        "Xenophobia",
+        "Homophobia",
+        "Hydrophobia",
+        "Claustrophobia"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "विदेशियों या अजनबियों से अत्यधिक भय/घृणा को Xenophobia कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"Extreme fear of confined or enclosed spaces\"",
+      "options": [
+        "Acrophobia",
+        "Claustrophobia",
+        "Xenophobia",
+        "Agoraphobia"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "संकीर्ण/बंद जगहों के डर को Claustrophobia कहते हैं।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "HIERARCY",
+        "HIERARCHY",
+        "HEIRARCHY",
+        "HIERARCHY"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "सही वर्तनी HIERARCHY (पदानुक्रम/श्रेणीबद्धता) है।"
+    }
+  ]
+}

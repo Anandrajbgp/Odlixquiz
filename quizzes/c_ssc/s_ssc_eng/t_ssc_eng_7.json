@@ -1,0 +1,605 @@
+{
+  "title": "English Language Test 7",
+  "questions": [
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"ABUNDANT\"",
+      "options": [
+        "Deficient",
+        "Scarce",
+        "Plentiful / Copious",
+        "Meagre"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "ABUNDANT का अर्थ होता है प्रचुर, प्रचुर मात्रा में या बहुयात। Synonym: Plentiful, Copious, Bountiful, Ample."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"ABUNDANT\"",
+      "options": [
+        "Bountiful",
+        "Plentiful",
+        "Copious",
+        "Scarce / Meagre"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "ABUNDANT (प्रचुर) का Antonym है Scarce (दुर्लभ/कम) या Meagre (अल्प)."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"BELLIGERENT\"",
+      "options": [
+        "Friendly",
+        "Peaceful",
+        "Amiable",
+        "Hostile / Pugnacious"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "BELLIGERENT का अर्थ होता है लड़ाकू, आक्रामक या युद्धरत। Synonym: Hostile, Pugnacious, Aggressive, Bellicose."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"BELLIGERENT\"",
+      "options": [
+        "Aggressive",
+        "Hostile",
+        "Pugnacious",
+        "Peaceful / Friendly"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "BELLIGERENT (आक्रामक/लड़ाकू) का Antonym है Peaceful (शांतिप्रिय) या Friendly."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"COMPETENT\"",
+      "options": [
+        "Inefficient",
+        "Capable / Efficient",
+        "Incapable",
+        "Incompetent"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "COMPETENT का अर्थ होता है सक्षम, योग्य या निपुण। Synonym: Capable, Efficient, Proficient, Able."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"COMPETENT\"",
+      "options": [
+        "Incompetent / Inefficient",
+        "Capable",
+        "Efficient",
+        "Proficient"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "COMPETENT (योग्य/सक्षम) का Antonym है Incompetent (अयोग्य) या Inefficient."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"DUBIOUS\"",
+      "options": [
+        "Definite",
+        "Certain",
+        "Doubtful / Suspicious",
+        "Sure"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "DUBIOUS का अर्थ होता है संदिग्ध, शंकास्पद या अनिश्चित। Synonym: Doubtful, Suspicious, Questionable."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"DUBIOUS\"",
+      "options": [
+        "Questionable",
+        "Certain / Sure",
+        "Doubtful",
+        "Suspicious"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "DUBIOUS (संदिग्ध) का Antonym है Certain (निश्चित) या Sure."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A furnace, oven or brick enclosure used for baking, drying or burning pottery and bricks\"",
+      "options": [
+        "Kiln",
+        "Furnace",
+        "Forge",
+        "Oven"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "ईंटों या मिट्टी के बर्तनों को पकाने वाली भट्टी को Kiln कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A collection of wild, rare or exotic animals kept in captivity for public exhibition\"",
+      "options": [
+        "Menagerie",
+        "Sanctuary",
+        "Zoo",
+        "Aquarium"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "प्रदर्शनी हेतु रखे गए जंगली जानवरों के संग्रह को Menagerie कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who lives in complete solitude and seclusion away from human society\"",
+      "options": [
+        "Eremite",
+        "Ascetic",
+        "Monk",
+        "Recluse / Hermit"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "समाज से अलग एकांत में रहने वाले वैरागी/एकांतवासी को Recluse या Hermit कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who is able to speak two languages fluently\"",
+      "options": [
+        "Monolingual",
+        "Bilingual",
+        "Linguist",
+        "Polyglot"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "दो भाषाएँ बोलने वाले व्यक्ति को Bilingual (द्विभाषी) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who speaks or knows only one language\"",
+      "options": [
+        "Bilingual",
+        "Polyglot",
+        "Monolingual",
+        "Linguist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "केवल एक भाषा बोलने वाले को Monolingual कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Through thick and thin\"",
+      "options": [
+        "During thin and fat days",
+        "Only in prosperous times",
+        "Through a dense forest",
+        "In all circumstances and conditions, whether good or bad"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Through thick and thin = हर सुख-दुख और हर परिस्थिति में।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Under the weather\"",
+      "options": [
+        "Standing under heavy rain",
+        "Enjoying pleasant weather",
+        "Extreme cold in winter",
+        "Slightly unwell, sick or indisposed"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Under the weather = बीमार होना, अस्वस्थ होना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Wild goose chase\"",
+      "options": [
+        "A successful rescue operation",
+        "A foolish and hopeless search or pursuit",
+        "A profitable business venture",
+        "To hunt wild geese in the forest"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Wild goose chase = व्यर्थ और निष्फल खोज या प्रयास।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Back to the drawing board\"",
+      "options": [
+        "To draw a picture on board",
+        "To fail in an examination",
+        "To finish a project successfully",
+        "Start planning all over again from the beginning"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Back to the drawing board = योजना में असफलता के बाद फिर से नए सिरे से काम शुरू करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"The ball is in your court\"",
+      "options": [
+        "To lose a sporting match",
+        "To win a game of tennis",
+        "It is now your turn to make a decision or take action",
+        "To pass responsibility to someone else"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "The ball is in your court = अब निर्णय/कदम उठाने की बारी आपकी है।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"He is one of the most intelligent boy in the class.\"",
+      "options": [
+        "He is one of",
+        "intelligent boy in the class",
+        "No error",
+        "the most"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: 'One of the' के बाद Plural Noun ('boys') का प्रयोग होता है।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"Neither Ram nor Shyam have submitted the fee.\"",
+      "options": [
+        "No error",
+        "nor Shyam",
+        "Neither Ram",
+        "have submitted the fee"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: Neither...nor में निकटतम सिंगुलर सब्जेक्ट 'Shyam' के अनुसार Singular Verb 'has' आएगा।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"She has been ill from last week.\"",
+      "options": [
+        "She has been",
+        "ill",
+        "No error",
+        "from last week"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: निश्चित बिंदु ('last week') के साथ प्रपोजिशन 'since' आता है (since last week)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He is junior _____ all his team members.\"",
+      "options": [
+        "from",
+        "to",
+        "than",
+        "with"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: Junior, Senior, Superior के साथ preposition 'to' आता है (Junior to all)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"She is proficient _____ English grammar and writing.\"",
+      "options": [
+        "with",
+        "for",
+        "at",
+        "in"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: Adjective 'Proficient' के साथ preposition 'in' का प्रयोग होता है (Proficient in English)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"The dog barked _____ the stranger at night.\"",
+      "options": [
+        "at",
+        "on",
+        "to",
+        "upon"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: Verb 'Bark' के साथ preposition 'at' आता है (Bark at someone)."
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "BUREAUCRASY",
+        "BUREUCRACY",
+        "BUREAUCRACY",
+        "BEUREAUCRACY"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी BUREAUCRACY (नौकरशाही) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "MAINTINANCE",
+        "MAINTENENCE",
+        "MAINTENANCE",
+        "MAINTAINANCE"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी MAINTENANCE (रखरखाव) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "PRIVILEGE",
+        "PRIVELEGE",
+        "PRIVILEDGE",
+        "PRIVLEGE"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी PRIVILEGE (विशेषधिकार) है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"EXEMPLARY\"",
+      "options": [
+        "Deplorable",
+        "Model / Commendable",
+        "Blameworthy",
+        "Inferior"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "EXEMPLARY का अर्थ होता है अनुकरणीय, प्रशंसनीय या आदर्श। Synonym: Model, Commendable, Praiseworthy."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"EXEMPLARY\"",
+      "options": [
+        "Commendable",
+        "Model",
+        "Deplorable / Blameworthy",
+        "Praiseworthy"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "EXEMPLARY (प्रशंसनीय) का Antonym है Deplorable (निंदनीय) या Blameworthy."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"FUTILE\"",
+      "options": [
+        "Productive",
+        "Useless / Ineffective",
+        "Fruitful",
+        "Effective"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "FUTILE का अर्थ होता है व्यर्थ, निष्फल या निरर्थक। Synonym: Useless, Ineffective, Vain, Fruitless."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"FUTILE\"",
+      "options": [
+        "Ineffective",
+        "Fruitful / Effective",
+        "Vain",
+        "Useless"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "FUTILE (व्यर्थ) का Antonym है Fruitful (फलदायी) या Effective."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A scholar who compiles dictionaries\"",
+      "options": [
+        "Cartographer",
+        "Biographer",
+        "Lexicographer",
+        "Calligrapher"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "शब्दकोश संकलनकर्ता को Lexicographer कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who designs, draws or prepares maps\"",
+      "options": [
+        "Lexicographer",
+        "Cartographer",
+        "Geographer",
+        "Demographer"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "मानचित्रकार को Cartographer कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A scientist who studies human societies, origin and development of human culture\"",
+      "options": [
+        "Psychologist",
+        "Sociologist",
+        "Anthropologist",
+        "Archaeologist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "मानव विज्ञान/संस्कृति के अध्ययनकर्ता को Anthropologist कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A scientist who studies heavenly bodies, stars and planets in space\"",
+      "options": [
+        "Cosmologist",
+        "Astronomer",
+        "Astrologer",
+        "Astronaut"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "खगोलशास्त्री को Astronomer कहते हैं (Astrologer = ज्योतिषी)।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Burn the candle at both ends\"",
+      "options": [
+        "To burn with anger",
+        "To work tirelessly without taking proper rest or sleep",
+        "To waste candles unnecessarily",
+        "To light a room from both sides"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Burn the candle at both ends = दिन-रात एक करके अत्यधिक परिश्रम करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Costs an arm and a leg\"",
+      "options": [
+        "Extremely expensive / costly",
+        "A cheap bargain",
+        "A physical handicap",
+        "Worth doing"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Costs an arm and a leg = अत्यधिक महँगा होना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Don't put all your eggs in one basket\"",
+      "options": [
+        "Avoid taking any risk",
+        "Keep eggs in separate containers",
+        "Don't carry eggs in a basket",
+        "Don't risk everything on a single plan or venture"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Don't put all your eggs in one basket = सारा जोखिम एक ही काम में न लगाना।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"The teacher said that the sun <u>rose</u> in the east.\"",
+      "options": [
+        "No improvement",
+        "had risen",
+        "rises",
+        "is rising"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: सार्वभौमिक सत्य (Universal Truth) का Tense सदैव Present Simple (rises) रहता है।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"He did not <u>opened</u> the letter yesterday.\"",
+      "options": [
+        "opens",
+        "opening",
+        "No improvement",
+        "open"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: 'Did not' के साथ हमेशा Verb की 1st form ('open') का प्रयोग होता है।"
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"They have completed the project.\"",
+      "options": [
+        "The project had been completed by them.",
+        "The project is completed by them.",
+        "The project was completed by them.",
+        "The project has been completed by them."
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Present Perfect (have + V3) का Passive = Object + has/have + been + V3 + by + Subject."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"She reads the newspaper every morning.\"",
+      "options": [
+        "The newspaper was read by her every morning.",
+        "The newspaper is being read by her every morning.",
+        "The newspaper is read by her every morning.",
+        "The newspaper has been read by her."
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Present Simple (reads) का Passive = Object + is/am/are + V3 (read) + by + Subject."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: He said to me, \"Can you help me?\"",
+      "options": [
+        "He told me if I could help him.",
+        "He asked me that if I could help him.",
+        "He asked me can I help him.",
+        "He asked me if I could help him."
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Interrogative Auxiliary verb (Can) से शुरू वाक्य का Indirect = asked + if + I (Subject) + could help him."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: The doctor said to the patient, \"Take this medicine daily.\"",
+      "options": [
+        "The doctor ordered the patient take this medicine daily.",
+        "The doctor told to the patient to take that medicine daily.",
+        "The doctor advised the patient taking medicine.",
+        "The doctor advised the patient to take that medicine daily."
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Imperative sentence (Advice) का Indirect = advised + the patient + to take that medicine daily."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"INSIPID\"",
+      "options": [
+        "Flavorful",
+        "Tasty",
+        "Tasteless / Bland",
+        "Delicious"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "INSIPID का अर्थ होता है फीका, बेस्वाद या नीरस। Synonym: Tasteless, Bland, Flavorless, Dull."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"INSIPID\"",
+      "options": [
+        "Dull",
+        "Tasteless",
+        "Bland",
+        "Tasty / Delicious"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "INSIPID (फीका) का Antonym है Tasty (स्वादिष्ट) या Delicious."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A substance or medicine given to counteract the effect of poison\"",
+      "options": [
+        "Antibiotic",
+        "Antigen",
+        "Antidote",
+        "Antiseptic"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "विष-नाशक औषधि को Antidote कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A word, law or custom that is no longer in active general use\"",
+      "options": [
+        "Outdated",
+        "Extinct",
+        "Ancient",
+        "Obsolete"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "अप्रचलित/पुरानी प्रथा या शब्द को Obsolete कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"Anything or food item that is fit or safe to be eaten\"",
+      "options": [
+        "Audible",
+        "Eligible",
+        "Edible",
+        "Potable"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "खाने योग्य वस्तु को Edible कहते हैं (पीने योग्य जल = Potable)."
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "GARRANTEE",
+        "GUARANTEE",
+        "GUARANTE",
+        "GARANTEE"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "सही वर्तनी GUARANTEE (गारंटी) है।"
+    }
+  ]
+}

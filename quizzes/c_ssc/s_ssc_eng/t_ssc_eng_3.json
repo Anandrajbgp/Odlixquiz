@@ -1,0 +1,605 @@
+{
+  "title": "English Language Test 3",
+  "questions": [
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"LETHARGIC\"",
+      "options": [
+        "Active",
+        "Sluggish / Lazy",
+        "Lively",
+        "Energetic"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "LETHARGIC का अर्थ होता है सुस्त, आलसी या शिथिल। Synonym: Sluggish, Lazy, Indolent, Inactive."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"LETHARGIC\"",
+      "options": [
+        "Energetic / Active",
+        "Sluggish",
+        "Indolent",
+        "Lazy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "LETHARGIC (सुस्त) का Antonym है Energetic (ऊर्जावान) या Active (सक्रिय)."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"COMPASSIONATE\"",
+      "options": [
+        "Sympathetic / Merciful",
+        "Callous",
+        "Unfeeling",
+        "Cruel"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "COMPASSIONATE का अर्थ होता है दयालु, सहानुभूतिपूर्ण या कृपालु। Synonym: Sympathetic, Merciful, Kind."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"COMPASSIONATE\"",
+      "options": [
+        "Sympathetic",
+        "Cruel / Callous",
+        "Merciful",
+        "Kind"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "COMPASSIONATE (दयालु) का Antonym है Cruel (क्रूर) या Callous (निर्दयी)."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"INADVERTENT\"",
+      "options": [
+        "Intentional",
+        "Unintentional / Accidental",
+        "Deliberate",
+        "Planned"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "INADVERTENT का अर्थ होता है अनजाने में हुआ, असावधान या आकस्मिक। Synonym: Unintentional, Accidental."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"INADVERTENT\"",
+      "options": [
+        "Unplanned",
+        "Accidental",
+        "Unintentional",
+        "Deliberate / Intentional"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "INADVERTENT (अनजाने में) का Antonym है Deliberate (जानबूझकर किया हुआ) या Intentional."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"OBNOXIOUS\"",
+      "options": [
+        "Attractive",
+        "Pleasant",
+        "Delightful",
+        "Offensive / Disgusting"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "OBNOXIOUS का अर्थ होता है अप्रिय, घिनौना या अप्रीतिकर। Synonym: Offensive, Disgusting, Repulsive."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"OBNOXIOUS\"",
+      "options": [
+        "Pleasant / Delightful",
+        "Repulsive",
+        "Offensive",
+        "Disgusting"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "OBNOXIOUS (अप्रिय/घिनौना) का Antonym है Pleasant (सुहावना) या Delightful."
+    },
+    {
+      "question": "Select the ONE WORD for: \"Words inscribed on a tombstone in memory of the person buried there\"",
+      "options": [
+        "Epidemic",
+        "Epitaph",
+        "Epilogue",
+        "Epitome"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "समाधि पर खुदे हुए लेख या शब्दों को Epitaph (समाधि लेख) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who leaves his own country to settle permanently in another\"",
+      "options": [
+        "Emigrant",
+        "Immigrant",
+        "Tourist",
+        "Exile"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "अपना देश छोड़कर दूसरे देश बसने जाने वाले को Emigrant (उत्प्रवासी) कहते हैं (I = In, Immigrant = आगत निवासी)।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who comes to a foreign country to settle permanently there\"",
+      "options": [
+        "Immigrant",
+        "Emigrant",
+        "Alien",
+        "Foreigner"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "विदेश से आकर बसने वाले व्यक्ति को Immigrant (अप्रवासी) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A state of lawlessness and disorder due to absence of government or control\"",
+      "options": [
+        "Oligarchy",
+        "Anarchy",
+        "Autocracy",
+        "Monarchy"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "सरकार या कानून व्यवस्था की अनुपस्थिति में उत्पन्न अराजकता को Anarchy (अराजकता) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"An extreme, morbid or irrational fear of water\"",
+      "options": [
+        "Pyrophobia",
+        "Acrophobia",
+        "Hydrophobia / Aquaphobia",
+        "Claustrophobia"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "पानी से अत्यधिक भय/डर को Hydrophobia कहते हैं (रेबीज रोग का प्रमुख लक्षण)।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"A piece of cake\"",
+      "options": [
+        "A delicious sweet food",
+        "A very easy task or accomplishment",
+        "A complicated problem",
+        "An expensive purchase"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "A piece of cake = बच्चों का खेल, बहुत ही आसान काम।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Add fuel to the fire\"",
+      "options": [
+        "To extinguish a house fire",
+        "To help resolve a conflict",
+        "To start cooking food",
+        "To make a bad situation or argument worse"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Add fuel to the fire = आग में घी डालना, मामले को और बिगाड़ना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"At the drop of a hat\"",
+      "options": [
+        "When a hat falls on the ground",
+        "After a long delay",
+        "Instantly / without any delay or hesitation",
+        "Very slowly and carefully"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "At the drop of a hat = बिना किसी हिचकिचाहट के, तुरंत।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Back to square one\"",
+      "options": [
+        "To succeed after failure",
+        "To win a game of chess",
+        "Back to the beginning / start all over again",
+        "To move forward quickly"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Back to square one = पुनः शुरुआती बिंदु पर आ जाना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Barking up the wrong tree\"",
+      "options": [
+        "To bark at a dog under a tree",
+        "To cut down the wrong tree",
+        "Accusing or pursuing the wrong person or direction",
+        "To find the correct solution"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Barking up the wrong tree = गलत व्यक्ति या दिशा में प्रयास करना।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"He is superior than me in intelligence.\"",
+      "options": [
+        "superior",
+        "He is",
+        "than me in intelligence",
+        "No error"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: 'Superior' के साथ preposition 'to' का प्रयोग होता है, 'than' का नहीं (superior to me)."
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"Either the manager or the workers has made a mistake.\"",
+      "options": [
+        "No error",
+        "has made a mistake",
+        "Either the manager",
+        "or the workers"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: Either...or में निकटतम सब्जेक्ट ('workers' प्लुरल) के अनुसार प्लुरल वर्ब 'have' आएगा।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"I have not seen him since two months.\"",
+      "options": [
+        "since two months",
+        "seen him",
+        "I have not",
+        "No error"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: अनिश्चित अवधि ('two months') के साथ प्रपोजिशन 'for' आता है (for two months)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He was prevented _____ doing his work.\"",
+      "options": [
+        "to",
+        "by",
+        "for",
+        "from"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: Prevent, Refrain, Abstain, Debar आदि verbs के साथ प्रपोजिशन 'from' + V-ing आता है।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"She is good _____ Mathematics.\"",
+      "options": [
+        "in",
+        "with",
+        "at",
+        "for"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: किसी विषय या कार्य में निपुण/अच्छा होने पर 'Good at' आता है ('Good in' गलत है)."
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"I am fond _____ reading story books.\"",
+      "options": [
+        "of",
+        "off",
+        "for",
+        "with"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: Adjective 'Fond' के साथ हमेशा preposition 'of' आता है (Fond of reading)."
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "BEUREAUCRACY",
+        "BUREAUCRACY",
+        "BUREUCRACY",
+        "BUREAUCRASY"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "सही वर्तनी BUREAUCRACY (नौकरशाही) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "NECESSERRY",
+        "NECESARY",
+        "NECESSERY",
+        "NECESSARY"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "सही वर्तनी NECESSARY (आवश्यक - single C, double S) है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "PRIVILEGE",
+        "PRIVELEGE",
+        "PRIVLEGE",
+        "PRIVILEDGE"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी PRIVILEGE (विशेषधिकार) है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"RETICENT\"",
+      "options": [
+        "Reserved / Taciturn",
+        "Frank",
+        "Garrulous",
+        "Talkative"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "RETICENT का अर्थ होता है कम बोलने वाला, संकोची या मौन। Synonym: Reserved, Taciturn, Silent."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"RETICENT\"",
+      "options": [
+        "Taciturn",
+        "Silent",
+        "Garrulous / Talkative",
+        "Reserved"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "RETICENT (कम बोलने वाला) का Antonym है Garrulous (बातूनी) या Talkative."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"ZEALOUS\"",
+      "options": [
+        "Indifferent",
+        "Lazy",
+        "Enthusiastic / Ardent",
+        "Apathetic"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "ZEALOUS का अर्थ होता है उत्साही या जोशिला। Synonym: Enthusiastic, Ardent, Passionate."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"ZEALOUS\"",
+      "options": [
+        "Ardent",
+        "Apathetic / Indifferent",
+        "Eager",
+        "Enthusiastic"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "ZEALOUS (उत्साही) का Antonym है Apathetic (उदासीन) या Indifferent."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who loves, collects or is intensely interested in books\"",
+      "options": [
+        "Bibliographer",
+        "Bibliophile",
+        "Biographer",
+        "Philatelist"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "पुस्तक प्रेमी को Bibliophile कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who collects or studies coins, medals and currency\"",
+      "options": [
+        "Anthropologist",
+        "Archaeologist",
+        "Numismatist",
+        "Philatelist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सिक्कों के संग्रहकर्ता/अध्ययनकर्ता को Numismatist (मुद्राशास्त्री) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who collects or studies postage stamps\"",
+      "options": [
+        "Numismatist",
+        "Philatelist",
+        "Florist",
+        "Cartographer"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "डाक टिकटों के संग्रहकर्ता को Philatelist (डाक टिकट संग्रही) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"One who is all powerful and has unlimited power\"",
+      "options": [
+        "Omnivorous",
+        "Omnipotent",
+        "Omnipresent",
+        "Omniscient"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "सर्वशक्तिमान को Omnipotent कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"One who is present everywhere at the same time\"",
+      "options": [
+        "Universal",
+        "Omnipresent",
+        "Omnipotent",
+        "Omniscient"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "सर्वव्यापी (जो हर जगह मौजूद हो) को Omnipresent कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"One who knows everything and has complete knowledge\"",
+      "options": [
+        "Omnipotent",
+        "Scholar",
+        "Omniscient",
+        "Omnipresent"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सर्वज्ञ (सब कुछ जानने वाला) को Omniscient कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Cost an arm and a leg\"",
+      "options": [
+        "A physical injury",
+        "A cheap bargain",
+        "Extremely expensive / costly",
+        "To lose a limb"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Cost an arm and a leg = अत्यधिक महँगा होना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Don't judge a book by its cover\"",
+      "options": [
+        "Always check the cover of a book",
+        "Never buy a book with a bad cover",
+        "Don't form an opinion based purely on external appearance",
+        "Read the whole book before reviewing"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Don't judge a book by its cover = केवल बाहरी रूप-रंग देखकर राय न बनाना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Give someone the cold shoulder\"",
+      "options": [
+        "To offer a cold drink",
+        "To hug someone warmly",
+        "To shivering in the cold",
+        "To intentionally ignore or treat someone coldly"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Give someone the cold shoulder = किसी की उपेक्षा करना या बेरुखी से व्यवहार करना।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"He refrained <u>to answer</u> the question.\"",
+      "options": [
+        "No improvement",
+        "from answer",
+        "from answering",
+        "to answering"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: Verb 'Refrain' के साथ preposition 'from' + Gerund (V-ing) आता है (refrained from answering)."
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"<u>Unless you do not work hard</u>, you will fail.\"",
+      "options": [
+        "Until you don't work",
+        "Unless you don't work",
+        "No improvement",
+        "Unless you work hard"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: 'Unless' स्वयं नकारात्मक (Negative) शब्द है, अतः इसके साथ 'not' का प्रयोग नहीं होता।"
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"She has finished the work.\"",
+      "options": [
+        "The work was finished by her.",
+        "The work is finished by her.",
+        "The work has been finished by her.",
+        "The work had been finished by her."
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Present Perfect (has + V3) का Passive = Object + has/have + been + V3 + by + Subject."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"Close the door.\"",
+      "options": [
+        "You are requested to close door.",
+        "Let the door be closed.",
+        "The door should close.",
+        "Let door close."
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Imperative sentence (Command/Order) का Passive = Let + Object + be + V3."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: He said to me, \"Where are you going?\"",
+      "options": [
+        "He asked me where was I going.",
+        "He asked me where I was going.",
+        "He told me where I am going.",
+        "He asked me where I am going."
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Interrogative WH- sentence का Indirect = asked + me + where + I (Subject) + was going."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: She said, \"Alas! I have failed.\"",
+      "options": [
+        "She said with grief that I have failed.",
+        "She exclaimed with sorrow that she had failed.",
+        "She cried that she failed.",
+        "She exclaimed with joy that she failed."
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Exclamatory sentence ('Alas!') का Indirect = exclaimed with sorrow + that + she had failed."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"GULLIBLE\"",
+      "options": [
+        "Suspicious",
+        "Shrewd",
+        "Cynical",
+        "Credulous / Easily deceived"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "GULLIBLE का अर्थ होता है सीधा-साधा, जिसे आसानी से बेवकूफ बनाया जा सके। Synonym: Credulous, Naive."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"GULLIBLE\"",
+      "options": [
+        "Cynical / Suspicious",
+        "Credulous",
+        "Trusting",
+        "Naive"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "GULLIBLE (भोला-भाला) का Antonym है Cynical (शक्की) या Suspicious."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A medicine or substance given to counteract the effects of a poison\"",
+      "options": [
+        "Antigen",
+        "Antidote",
+        "Antiseptic",
+        "Antibiotic"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "विष के प्रभाव को काटने वाली औषधि को Antidote (विषघ्न/काट) कहते हैं।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "GUARANTEE",
+        "GARANTEE",
+        "GUARANTE",
+        "GARRANTEE"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सही वर्तनी GUARANTEE (गारंटी/आश्वासन) है।"
+    }
+  ]
+}

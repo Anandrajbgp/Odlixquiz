@@ -1,0 +1,605 @@
+{
+  "title": "English Language Test 1",
+  "questions": [
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"ABANDON\"",
+      "options": [
+        "Retain",
+        "Forsake / Desert",
+        "Cherish",
+        "Adopt"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "ABANDON का अर्थ होता है छोड़ना या त्यागना। Synonym: Forsake, Desert, Relinquish."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"ABANDON\"",
+      "options": [
+        "Desert",
+        "Forsake",
+        "Quit",
+        "Retain / Keep"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "ABANDON का अर्थ त्यागना है, अतः इसका Antonym है Retain (बनाए रखना) या Keep."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"CANDID\"",
+      "options": [
+        "Deceitful",
+        "Secretive",
+        "Frank / Honest",
+        "Cunning"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "CANDID का अर्थ होता है स्पष्टवादी, निष्कपट या ईमानदार। Synonym: Frank, Honest, Outspoken."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"CANDID\"",
+      "options": [
+        "Deceitful / Secretive",
+        "Frank",
+        "Honest",
+        "Sincere"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "CANDID (स्पष्टवादी) का विलोम Deceitful (धोखेबाज़) या Secretive (छिपाने वाला) होता है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"DILIGENT\"",
+      "options": [
+        "Lazy",
+        "Idle",
+        "Hardworking / Assiduous",
+        "Careless"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "DILIGENT का अर्थ होता है परिश्रम करने वाला या मेधावी। Synonym: Hardworking, Assiduous, Industrious."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"DILIGENT\"",
+      "options": [
+        "Lazy / Idle",
+        "Industrious",
+        "Hardworking",
+        "Active"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "DILIGENT (मेहनती) का Antonym है Lazy (आलसी) या Idle."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"FRUGAL\"",
+      "options": [
+        "Extravagant",
+        "Generous",
+        "Thrifty / Economical",
+        "Wasteful"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "FRUGAL का अर्थ होता है किफायती या कम खर्च करने वाला। Synonym: Thrifty, Economical, Economiser."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"FRUGAL\"",
+      "options": [
+        "Thrifty",
+        "Miserly",
+        "Economical",
+        "Extravagant / Wasteful"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "FRUGAL (मितव्ययी) का Antonym है Extravagant (फिजूलखर्च करने वाला) या Wasteful."
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who looks at the bright/positive side of things\"",
+      "options": [
+        "Atheist",
+        "Optimist",
+        "Pessimist",
+        "Altruist"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "आशावादी व्यक्ति को Optimist कहते हैं (Pessimist = निराशावादी)।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who looks at the dark/negative side of things\"",
+      "options": [
+        "Realist",
+        "Fatalist",
+        "Pessimist",
+        "Optimist"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "हर चीज़ का नकारात्मक पहलू देखने वाले निराशावादी व्यक्ति को Pessimist कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A person who does not believe in the existence of God\"",
+      "options": [
+        "Heretic",
+        "Atheist",
+        "Agnostic",
+        "Theist"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "ईश्वर में विश्वास न रखने वाले नास्तिक को Atheist कहते हैं (Theist = आस्तिक)।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A life history of a person written by himself\"",
+      "options": [
+        "Autograph",
+        "Autobiography",
+        "Biography",
+        "Bibliography"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "स्वयं द्वारा लिखी गई अपनी जीवन कथा को Autobiography (आत्मकथा) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A life history of a person written by another person\"",
+      "options": [
+        "Autobiography",
+        "Memoir",
+        "Biography",
+        "Geography"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "किसी अन्य व्यक्ति द्वारा लिखी गई जीवनी को Biography कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"To bite the bullet\"",
+      "options": [
+        "To eat something hard",
+        "To face a difficult situation courageously",
+        "To get shot in a war",
+        "To show cowardice"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "To bite the bullet = किसी कठिन या अवांछित परिस्थिति का साहसपूर्वक सामना करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Break the ice\"",
+      "options": [
+        "To end a friendship",
+        "To melt frozen ice",
+        "To cause damage",
+        "To start a conversation in a silent/awkward situation"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Break the ice = चुप्पी तोड़ना, बातचीत शुरू करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Burn the midnight oil\"",
+      "options": [
+        "To cook late at night",
+        "To sleep late in the morning",
+        "To waste electricity or fuel",
+        "To work or study late into the night"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Burn the midnight oil = देर रात तक पढ़ाई या काम करना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Once in a blue moon\"",
+      "options": [
+        "Very rarely / Very seldom",
+        "On a full moon night",
+        "Every month",
+        "Very frequently"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Once in a blue moon = ईद का चाँद होना, बहुत दुर्लभ अवसर पर।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Spill the beans\"",
+      "options": [
+        "To reveal a secret prematurely",
+        "To drop food on the floor",
+        "To cook beans",
+        "To keep a secret"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Spill the beans = भेद या गुप्त बात उजागर कर देना।"
+    },
+    {
+      "question": "Identify the segment in the sentence which contains a grammatical ERROR: \"He is one of the best student in our class.\"",
+      "options": [
+        "student in our class",
+        "He is one",
+        "of the best",
+        "No error"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: 'One of the' के बाद प्लुरल नाउन (Plural Noun) आता है, अतः 'student' के स्थान पर 'students' होगा।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"Neither Ram nor his friends is present today.\"",
+      "options": [
+        "nor his friends",
+        "No error",
+        "Neither Ram",
+        "is present today"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: Neither...nor में वर्ब निकटतम सबजेक्ट के अनुसार आती है; 'his friends' प्लुरल है, अतः 'are' आएगा।"
+    },
+    {
+      "question": "Identify the segment with an ERROR: \"She has been working here since five years.\"",
+      "options": [
+        "working here",
+        "She has been",
+        "No error",
+        "since five years"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: अनिश्चित समय/अवधि (Duration) के लिए 'for' का प्रयोग होता है, अतः 'since' के स्थान पर 'for five years' होगा।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"He is senior _____ me in service.\"",
+      "options": [
+        "with",
+        "to",
+        "from",
+        "than"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Rule: Senior, Junior, Superior, Inferior, Prior, Preferable आदि शब्दों के साथ 'than' की जगह 'to' का प्रयोग होता है।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"She prefers tea _____ coffee.\"",
+      "options": [
+        "to",
+        "from",
+        "over",
+        "than"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: Verb 'Prefer' और 'Preferable' के साथ हमेशा 'to' प्रपोजिशन का प्रयोग होता है।"
+    },
+    {
+      "question": "Fill in the blank with the appropriate preposition: \"The cat jumped _____ the table.\"",
+      "options": [
+        "upon / onto",
+        "in",
+        "at",
+        "on"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "Rule: गति (Motion in direction) के साथ किसी सतह पर कूदने/जाने के लिए 'upon' या 'onto' का प्रयोग होता है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "ACOMMODATT",
+        "ACCOMODATE",
+        "ACOMMODATE",
+        "ACCOMMODATE"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "सही वर्तनी ACCOMMODATE (double C, double M) है, जिसका अर्थ ठहराना/स्थान देना होता है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "EMBARASS",
+        "EMBARRAS",
+        "EMBARRASS",
+        "EMBARAS"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी EMBARRASS (double R, double S) है, जिसका अर्थ लज्जित करना होता है।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "OCCURRANCE",
+        "OCURRENCE",
+        "OCCURENCE",
+        "OCCURRENCE"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "सही वर्तनी OCCURRENCE (double C, double R, ENCE) है, जिसका अर्थ घटना होता है।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"OBSTINATE\"",
+      "options": [
+        "Flexible",
+        "Submissive",
+        "Obedient",
+        "Stubborn / Refractory"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "OBSTINATE का अर्थ होता है हठी या जिद्दी। Synonym: Stubborn, Rigid, Refractory."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"OBSTINATE\"",
+      "options": [
+        "Flexible / Yielding",
+        "Stubborn",
+        "Rigid",
+        "Firm"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "OBSTINATE (जिद्दी) का Antonym है Flexible (लचीला/नम्र) या Yielding."
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"TRANSIENT\"",
+      "options": [
+        "Permanent",
+        "Temporary / Ephemeral",
+        "Lasting",
+        "Eternal"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "TRANSIENT का अर्थ होता है क्षणिक या अस्थाई। Synonym: Temporary, Ephemeral, Short-lived."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"TRANSIENT\"",
+      "options": [
+        "Ephemeral",
+        "Momentary",
+        "Temporary",
+        "Permanent / Lasting"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "TRANSIENT (क्षणिक) का Antonym है Permanent (स्थाई) या Eternal."
+    },
+    {
+      "question": "Select the ONE WORD for: \"Government by a single ruler with absolute unlimited power\"",
+      "options": [
+        "Plutocracy",
+        "Democracy",
+        "Oligarchy",
+        "Autocracy"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "एक ही व्यक्ति द्वारा निरंकुश शासन व्यवस्था को Autocracy (एकतंत्र/तानाशाही) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"Government by the wealthy and rich class of people\"",
+      "options": [
+        "Plutocracy",
+        "Aristocracy",
+        "Bureaucracy",
+        "Theocracy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "धनी वर्ग के लोगों द्वारा चलाई जाने वाली सरकार को Plutocracy (धनिकतंत्र) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"Government by civil officials or bureaucrats\"",
+      "options": [
+        "Bureaucracy",
+        "Anarchy",
+        "Autocracy",
+        "Democracy"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "सरकारी नौकरशाहों/अफसरों के शासन को Bureaucracy (नौकरशाही) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"Handwriting or printing that is impossible to read\"",
+      "options": [
+        "Eligible",
+        "Inaudible",
+        "Illegitimate",
+        "Illegible"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "जो लिखावट पढ़ी न जा सके उसे Illegible (अपठनीय) कहते हैं।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Apple of one's eye\"",
+      "options": [
+        "A person with poor eyesight",
+        "An apple that is red",
+        "Very dear or favorite person",
+        "An expensive gift"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Apple of one's eye = आँख का तारा, अत्यधिक प्यारा।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"Beat around the bush\"",
+      "options": [
+        "To search in the forest",
+        "Avoid coming to the main point",
+        "To hit bushes with a stick",
+        "To speak directly"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "Beat around the bush = घुमा-फिराकर बात करना, मुख्य बिंदु से भटकना।"
+    },
+    {
+      "question": "Select the correct meaning of the IDIOM: \"A blessing in disguise\"",
+      "options": [
+        "A lucky event that turns bad",
+        "A disguised secret agent",
+        "A curse from a holy person",
+        "An apparent misfortune that yields a good result"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "A blessing in disguise = आपदा में अवसर/छिपा हुआ वरदान।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"If I <u>was</u> a king, I would help the poor.\"",
+      "options": [
+        "had been",
+        "am",
+        "No improvement",
+        "were"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "Rule: काल्पनिक शर्त (Unreal Conditional Sentence) में सब्जेक्ट के साथ हमेशा 'were' का प्रयोग होता है।"
+    },
+    {
+      "question": "Select the correct improvement for the underlined part: \"Hardly had I reached the station <u>than</u> the train left.\"",
+      "options": [
+        "No improvement",
+        "before",
+        "when",
+        "then"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Rule: Hardly / Scarcely के साथ कंजंक्शन के रूप में सदैव 'when' या 'before' आता है, 'than' नहीं।"
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"He wrote a letter.\"",
+      "options": [
+        "A letter is written by him.",
+        "A letter was being written by him.",
+        "A letter was written by him.",
+        "A letter has been written by him."
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Past Simple Tense (Subject + V2 + Object) का Passive = Object + was/were + V3 + by + Subject."
+    },
+    {
+      "question": "Change into PASSIVE VOICE: \"She is cooking food.\"",
+      "options": [
+        "Food is cooked by her.",
+        "Food was cooked by her.",
+        "Food is being cooked by her.",
+        "Food has been cooked by her."
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Present Continuous Tense (is/am/are + V-ing) का Passive = Object + is/am/are + being + V3 + by + Subject."
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: He said, \"I am going to market.\"",
+      "options": [
+        "He told that he is going to market.",
+        "He asked if he was going to market.",
+        "He said that he was going to market.",
+        "He said that I am going to market."
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "Reporting verb Past Tense में होने से Present Continuous (am going) बदलकर Past Continuous (was going) बनेगा।"
+    },
+    {
+      "question": "Change into INDIRECT SPEECH: She said to me, \"What is your name?\"",
+      "options": [
+        "She asked me what my name was.",
+        "She asked me what is my name.",
+        "She asked me what was my name.",
+        "She told me what my name is."
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "WH- प्रश्न में reporting verb 'asked' बनेगी, WH-word कंजंक्शन बनेगा तथा प्रश्न साधारण वाक्य (what my name was) बन जाएगा।"
+    },
+    {
+      "question": "Select the most appropriate SYNONYM of the word: \"BENEVOLENT\"",
+      "options": [
+        "Kind / Generous",
+        "Cruel",
+        "Selfish",
+        "Malevolent"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "BENEVOLENT का अर्थ होता है परोपकारी, दयालु या उदार। Synonym: Kind, Generous, Altruistic."
+    },
+    {
+      "question": "Select the most appropriate ANTONYM of the word: \"BENEVOLENT\"",
+      "options": [
+        "Friendly",
+        "Kind",
+        "Generous",
+        "Malevolent / Cruel"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "BENEVOLENT (दयालु) का Antonym है Malevolent (द्वेषी/दुष्ट) या Cruel."
+    },
+    {
+      "question": "Select the ONE WORD for: \"That which cannot be satisfied or appeased\"",
+      "options": [
+        "Insatiable",
+        "Satiable",
+        "Incurable",
+        "Incredible"
+      ],
+      "answer": 0,
+      "correct": 0,
+      "explanation": "जिसकी तृप्ति/संतुष्टि न हो सके उसे Insatiable (अतृप्त) कहते हैं।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A place where birds are kept and reared\"",
+      "options": [
+        "Zoo",
+        "Aquarium",
+        "Apiary",
+        "Aviary"
+      ],
+      "answer": 3,
+      "correct": 3,
+      "explanation": "पक्षियों को रखने के स्थान/पिंजरे को Aviary कहते हैं (मधुमक्खियों का स्थान Apiary होता है)।"
+    },
+    {
+      "question": "Select the ONE WORD for: \"A place where bees are kept and hives are maintained\"",
+      "options": [
+        "Kennel",
+        "Apiary",
+        "Aviary",
+        "Barn"
+      ],
+      "answer": 1,
+      "correct": 1,
+      "explanation": "मधुमक्खियों के पालन/पालतू डिब्बों के स्थान को Apiary कहते हैं।"
+    },
+    {
+      "question": "Select the CORRECTLY spelt word:",
+      "options": [
+        "NIEGHBOUR",
+        "NEIGHBORU",
+        "NEIGHBOUR",
+        "NAIGHBOUR"
+      ],
+      "answer": 2,
+      "correct": 2,
+      "explanation": "सही वर्तनी NEIGHBOUR (पड़ोसी) है।"
+    }
+  ]
+}
