@@ -5,7 +5,6 @@ Category → Subject → Test/PDF wala Telegram bot with Telegram Group integrat
 ## Structure
 
 ```
-bot.py             # shortcut (main.py ko chalata hai), `python bot.py`
 main.py            # entry point - handlers register + polling
 config.py          # BOT_TOKEN, ADMIN_ID (.env se), paths, constants
 database.py        # data.json load/save, categories/subjects/tests/history (with auto-backup recovery)
@@ -27,5 +26,5 @@ handlers_admin.py  # Add Category/Subject/Test, PDF upload
 
 ```powershell
 pip install -r requirements.txt
-python bot.py        # ya: python main.py
+python main.py
 ```

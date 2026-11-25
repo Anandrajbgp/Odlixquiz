@@ -1,6 +1,8 @@
 .env
 __pycache__/
 *.pyc
+*.tmp
+.artifacts/
 data.json.bak
 *.corrupt
 bot_before_split_backup.py

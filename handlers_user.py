@@ -239,7 +239,7 @@ async def on_callback(update, context):
         handled = await admin_panel_callback(update, context, data)
         if handled is not False:
             return
-    if data.startswith(("livecat:", "livesub:", "livetest:", "hidecat:", "qtime:", "qtimechg:", "qtimepick:")):
+    if data.startswith(("livecat:", "livesub:", "livetest:", "hidecat:", "qtime:", "qtimechg:", "qtimepick:", "schcat:", "schsub:", "schtest:", "schdel:")):
         if uid != ADMIN_ID:
             await q.answer("Admin only.", show_alert=True)
             return
@@ -472,6 +472,7 @@ async def on_callback(update, context):
         or data.startswith("hidecat:") or data.startswith("livecat:")
         or data.startswith("livesub:") or data.startswith("livetest:")
         or data.startswith("qtime:") or data.startswith("qtimechg:") or data.startswith("qtimepick:")
+        or data.startswith("schcat:") or data.startswith("schsub:") or data.startswith("schtest:") or data.startswith("schdel:")
     ):
         from handlers_admin import admin_callback
         await admin_callback(update, context, data, st)

@@ -278,3 +278,15 @@ def clear_live_msgs():
         m = list(db["live"]["msg_ids"])
         db["live"]["msg_ids"] = []
         return m
+
+def get_leaderboard(limit=10):
+    users = db.get('users', {})
+    board = []
+    for uid, udata in users.items():
+        if udata.get('history'):
+            total_score = sum(h.get('score', 0) for h in udata['history'])
+            if total_score > 0:
+                name = udata['history'][-1].get('name', str(uid))
+                board.append({'uid': uid, 'name': name, 'total_score': total_score})
+    board.sort(key=lambda x: x['total_score'], reverse=True)
+    return board[:limit]

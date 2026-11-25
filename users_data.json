@@ -2,7 +2,7 @@
   "history": {},
   "users": {},
   "seq": {
-    "cat": 0,
+    "cat": 1,
     "sub": 0,
     "test": 0
   },
@@ -17,11 +17,12 @@
     "source_channel": 0
   },
   "live": {
-    "active": false,
-    "cid": "",
-    "sid": "",
-    "tid": "",
-    "gap": 30,
+    "active": true,
+    "cid": "c_ncert6",
+    "sid": "s_bio6",
+    "tid": "sci6_ch1",
+    "gap": 0,
     "msg_ids": []
-  }
+  },
+  "schedules": []
 }
