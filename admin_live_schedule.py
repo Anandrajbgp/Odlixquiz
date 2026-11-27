@@ -1,235 +1,198 @@
-import re
-from datetime import datetime
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+"""Admin live & schedule test management handlers."""
+import logging
+from datetime import datetime, timezone, timedelta
 import database as dbm
-from keyboards import cat_inline, sub_inline, admin_home_panel, admin_stats_line, get_test_qtime, fmt_qtime
 import live as lvm
-from live import parse_schedule_time
+from keyboards import cat_inline, sub_inline, test_inline, admin_home_panel, admin_stats_line
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+
+logger = logging.getLogger(__name__)
+
 
 async def live_menu(update, context):
     q = update.callback_query
+    txt = lvm.live_status_text()
     if lvm.is_live_active():
         kb = InlineKeyboardMarkup([
-            [InlineKeyboardButton("⏹ LIVE Roko", callback_data="adm:livestop")]])
-        await q.message.reply_text(lvm.live_status_text() + "\nNeeche button se roko ya /livestop bhejo.",
-                                    reply_markup=kb, parse_mode="HTML")
+            [InlineKeyboardButton("⏹ LIVE Roko", callback_data="adm:livestop")],
+            [InlineKeyboardButton("🏠 Admin Home", callback_data="home:main")]
+        ])
+        await q.message.reply_text(txt, reply_markup=kb, parse_mode="HTML")
     else:
         context.user_data["astate"] = {"step": "pick_cat_for_live"}
-        await q.message.reply_text("🔴 <b>Kis category ka test LIVE bhejna hai?</b>\n🔒 = sirf LIVE ke liye (user ko nahi dikhega)",
-                                    reply_markup=cat_inline("livecat"), parse_mode="HTML")
+        await q.message.reply_text(
+            f"{txt}\n\n<b>LIVE bhejne ke liye category chuno:</b>",
+            reply_markup=cat_inline("livecat"),
+            parse_mode="HTML"
+        )
 
-async def livestop(update, context):
-    q = update.callback_query
-    from live import _lv
-    lv = _lv()
-    if not lv.get("active"):
-        await q.message.reply_text("Koi LIVE nahi chal raha.")
-    else:
-        lv["active"] = False
-        dbm.save_data()
-        await q.message.reply_text("⏹ LIVE rok diya.")
-        try:
-            import broadcast as bcm
-            await bcm.broadcast_text(context, "⏹ LIVE TEST rok diya gaya.")
-        except Exception:
-            pass
-
-async def pick_sub_for_live(update, context, cid, st):
-    q = update.callback_query
-    c = dbm.get_cat(cid)
-    if not c:
-        await q.message.reply_text("Category nahi mili.")
-        return
-    if not c.get("subjects"):
-        await q.message.reply_text(f"{c['name']} me koi sub-category nahi.")
-        return
-    st["step"] = "wait_sub_for_live"
-    st["cid"] = cid
-    context.user_data["astate"] = st
-    await q.message.reply_text(f"🔴 <b>{c['name']}</b> → sub-category chuno:", reply_markup=sub_inline("livesub", cid), parse_mode="HTML")
-
-async def pick_test_for_live(update, context, cid, sid):
-    q = update.callback_query
-    s = dbm.get_sub(cid, sid)
-    if not s:
-        await q.message.reply_text("Sub-category nahi mili.")
-        return
-    tests = s.get("tests", {}) or {}
-    if not tests:
-        await q.message.reply_text("Isme koi test nahi.")
-        return
-    def sortkey(item):
-        tid, t = item
-        m = re.search(r"(\d+)", t.get("title", "") or "")
-        return (int(m.group(1)) if m else 9999, t.get("title", ""))
-    btns = []
-    for tid, t in sorted(tests.items(), key=sortkey):
-        qt = fmt_qtime(get_test_qtime(t=t))
-        btns.append([InlineKeyboardButton(f"🔴 {t.get('title', tid)} ({len(t.get('questions', []))} Q, ⏱ {qt})", callback_data=f"livetest:{cid}:{sid}:{tid}")])
-    tbtns = []
-    for tid, t in sorted(tests.items(), key=sortkey):
-        qt = fmt_qtime(get_test_qtime(t=t))
-        tbtns.append([InlineKeyboardButton(f"⏱ {t.get('title', tid)} ({qt}) → time badlo", callback_data=f"qtimepick:{cid}:{sid}:{tid}")])
-    await q.message.reply_text("🔴 <b>Kaunsa test LIVE bhejna hai?</b> (dabate hi uske time se jayega)", reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
-    await q.message.reply_text("⏱ <b>Purane test ka time badalna ho to chuno:</b>", reply_markup=InlineKeyboardMarkup(tbtns), parse_mode="HTML")
-
-async def start_live_test(update, context, cid, sid, tid):
-    q = update.callback_query
-    if lvm.is_live_active():
-        await q.message.reply_text("Ek LIVE chal raha. /livestop se roko.")
-        return
-    t = dbm.get_test(cid, sid, tid)
-    if not t:
-        await q.message.reply_text("Test nahi mila.")
-        return
-    context.user_data.pop("astate", None)
-    use_gap = get_test_qtime(cid, sid, tid)
-    await q.message.reply_text(f"🔴 LIVE shuru: <b>{t.get('title')}</b> ({len(t.get('questions', []))} Q, ⏱ {use_gap}s/Q).", parse_mode="HTML")
-    lvm.start_live_task(context, cid, sid, tid, None, q.message.chat_id)
 
 async def schedule_menu(update, context):
     q = update.callback_query
-    schedules = dbm.db.get("schedules", [])
-    nsch = len(schedules)
-    txt = (
-        "📅 <b>TEST SCHEDULE PANEL</b>\n\n"
-        f"Abhi active schedules: <b>{nsch}</b>\n\n"
-        "Aap kisi bhi test ko kisi bhi time par schedule kar sakte hain.\n"
-        "Chuno aap kya karna chahte hain:"
+    kb = InlineKeyboardMarkup([
+        [InlineKeyboardButton("➕ Naya Schedule Add Karo", callback_data="adm:schadd")],
+        [InlineKeyboardButton("📋 Scheduled Tests Dekho", callback_data="adm:schlist")],
+        [InlineKeyboardButton("🏠 Admin Home", callback_data="home:main")]
+    ])
+    await q.message.reply_text(
+        "📅 <b>Schedule Test Menu:</b>\nKuch time baad automatic live test chalane ke liye chuno:",
+        reply_markup=kb,
+        parse_mode="HTML"
     )
-    btns = [
-        [InlineKeyboardButton("➕ Naya Test Schedule Karein", callback_data="adm:schadd")],
-        [InlineKeyboardButton(f"📋 Active Schedules Dekhein ({nsch})", callback_data="adm:schlist")],
-    ]
-    await q.message.reply_text(txt, reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
+
 
 async def schadd_start(update, context):
     q = update.callback_query
     context.user_data["astate"] = {"step": "pick_cat_for_sch"}
-    await q.message.reply_text("📅 <b>Kis category ka test schedule karna hai?</b>", reply_markup=cat_inline("schcat"), parse_mode="HTML")
+    await q.message.reply_text(
+        "📅 <b>Schedule Test ke liye category chuno:</b>",
+        reply_markup=cat_inline("schcat"),
+        parse_mode="HTML"
+    )
+
 
 async def schlist(update, context):
     q = update.callback_query
     schedules = dbm.db.get("schedules", [])
     if not schedules:
-        await q.message.reply_text("📅 Koi bhi test schedule nahi hai.\n\nSchedule karne ke liye '➕ Naya Test Schedule Karein' chuno.", parse_mode="HTML")
+        await q.message.reply_text("📋 Abhi koi scheduled test nahi hai.")
         return
-    lines = ["📅 <b>Active Scheduled Tests:</b>\n"]
+    lines = ["📋 <b>Scheduled Tests List:</b>\n"]
     btns = []
-    for i, sch in enumerate(schedules):
-        try:
-            dt = datetime.fromisoformat(sch["run_time"]).strftime("%d-%m-%Y %H:%M")
-        except Exception:
-            dt = sch.get("run_time", "")
-        title = sch.get("title", "Test")
-        lines.append(f"{i + 1}. <b>{title}</b> — ⏱ {dt}")
-        btns.append([InlineKeyboardButton(f"🗑 Cancel: {title} ({dt})", callback_data=f"adm:schdel:{i}")])
-    lines.append("\nKisi schedule ko radd karne ke liye button dabayein ya <code>/cancelschedule [number]</code> command use karein.")
-    await q.message.reply_text("\n".join(lines), reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
+    for idx, sch in enumerate(schedules):
+        lines.append(f"{idx + 1}. <b>{sch.get('title', '?')}</b>\n ⏰ {sch.get('run_time', '?')}")
+        btns.append([InlineKeyboardButton(f"🗑 Delete #{idx + 1} ({sch.get('title', '?')})", callback_data=f"schdel:{idx}")])
+    btns.append([InlineKeyboardButton("🏠 Admin Home", callback_data="home:main")])
+    await q.message.reply_text("\n\n".join(lines), reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
+
+
+async def livestop(update, context):
+    q = update.callback_query
+    lv = dbm.db.get("live", {})
+    title = lv.get("tid", "LIVE")
+    lv["active"] = False
+    dbm.save_data()
+    txt, kb = admin_home_panel(admin_stats_line())
+    await q.message.reply_text(f"⏹ <b>LIVE Test roka gaya.</b>\n\n{txt}", reply_markup=kb, parse_mode="HTML")
+
+
+async def pick_sub_for_live(update, context, cid, st):
+    q = update.callback_query
+    c = dbm.get_cat(cid)
+    if not c or not c.get("subjects"):
+        await q.message.reply_text("❌ Sub-category nahi mili.")
+        return
+    st.update({"step": "pick_sub_for_live", "cid": cid})
+    context.user_data["astate"] = st
+    await q.message.reply_text(f"📂 <b>{c['name']}</b> → sub-category chuno:", reply_markup=sub_inline("livesub", cid), parse_mode="HTML")
+
+
+async def pick_test_for_live(update, context, cid, sid):
+    q = update.callback_query
+    s = dbm.get_sub(cid, sid)
+    if not s or not s.get("tests"):
+        await q.message.reply_text("❌ Is sub-category me koi test nahi hai.")
+        return
+    btns = []
+    for tid, t in s.get("tests", {}).items():
+        btns.append([InlineKeyboardButton(f"🔴 LIVE {t.get('title', tid)} ({len(t.get('questions', []))} Qs)", callback_data=f"livetest:{cid}:{sid}:{tid}")])
+    await q.message.reply_text("📝 <b>Kaunsa Test LIVE bhejna hai?</b>", reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
+
+
+async def start_live_test(update, context, cid, sid, tid):
+    q = update.callback_query
+    admin_id = update.effective_user.id
+    context.user_data.pop("astate", None)
+    lvm.start_live_task(context, cid, sid, tid, None, admin_id)
+    await q.message.reply_text("🚀 LIVE Test shuru ho raha hai...")
+
 
 async def pick_sub_for_sch(update, context, cid, st):
     q = update.callback_query
     c = dbm.get_cat(cid)
-    if not c:
-        await q.message.reply_text("Category nahi mili.")
+    if not c or not c.get("subjects"):
+        await q.message.reply_text("❌ Sub-category nahi mili.")
         return
-    if not c.get("subjects"):
-        await q.message.reply_text(f"{c['name']} me koi sub-category nahi.")
-        return
-    st["step"] = "wait_sub_for_sch"
-    st["cid"] = cid
+    st.update({"step": "pick_sub_for_sch", "cid": cid})
     context.user_data["astate"] = st
-    await q.message.reply_text(f"📅 <b>{c['name']}</b> → sub-category chuno:", reply_markup=sub_inline("schsub", cid), parse_mode="HTML")
+    await q.message.reply_text(f"📂 <b>{c['name']}</b> → sub-category chuno:", reply_markup=sub_inline("schsub", cid), parse_mode="HTML")
+
 
 async def pick_test_for_sch(update, context, cid, sid):
     q = update.callback_query
     s = dbm.get_sub(cid, sid)
-    if not s:
-        await q.message.reply_text("Sub-category nahi mili.")
+    if not s or not s.get("tests"):
+        await q.message.reply_text("❌ Is sub-category me koi test nahi hai.")
         return
-    tests = s.get("tests", {}) or {}
-    if not tests:
-        await q.message.reply_text("Isme koi test nahi.")
-        return
-    def sortkey(item):
-        tid, t = item
-        m = re.search(r"(\d+)", t.get("title", "") or "")
-        return (int(m.group(1)) if m else 9999, t.get("title", ""))
     btns = []
-    for tid, t in sorted(tests.items(), key=sortkey):
-        btns.append([InlineKeyboardButton(f"📅 {t.get('title', tid)} ({len(t.get('questions', []))} Qs)", callback_data=f"schtest:{cid}:{sid}:{tid}")])
-    await q.message.reply_text("📅 <b>Kaunsa test schedule karna hai?</b>", reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
+    for tid, t in s.get("tests", {}).items():
+        btns.append([InlineKeyboardButton(f"📅 Schedule {t.get('title', tid)}", callback_data=f"schtest:{cid}:{sid}:{tid}")])
+    await q.message.reply_text("📝 <b>Kaunsa Test Schedule karna hai?</b>", reply_markup=InlineKeyboardMarkup(btns), parse_mode="HTML")
+
 
 async def prompt_schedule_time(update, context, cid, sid, tid):
     q = update.callback_query
     t = dbm.get_test(cid, sid, tid)
     if not t:
-        await q.message.reply_text("Test nahi mila.")
+        await q.message.reply_text("❌ Test nahi mila.")
         return
     context.user_data["astate"] = {"step": "wait_schedule_time", "cid": cid, "sid": sid, "tid": tid}
+    IST = timezone(timedelta(hours=5, minutes=30))
+    now_str = datetime.now(IST).strftime("%Y-%m-%d %H:%M")
     await q.message.reply_text(
-        f"📅 <b>'{t.get('title')}' schedule karne ke liye Time bhejo:</b>\n\n"
-        "Format:\n"
-        "1. <code>YYYY-MM-DD HH:MM</code> (Jaise: <code>2025-05-15 18:30</code>)\n"
-        "2. <code>HH:MM</code> (Jaise: <code>18:30</code> - aaj/kal ke liye)\n\n"
-        "<i>Radd karne ke liye /cancel bhejo.</i>",
+        f"📅 <b>{t.get('title')}</b> Schedule karne ke liye time bhejo:\n\n"
+        f"12-hour format: <code>6:30 PM</code> ya <code>06:30 PM</code>\n"
+        f"24-hour format: <code>21:30</code> (aaj ya kal ke liye)\n"
+        f"Date + time: <code>2026-11-27 6:30 PM</code> ya <code>27-11-2026 6:30 PM</code>\n"
+        f"Abhi ka time: <code>{now_str}</code>",
         parse_mode="HTML"
     )
 
+
 async def schdel(update, context, idx_str):
     q = update.callback_query
-    if idx_str.isdigit():
+    try:
         idx = int(idx_str)
         schedules = dbm.db.get("schedules", [])
         if 0 <= idx < len(schedules):
             removed = schedules.pop(idx)
             dbm.save_data()
-            await q.message.reply_text(f"🗑️ Schedule radd kar diya gaya: <b>{removed.get('title')}</b>", parse_mode="HTML")
+            if getattr(context, "job_queue", None) and "sch_id" in removed:
+                lvm.remove_test_job(context.job_queue, removed["sch_id"])
+            await q.message.reply_text(f"🗑 Schedule <b>'{removed.get('title')}'</b> delete ho gaya.", parse_mode="HTML")
         else:
-            await q.message.reply_text("❌ Galat schedule number.")
+            await q.message.reply_text("❌ Schedule nahi mila.")
+    except Exception as e:
+        await q.message.reply_text(f"❌ Error: {e}")
+
 
 async def process_schedule_time(update, context, txt, st):
-    if txt == "/cancel":
-        context.user_data.pop("astate", None)
-        t_msg, k_msg = admin_home_panel(admin_stats_line())
-        await update.message.reply_text(f"❌ Schedule karna radd kar diya gaya.\n\n{t_msg}", reply_markup=k_msg, parse_mode="HTML")
-        return True
-
-    run_dt = parse_schedule_time(txt)
+    run_dt = lvm.parse_schedule_time(txt)
     if not run_dt:
-        await update.message.reply_text(
-            "❌ <b>Galat time format!</b>\n"
-            "Kripya <code>YYYY-MM-DD HH:MM</code> (ex: <code>2025-05-15 18:30</code>) ya <code>HH:MM</code> (ex: <code>18:30</code>) format me time bhejo ya /cancel karo.",
-            parse_mode="HTML"
-        )
+        await update.message.reply_text("❌ Galat time format. Example: <code>6:30 PM</code> ya <code>21:30</code>", parse_mode="HTML")
         return True
-
-    cid = st["cid"]
-    sid = st["sid"]
-    tid = st["tid"]
+    cid, sid, tid = st.get("cid"), st.get("sid"), st.get("tid")
     t = dbm.get_test(cid, sid, tid)
-    title = t.get("title", "Test") if t else "Test"
-
-    schedule_item = {
-        "cid": cid,
-        "sid": sid,
-        "tid": tid,
-        "title": title,
+    if not t:
+        context.user_data.pop("astate", None)
+        await update.message.reply_text("❌ Test nahi mila.")
+        return True
+    sch_id = f"{tid}_{int(datetime.now().timestamp())}"
+    sch_entry = {
+        "sch_id": sch_id,
+        "cid": cid, "sid": sid, "tid": tid,
+        "title": t.get("title"),
         "run_time": run_dt.isoformat(),
-        "admin_chat_id": update.effective_chat.id,
+        "admin_chat_id": update.effective_chat.id
     }
-
-    dbm.db.setdefault("schedules", []).append(schedule_item)
+    dbm.db.setdefault("schedules", []).append(sch_entry)
     dbm.save_data()
+    if getattr(context, "job_queue", None):
+        lvm.schedule_test_job(context.job_queue, sch_entry)
     context.user_data.pop("astate", None)
-
-    t_msg, k_msg = admin_home_panel(admin_stats_line())
+    txt_out, kb_out = admin_home_panel(admin_stats_line())
     await update.message.reply_text(
-        f"✅ <b>Test Successfully Schedule Ho Gaya!</b>\n\n"
-        f"📝 Test: <b>{title}</b>\n"
-        f"⏰ Scheduled Time: <b>{run_dt.strftime('%d-%m-%Y %H:%M')}</b>\n\n"
-        f"Tay samay par bot ise live kar dega.\n\n{t_msg}",
-        reply_markup=k_msg,
-        parse_mode="HTML"
+        f"✅ <b>{t.get('title')}</b> schedule ho gaya!\n⏰ Time: <b>{run_dt.strftime('%d-%m-%Y %I:%M %p')}</b>\n\n{txt_out}",
+        reply_markup=kb_out, parse_mode="HTML"
     )
     return True

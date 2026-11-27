@@ -204,6 +204,37 @@ async def cmd_unlinkhere(update, context):
     else:
         await update.effective_message.reply_text("Ye chat list me nahi tha.")
 
+async def cmd_targets(update, context):
+    if not _is_admin(_sender_id(update)):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    await update.effective_message.reply_text(targets_text(), parse_mode="HTML")
+
+async def cmd_send(update, context):
+    if not _is_admin(_sender_id(update)):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    context.user_data["astate"] = {"step": "wait_broadcast_msg"}
+    await update.effective_message.reply_text(
+        "📢 <b>Broadcast Mode Active!</b>\nAgla message (Text, Photo, Video, Document) jo bhi bhejoge, sabhi linked groups me chala jayega.\nCancel karne ke liye /cancel bhejo.",
+        parse_mode="HTML"
+    )
+
+async def cmd_broadcast(update, context):
+    if not _is_admin(_sender_id(update)):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    args = context.args
+    if not args:
+        await cmd_send(update, context)
+        return
+    text = " ".join(args)
+    ok, fail, errs = await broadcast_text(context, text)
+    rep = f"📢 Broadcast text: {ok} sent, {fail} fail."
+    if errs:
+        rep += "\n" + "\n".join(errs[:5])
+    await update.effective_message.reply_text(rep)
+
 async def on_bot_added(update, context):
     chat = update.effective_chat
     if not chat or chat.type == "private":

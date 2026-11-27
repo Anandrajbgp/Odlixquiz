@@ -17,12 +17,744 @@
     "source_channel": 0
   },
   "live": {
-    "active": true,
+    "active": false,
     "cid": "c_ncert6",
     "sid": "s_bio6",
     "tid": "sci6_ch1",
-    "gap": 0,
-    "msg_ids": []
+    "gap": 30,
+    "msg_ids": [
+      478
+    ]
   },
-  "schedules": []
+  "schedules": [
+    {
+      "sch_id": "tonight_9pm_t_rly_gs_3",
+      "cid": "c_railway",
+      "sid": "s_rly_gs",
+      "tid": "t_rly_gs_3",
+      "title": "[🌙 Tonight Special] Railway Exams (NTPC, Group D) › General Studies & GK - General Studies & GK Test 3",
+      "run_time": "2026-11-27T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_0_7_sci6_ch1",
+      "cid": "c_ncert6",
+      "sid": "s_bio6",
+      "tid": "sci6_ch1",
+      "title": "[🌅 Science] Class 6th NCERT › Biology (जीव विज्ञान) - अध्याय 1: भोजन: इसका स्रोत कहाँ से आता है",
+      "run_time": "2026-11-28T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_0_14_t_ssc_eng_1",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_1",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 1",
+      "run_time": "2026-11-28T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_0_18_t_ssc_math_1",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_1",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 1",
+      "run_time": "2026-11-28T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_0_21_t_civ6_urb_7",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_civ6_urb_7",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - C Ncert6 - S Civ6 - T Civ6 Urb 7",
+      "run_time": "2026-11-28T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_1_7_sci6_ch16",
+      "cid": "c_ncert6",
+      "sid": "s_bio6",
+      "tid": "sci6_ch16",
+      "title": "[🌅 Science] Class 6th NCERT › Biology (जीव विज्ञान) - अध्याय 16: कचरा: बाहर जाओ अंदर आओ",
+      "run_time": "2026-11-29T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_1_14_t_ssc_eng_10",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_10",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 10",
+      "run_time": "2026-11-29T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_1_18_t_ssc_math_10",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_10",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 10",
+      "run_time": "2026-11-29T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_1_21_t_sst6_civ_1",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_sst6_civ_1",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - नागरिक शास्त्र - अध्याय 1: विविधता को समझना",
+      "run_time": "2026-11-29T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_2_7_sci6_ch2",
+      "cid": "c_ncert6",
+      "sid": "s_bio6",
+      "tid": "sci6_ch2",
+      "title": "[🌅 Science] Class 6th NCERT › Biology (जीव विज्ञान) - अध्याय 2: भोजन के घटक",
+      "run_time": "2026-11-30T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_2_14_t_ssc_eng_2",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_2",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 2",
+      "run_time": "2026-11-30T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_2_18_t_ssc_math_2",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_2",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 2",
+      "run_time": "2026-11-30T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_2_21_t_sst6_civ_2",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_sst6_civ_2",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - C Ncert6  S Civ6  T Civ6 Div 2",
+      "run_time": "2026-11-30T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_3_7_sci6_ch7",
+      "cid": "c_ncert6",
+      "sid": "s_bio6",
+      "tid": "sci6_ch7",
+      "title": "[🌅 Science] Class 6th NCERT › Biology (जीव विज्ञान) - अध्याय 7: पौधों को जानना",
+      "run_time": "2026-12-01T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_3_14_t_ssc_eng_3",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_3",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 3",
+      "run_time": "2026-12-01T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_3_18_t_ssc_math_3",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_3",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 3",
+      "run_time": "2026-12-01T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_3_21_t_sst6_civ_3",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_sst6_civ_3",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - नागरिक शास्त्र - अध्याय 3: सरकार क्या है?",
+      "run_time": "2026-12-01T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_4_7_sci6_ch8",
+      "cid": "c_ncert6",
+      "sid": "s_bio6",
+      "tid": "sci6_ch8",
+      "title": "[🌅 Science] Class 6th NCERT › Biology (जीव विज्ञान) - अध्याय 8: शरीर की गतिविधि",
+      "run_time": "2026-12-02T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_4_14_t_ssc_eng_4",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_4",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 4",
+      "run_time": "2026-12-02T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_4_18_t_ssc_math_4",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_4",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 4",
+      "run_time": "2026-12-02T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_4_21_t_sst6_civ_4",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_sst6_civ_4",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - नागरिक शास्त्र - अध्याय 4: लोकतांत्रिक सरकार के मुख्य तत्व",
+      "run_time": "2026-12-02T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_5_7_sci6_ch9",
+      "cid": "c_ncert6",
+      "sid": "s_bio6",
+      "tid": "sci6_ch9",
+      "title": "[🌅 Science] Class 6th NCERT › Biology (जीव विज्ञान) - अध्याय 9: जीवित जीवों की विशेषताएँ और आवास",
+      "run_time": "2026-12-03T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_5_14_t_ssc_eng_5",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_5",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 5",
+      "run_time": "2026-12-03T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_5_18_t_ssc_math_5",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_5",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 5",
+      "run_time": "2026-12-03T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_5_21_t_sst6_civ_5",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_sst6_civ_5",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - नागरिक शास्त्र - अध्याय 5: पंचायती राज",
+      "run_time": "2026-12-03T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_6_7_sci6_ch14",
+      "cid": "c_ncert6",
+      "sid": "s_chem6",
+      "tid": "sci6_ch14",
+      "title": "[🌅 Science] Class 6th NCERT › Chemistry (रसायन विज्ञान) - अध्याय 14: जल",
+      "run_time": "2026-12-04T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_6_14_t_ssc_eng_6",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_6",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 6",
+      "run_time": "2026-12-04T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_6_18_t_ssc_math_6",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_6",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 6",
+      "run_time": "2026-12-04T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_6_21_t_sst6_civ_6",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_sst6_civ_6",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - नागरिक शास्त्र - अध्याय 6: ग्रामीण प्रशासन",
+      "run_time": "2026-12-04T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_7_7_sci6_ch15",
+      "cid": "c_ncert6",
+      "sid": "s_chem6",
+      "tid": "sci6_ch15",
+      "title": "[🌅 Science] Class 6th NCERT › Chemistry (रसायन विज्ञान) - अध्याय 15: वायु हमारे चारों ओर",
+      "run_time": "2026-12-05T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_7_14_t_ssc_eng_7",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_7",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 7",
+      "run_time": "2026-12-05T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_7_18_t_ssc_math_7",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_7",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 7",
+      "run_time": "2026-12-05T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_7_21_t_sst6_civ_8",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_sst6_civ_8",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - नागरिक शास्त्र - अध्याय 8: ग्रामीण आजीविका",
+      "run_time": "2026-12-05T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_8_7_sci6_ch3",
+      "cid": "c_ncert6",
+      "sid": "s_chem6",
+      "tid": "sci6_ch3",
+      "title": "[🌅 Science] Class 6th NCERT › Chemistry (रसायन विज्ञान) - अध्याय 3: रेशे से वस्त्र तक",
+      "run_time": "2026-12-06T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_8_14_t_ssc_eng_8",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_8",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 8",
+      "run_time": "2026-12-06T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_8_18_t_ssc_math_8",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_8",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 8",
+      "run_time": "2026-12-06T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_8_21_t_sst6_civ_9",
+      "cid": "c_ncert6",
+      "sid": "s_civ6",
+      "tid": "t_sst6_civ_9",
+      "title": "[🌙 S.St] Class 6th NCERT › Civics (नागरिक शास्त्र) - नागरिक शास्त्र - अध्याय 9: शहरी आजीविका",
+      "run_time": "2026-12-06T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_9_7_sci6_ch4",
+      "cid": "c_ncert6",
+      "sid": "s_chem6",
+      "tid": "sci6_ch4",
+      "title": "[🌅 Science] Class 6th NCERT › Chemistry (रसायन विज्ञान) - अध्याय 4: पदार्थों को समूहों में बाँटना",
+      "run_time": "2026-12-07T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_9_14_t_ssc_eng_9",
+      "cid": "c_ssc",
+      "sid": "s_ssc_eng",
+      "tid": "t_ssc_eng_9",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › English Language - English Language Test 9",
+      "run_time": "2026-12-07T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_9_18_t_ssc_math_9",
+      "cid": "c_ssc",
+      "sid": "s_ssc_math",
+      "tid": "t_ssc_math_9",
+      "title": "[🌇 Maths & Reasoning] SSC Exams (CGL, CHSL, MTS, GD) › Quantitative Aptitude - Quantitative Aptitude Test 9",
+      "run_time": "2026-12-07T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_9_21_t_sst6_geo_1",
+      "cid": "c_ncert6",
+      "sid": "s_geo6",
+      "tid": "t_sst6_geo_1",
+      "title": "[🌙 S.St] Class 6th NCERT › Geography (भूगोल) - भूगोल - अध्याय 1: पृथ्वी: हमारा आवास (सौरमंडल में पृथ्वी)",
+      "run_time": "2026-12-07T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_10_7_sci6_ch5",
+      "cid": "c_ncert6",
+      "sid": "s_chem6",
+      "tid": "sci6_ch5",
+      "title": "[🌅 Science] Class 6th NCERT › Chemistry (रसायन विज्ञान) - अध्याय 5: पदार्थों को पृथक करना",
+      "run_time": "2026-12-08T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_10_14_t_ssc_gs_1",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_1",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 1",
+      "run_time": "2026-12-08T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_10_18_t_rly_math_1",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_1",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 1",
+      "run_time": "2026-12-08T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_10_21_t_sst6_geo_2",
+      "cid": "c_ncert6",
+      "sid": "s_geo6",
+      "tid": "t_sst6_geo_2",
+      "title": "[🌙 S.St] Class 6th NCERT › Geography (भूगोल) - भूगोल - अध्याय 2: भूमंडल: महाद्वीप और महासागर",
+      "run_time": "2026-12-08T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_11_7_sci6_ch6",
+      "cid": "c_ncert6",
+      "sid": "s_chem6",
+      "tid": "sci6_ch6",
+      "title": "[🌅 Science] Class 6th NCERT › Chemistry (रसायन विज्ञान) - अध्याय 6: हमारे चारों ओर परिवर्तन",
+      "run_time": "2026-12-09T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_11_14_t_ssc_gs_10",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_10",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 10",
+      "run_time": "2026-12-09T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_11_18_t_rly_math_10",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_10",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 10",
+      "run_time": "2026-12-09T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_11_21_t_sst6_geo_3",
+      "cid": "c_ncert6",
+      "sid": "s_geo6",
+      "tid": "t_sst6_geo_3",
+      "title": "[🌙 S.St] Class 6th NCERT › Geography (भूगोल) - भूगोल - अध्याय 3: पृथ्वी की गतियाँ",
+      "run_time": "2026-12-09T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_12_7_sci6_ch10",
+      "cid": "c_ncert6",
+      "sid": "s_phy6",
+      "tid": "sci6_ch10",
+      "title": "[🌅 Science] Class 6th NCERT › Physics (भौतिकी) - अध्याय 10: गति और दूरी का मापन",
+      "run_time": "2026-12-10T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_12_14_t_ssc_gs_2",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_2",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 2",
+      "run_time": "2026-12-10T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_12_18_t_rly_math_2",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_2",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 2",
+      "run_time": "2026-12-10T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_12_21_t_sst6_geo_4",
+      "cid": "c_ncert6",
+      "sid": "s_geo6",
+      "tid": "t_sst6_geo_4",
+      "title": "[🌙 S.St] Class 6th NCERT › Geography (भूगोल) - भूगोल - अध्याय 4: मानचित्र",
+      "run_time": "2026-12-10T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_13_7_sci6_ch11",
+      "cid": "c_ncert6",
+      "sid": "s_phy6",
+      "tid": "sci6_ch11",
+      "title": "[🌅 Science] Class 6th NCERT › Physics (भौतिकी) - अध्याय 11: प्रकाश, छाया और प्रतिबिंब",
+      "run_time": "2026-12-11T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_13_14_t_ssc_gs_3",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_3",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 3",
+      "run_time": "2026-12-11T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_13_18_t_rly_math_3",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_3",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 3",
+      "run_time": "2026-12-11T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_13_21_t_sst6_geo_5",
+      "cid": "c_ncert6",
+      "sid": "s_geo6",
+      "tid": "t_sst6_geo_5",
+      "title": "[🌙 S.St] Class 6th NCERT › Geography (भूगोल) - भूगोल - अध्याय 5: पृथ्वी के प्रमुख परिमंडल (क्षेत्र)",
+      "run_time": "2026-12-11T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_14_7_sci6_ch12",
+      "cid": "c_ncert6",
+      "sid": "s_phy6",
+      "tid": "sci6_ch12",
+      "title": "[🌅 Science] Class 6th NCERT › Physics (भौतिकी) - अध्याय 12: विद्युत और परिपथ",
+      "run_time": "2026-12-12T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_14_14_t_ssc_gs_4",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_4",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 4",
+      "run_time": "2026-12-12T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_14_18_t_rly_math_4",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_4",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 4",
+      "run_time": "2026-12-12T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_14_21_t_sst6_geo_6",
+      "cid": "c_ncert6",
+      "sid": "s_geo6",
+      "tid": "t_sst6_geo_6",
+      "title": "[🌙 S.St] Class 6th NCERT › Geography (भूगोल) - भूगोल - अध्याय 6: पृथ्वी के प्रमुख भू-आकृतियाँ",
+      "run_time": "2026-12-12T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_15_7_sci6_ch13",
+      "cid": "c_ncert6",
+      "sid": "s_phy6",
+      "tid": "sci6_ch13",
+      "title": "[🌅 Science] Class 6th NCERT › Physics (भौतिकी) - अध्याय 13: चुंबक के साथ खेलना",
+      "run_time": "2026-12-13T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_15_14_t_ssc_gs_5",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_5",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 5",
+      "run_time": "2026-12-13T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_15_18_t_rly_math_5",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_5",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 5",
+      "run_time": "2026-12-13T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_15_21_t_sst6_geo_7",
+      "cid": "c_ncert6",
+      "sid": "s_geo6",
+      "tid": "t_sst6_geo_7",
+      "title": "[🌙 S.St] Class 6th NCERT › Geography (भूगोल) - भूगोल - अध्याय 7: हमारा देश – भारत",
+      "run_time": "2026-12-13T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_16_7_sci7_ch1",
+      "cid": "c_ncert7",
+      "sid": "s_bio7",
+      "tid": "sci7_ch1",
+      "title": "[🌅 Science] Class 7th NCERT › Biology (जीव विज्ञान) - 1. पादपों में पोषण",
+      "run_time": "2026-12-14T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_16_14_t_ssc_gs_6",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_6",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 6",
+      "run_time": "2026-12-14T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_16_18_t_rly_math_6",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_6",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 6",
+      "run_time": "2026-12-14T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_16_21_t_sst6_geo_8",
+      "cid": "c_ncert6",
+      "sid": "s_geo6",
+      "tid": "t_sst6_geo_8",
+      "title": "[🌙 S.St] Class 6th NCERT › Geography (भूगोल) - भूगोल - अध्याय 8: भारत: जलवायु, वनस्पति और वन्य जीवन",
+      "run_time": "2026-12-14T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_17_7_sci7_ch12",
+      "cid": "c_ncert7",
+      "sid": "s_bio7",
+      "tid": "sci7_ch12",
+      "title": "[🌅 Science] Class 7th NCERT › Biology (जीव विज्ञान) - 12. वन: हमारी जीवन रेखा",
+      "run_time": "2026-12-15T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_17_14_t_ssc_gs_7",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_7",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 7",
+      "run_time": "2026-12-15T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_17_18_t_rly_math_7",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_7",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 7",
+      "run_time": "2026-12-15T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_17_21_t_his6_art_11",
+      "cid": "c_ncert6",
+      "sid": "s_his6",
+      "tid": "t_his6_art_11",
+      "title": "[🌙 S.St] Class 6th NCERT › History (इतिहास) - इतिहास - अध्याय 11: इमारतें, चित्रकला और पुस्तकें",
+      "run_time": "2026-12-15T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_18_7_sci7_ch13",
+      "cid": "c_ncert7",
+      "sid": "s_bio7",
+      "tid": "sci7_ch13",
+      "title": "[🌅 Science] Class 7th NCERT › Biology (जीव विज्ञान) - 13. अपशिष्ट जल की कहानी",
+      "run_time": "2026-12-16T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_18_14_t_ssc_gs_8",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_8",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 8",
+      "run_time": "2026-12-16T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_18_18_t_rly_math_8",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_8",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 8",
+      "run_time": "2026-12-16T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_18_21_t_sst6_hist_1",
+      "cid": "c_ncert6",
+      "sid": "s_his6",
+      "tid": "t_sst6_hist_1",
+      "title": "[🌙 S.St] Class 6th NCERT › History (इतिहास) - इतिहास - अध्याय 1: क्या, कहाँ, कैसे और कब",
+      "run_time": "2026-12-16T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_19_7_sci7_ch2",
+      "cid": "c_ncert7",
+      "sid": "s_bio7",
+      "tid": "sci7_ch2",
+      "title": "[🌅 Science] Class 7th NCERT › Biology (जीव विज्ञान) - 2. प्राणियों में पोषण",
+      "run_time": "2026-12-17T07:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_19_14_t_ssc_gs_9",
+      "cid": "c_ssc",
+      "sid": "s_ssc_gs",
+      "tid": "t_ssc_gs_9",
+      "title": "[☀️ GK & GS] SSC Exams (CGL, CHSL, MTS, GD) › General Studies & GK - General Studies Test 9",
+      "run_time": "2026-12-17T14:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_19_18_t_rly_math_9",
+      "cid": "c_railway",
+      "sid": "s_rly_math",
+      "tid": "t_rly_math_9",
+      "title": "[🌇 Maths & Reasoning] Railway Exams (NTPC, Group D) › Mathematics - Mathematics Test 9",
+      "run_time": "2026-12-17T18:00:00+05:30",
+      "admin_chat_id": 7863379790
+    },
+    {
+      "sch_id": "auto_19_21_t_sst6_hist_10",
+      "cid": "c_ncert6",
+      "sid": "s_his6",
+      "tid": "t_sst6_hist_10",
+      "title": "[🌙 S.St] Class 6th NCERT › History (इतिहास) - इतिहास - अध्याय 10: नए साम्राज्य और राज्य",
+      "run_time": "2026-12-17T21:00:00+05:30",
+      "admin_chat_id": 7863379790
+    }
+  ]
 }

@@ -1,4 +1,4 @@
-"""Entry point - python bot.py se bot start hota hai."""
+"""Entry point - python main.py se bot start hota hai."""
 import logging
 
 from telegram import Update
@@ -68,6 +68,15 @@ def main():
     app.add_handler(CommandHandler("myid", bcm.cmd_myid, filters=_tg_filters.ALL))
     app.add_handler(CommandHandler("linkhere", bcm.cmd_linkhere, filters=_tg_filters.ALL))
     app.add_handler(CommandHandler("unlinkhere", bcm.cmd_unlinkhere))
+    app.add_handler(CommandHandler("broadcast", bcm.cmd_broadcast))
+    app.add_handler(CommandHandler("send", bcm.cmd_send))
+    app.add_handler(CommandHandler("targets", bcm.cmd_targets))
+
+    app.add_handler(CommandHandler("live", lvm.cmd_live))
+    app.add_handler(CommandHandler("livestop", lvm.cmd_livestop))
+    app.add_handler(CommandHandler("schedule", lvm.cmd_schedule))
+    app.add_handler(CommandHandler("schedules", lvm.cmd_schedules))
+    app.add_handler(CommandHandler("cancelschedule", lvm.cmd_cancelschedule))
 
     app.add_handler(CallbackQueryHandler(on_callback))
     app.add_handler(PollAnswerHandler(handle_poll_answer))

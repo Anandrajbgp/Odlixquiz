@@ -61,6 +61,7 @@ def load_data():
                 db["seq"] = user_d.get("seq", {"cat": 0, "sub": 0, "test": 0})
                 db["broadcast"] = user_d.get("broadcast", default_db()["broadcast"])
                 db["live"] = user_d.get("live", default_db()["live"])
+                db["live"]["active"] = False  # Reset on startup so bot isn't stuck
                 db["schedules"] = user_d.get("schedules", [])
             except Exception as e:
                 logger.error(f"Error loading {USERS_DATA_FILE}: {e}")
@@ -279,14 +280,29 @@ def clear_live_msgs():
         db["live"]["msg_ids"] = []
         return m
 
+def next_test_number_in(cid, sid):
+    s = get_sub(cid, sid)
+    if not s:
+        return 1
+    tests = s.get("tests", {})
+    return len(tests) + 1
+
+
 def get_leaderboard(limit=10):
-    users = db.get('users', {})
+    hist = db.get("history", {})
     board = []
-    for uid, udata in users.items():
-        if udata.get('history'):
-            total_score = sum(h.get('score', 0) for h in udata['history'])
-            if total_score > 0:
-                name = udata['history'][-1].get('name', str(uid))
-                board.append({'uid': uid, 'name': name, 'total_score': total_score})
-    board.sort(key=lambda x: x['total_score'], reverse=True)
+    for uid, attempts in hist.items():
+        if not attempts:
+            continue
+        best_att = max(attempts, key=lambda a: a.get("score", 0))
+        best_score = best_att.get("score", 0)
+        total = best_att.get("total", 1)
+        name = best_att.get("name", f"User {uid}")
+        board.append({
+            "uid": uid,
+            "name": name,
+            "best": best_score,
+            "total": total,
+        })
+    board.sort(key=lambda x: (x["best"] / max(x["total"], 1), x["best"]), reverse=True)
     return board[:limit]

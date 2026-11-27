@@ -1,7 +1,8 @@
 """LIVE test - admin ke command se test channel/group me test ke time se."""
 import asyncio
 import logging
-from datetime import datetime
+import re
+from datetime import datetime, timezone, timedelta
 from telegram import Update
 from telegram.ext import ContextTypes
 import database as dbm
@@ -9,6 +10,7 @@ import broadcast as bcm
 from config import ADMIN_ID
 logger = logging.getLogger(__name__)
 DEFAULT_GAP = 30
+IST = timezone(timedelta(hours=5, minutes=30))
 
 def _lv():
     return dbm.db.setdefault(
@@ -191,8 +193,10 @@ async def run_live(context, cid, sid, tid, gap: int | None, admin_chat_id: int):
             live_user_scores.clear()
         live_active_poll_info.clear()
 
+        next_info = get_next_scheduled_test_text()
+        finish_text = f"🏁 <b>LIVE TEST KHATM!</b>\n<b>{title}</b> - {total} Questions poore ho gaye.{next_info}"
         try:
-            await bcm.broadcast_text(context, f"LIVE TEST khatm! <b>{title}</b> - {total} Q ho gaye.")
+            await bcm.broadcast_text(context, finish_text)
         except Exception:
             pass
         try:
@@ -204,69 +208,241 @@ def start_live_task(context, cid, sid, tid, gap, admin_chat_id):
     context.application.create_task(run_live(context, cid, sid, tid, gap, admin_chat_id))
 
 def parse_schedule_time(s: str) -> datetime | None:
+    """Parse time in 12-hour or 24-hour format.
+    Accepts: 6:30 PM, 06:30 PM, 21:30, 2026-11-27 6:30 PM, 2026-11-27 18:30
+    """
     s = s.strip()
-    try:
-        return datetime.strptime(s, "%Y-%m-%d %H:%M")
-    except ValueError:
-        pass
-    try:
-        from datetime import time as dtime, timedelta
-        t = datetime.strptime(s, "%H:%M").time()
-        now = datetime.now()
-        dt = datetime.combine(now.date(), t)
-        if dt <= now:
-            dt += timedelta(days=1)
-        return dt
-    except ValueError:
-        pass
+    # List of possible formats (12-hour + 24-hour)
+    formats = [
+        "%Y-%m-%d %I:%M %p",   # 2026-11-27 6:30 PM
+        "%Y-%m-%d %I:%M%p",    # 2026-11-27 6:30PM
+        "%d-%m-%Y %I:%M %p",   # 27-11-2026 6:30 PM
+        "%d-%m-%Y %I:%M%p",    # 27-11-2026 6:30PM
+        "%Y-%m-%d %H:%M",      # 2026-11-27 18:30
+        "%d-%m-%Y %H:%M",      # 27-11-2026 18:30
+        "%I:%M %p",            # 6:30 PM
+        "%I:%M%p",             # 6:30PM
+        "%H:%M",               # 18:30
+    ]
+    from datetime import time as dtime, timedelta
+
+    # IST (Bhagalpur) timezone
+    IST = timezone(timedelta(hours=5, minutes=30))
+
+    for fmt in formats:
+        try:
+            parsed = datetime.strptime(s, fmt)
+            # If only time was given (no date), combine with today's date in IST
+            if parsed.date() == datetime(1900, 1, 1).date():
+                now = datetime.now(IST)
+                dt = datetime.combine(now.date(), parsed.time()).replace(tzinfo=IST)
+                if dt <= now:
+                    dt += timedelta(days=1)
+                return dt
+            return parsed.replace(tzinfo=IST)
+        except ValueError:
+            continue
     return None
 
 
-async def scheduler_worker(context):
-    while True:
+def get_next_scheduled_test_text() -> str:
+    schedules = dbm.db.get("schedules", [])
+    now_dt = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+    future = []
+    for sch in schedules:
         try:
-            await asyncio.sleep(30)
-            schedules = dbm.db.get("schedules", [])
-            if not schedules:
-                continue
-            now = datetime.now()
-            remaining = []
-            for sch in schedules:
-                try:
-                    run_dt = datetime.fromisoformat(sch["run_time"])
-                except Exception:
-                    continue
-                if now >= run_dt:
-                    logger.info(f"Triggering scheduled live test: {sch.get('title')}")
-                    start_live_task(context, sch["cid"], sch["sid"], sch["tid"], None, sch["admin_chat_id"])
-                    try:
-                        await context.bot.send_message(
-                            chat_id=sch["admin_chat_id"],
-                            text=f"⏰ <b>Scheduled Live Test Shuru Ho Gaya!</b>\nTest: <b>{sch.get('title')}</b>",
-                            parse_mode="HTML"
-                        )
-                    except Exception:
-                        pass
-                else:
-                    remaining.append(sch)
-            if len(remaining) != len(schedules):
-                dbm.db["schedules"] = remaining
-                dbm.save_data()
-        except Exception as e:
-            logger.error(f"Scheduler worker error: {e}")
+            dt = datetime.fromisoformat(sch["run_time"])
+            if dt > now_dt:
+                future.append((dt, sch))
+        except Exception:
+            pass
+    if not future:
+        return ""
+    future.sort(key=lambda x: x[0])
+    next_dt, next_sch = future[0]
+    time_str = next_dt.strftime("%d-%m-%Y %I:%M %p")
+    return (
+        f"\n\n📌 <b>AGLA UPCOMING TEST:</b>\n"
+        f"⏰ <b>Time:</b> {time_str}\n"
+        f"📚 <b>Topic:</b> {next_sch.get('title', '?')}\n"
+        f"Sabhi members tayyaar rahein! 🚀"
+    )
 
 
-class SimpleContext:
-    def __init__(self, application):
-        self.bot = application.bot
-        self.application = self
+async def scheduled_job_callback(context: ContextTypes.DEFAULT_TYPE):
+    job = context.job
+    sch = job.data if job else None
+    if not sch:
+        return
+    logger.info(f"Triggering scheduled live test via JobQueue: {sch.get('title')}")
+    start_live_task(context, sch["cid"], sch["sid"], sch["tid"], None, sch["admin_chat_id"])
+    try:
+        await context.bot.send_message(
+            chat_id=sch["admin_chat_id"],
+            text=f"⏰ <b>Scheduled Live Test Shuru Ho Gaya!</b>\nTest: <b>{sch.get('title')}</b>",
+            parse_mode="HTML"
+        )
+    except Exception as e:
+        logger.warning(f"Failed to send schedule start notification: {e}")
 
-    def create_task(self, coro):
-        return asyncio.create_task(coro)
+    # Remove from persistence
+    schedules = dbm.db.get("schedules", [])
+    dbm.db["schedules"] = [s for s in schedules if s.get("sch_id") != sch.get("sch_id")]
+    dbm.save_data()
+
+
+async def reminder_job_callback(context: ContextTypes.DEFAULT_TYPE):
+    job = context.job
+    sch = job.data if job else None
+    if not sch:
+        return
+    try:
+        dt = datetime.fromisoformat(sch["run_time"])
+        time_str = dt.strftime("%I:%M %p")
+    except Exception:
+        time_str = "10 mins"
+
+    text = (
+        f"⏰ <b>10-MINUTE REMINDER!</b> ⏰\n\n"
+        f"Test bas 10 minute mein shuru hone wala hai!\n"
+        f"📚 <b>Topic:</b> {sch.get('title')}\n"
+        f"🕐 <b>Exact Start Time:</b> {time_str}\n\n"
+        f"Sabhi members live test ke liye tayyaar ho jayein! 🚀"
+    )
+    try:
+        await bcm.broadcast_text(context, text)
+    except Exception as e:
+        logger.warning(f"Reminder broadcast fail: {e}")
+
+
+def schedule_test_job(job_queue, sch_entry):
+    if not job_queue:
+        return
+    try:
+        run_dt = datetime.fromisoformat(sch_entry["run_time"])
+        sch_key = sch_entry.get("sch_id", sch_entry.get("tid"))
+        job_id = f"sch_{sch_key}"
+        job_queue.run_once(
+            scheduled_job_callback,
+            when=run_dt,
+            data=sch_entry,
+            name=job_id
+        )
+        logger.info(f"JobQueue: Scheduled '{sch_entry.get('title')}' for {run_dt}")
+
+        # Schedule 10-minute reminder
+        reminder_dt = run_dt - timedelta(minutes=10)
+        now_dt = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+        if reminder_dt > now_dt:
+            rem_id = f"rem_{sch_key}"
+            job_queue.run_once(
+                reminder_job_callback,
+                when=reminder_dt,
+                data=sch_entry,
+                name=rem_id
+            )
+            logger.info(f"JobQueue: Scheduled 10-min reminder for {reminder_dt}")
+    except Exception as e:
+        logger.error(f"Failed to schedule job in JobQueue: {e}")
+
+
+def remove_test_job(job_queue, sch_id):
+    if not job_queue:
+        return
+    job_id = f"sch_{sch_id}"
+    rem_id = f"rem_{sch_id}"
+    for j in job_queue.get_jobs_by_name(job_id):
+        j.schedule_removal()
+    for j in job_queue.get_jobs_by_name(rem_id):
+        j.schedule_removal()
 
 
 def start_scheduler(app_or_context):
     app = getattr(app_or_context, "application", app_or_context)
-    ctx = SimpleContext(app)
-    app.create_task(scheduler_worker(ctx))
+    jq = getattr(app, "job_queue", None) or getattr(app_or_context, "job_queue", None)
+    if not jq:
+        logger.warning("JobQueue not available on application.")
+        return
+    schedules = list(dbm.db.get("schedules", []))
+    now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+    for sch in schedules:
+        if "sch_id" not in sch:
+            sch["sch_id"] = f"{sch['tid']}_{int(datetime.now().timestamp())}"
+        try:
+            run_dt = datetime.fromisoformat(sch["run_time"])
+            if run_dt > now:
+                schedule_test_job(jq, sch)
+        except Exception as e:
+            logger.error(f"Error restoring job {sch}: {e}")
+
+
+def _is_admin(uid) -> bool:
+    try:
+        return bool(ADMIN_ID) and uid is not None and int(uid) == int(ADMIN_ID)
+    except Exception:
+        return False
+
+
+async def cmd_live(update, context):
+    if not _is_admin(update.effective_user.id if update.effective_user else None):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    args = context.args
+    if not args:
+        await update.effective_message.reply_text(live_tests_list(), parse_mode="HTML")
+        return
+    query = " ".join(args)
+    res = None
+    if query.isdigit():
+        idx = int(query)
+        mp = live_index_map()
+        res = mp.get(idx)
+    else:
+        res = find_test_by_name(query)
+    if not res:
+        await update.effective_message.reply_text(f"❌ Test '{query}' nahi mila.\n\n{live_tests_list()}", parse_mode="HTML")
+        return
+    cid, sid, tid = res
+    start_live_task(context, cid, sid, tid, None, update.effective_chat.id)
+    await update.effective_message.reply_text("🚀 LIVE test starting...")
+
+
+async def cmd_livestop(update, context):
+    if not _is_admin(update.effective_user.id if update.effective_user else None):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    lv = _lv()
+    lv["active"] = False
+    dbm.save_data()
+    await update.effective_message.reply_text("⏹ LIVE test roka gaya.")
+
+
+async def cmd_schedule(update, context):
+    if not _is_admin(update.effective_user.id if update.effective_user else None):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    import admin_live_schedule
+    await admin_live_schedule.schedule_menu(update, context)
+
+
+async def cmd_schedules(update, context):
+    if not _is_admin(update.effective_user.id if update.effective_user else None):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    import admin_live_schedule
+    await admin_live_schedule.schlist(update, context)
+
+
+async def cmd_cancelschedule(update, context):
+    if not _is_admin(update.effective_user.id if update.effective_user else None):
+        await update.effective_message.reply_text("Admin only.")
+        return
+    args = context.args
+    if not args or not args[0].isdigit():
+        await update.effective_message.reply_text("Usage: <code>/cancelschedule 1</code>", parse_mode="HTML")
+        return
+    idx_str = str(int(args[0]) - 1)
+    import admin_live_schedule
+    await admin_live_schedule.schdel(update, context, idx_str)
+
 
