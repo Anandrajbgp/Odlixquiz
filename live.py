@@ -82,7 +82,7 @@ async def _send_q_to_targets(context, q, qi, total, title, gap):
     tg = bcm.get_targets()
     sent = 0
     lv = _lv()
-    qtext = f"[LIVE {title}] Q{qi + 1}/{total} (⏱ {gap}s): {q['question']}"
+    qtext = f"Q{qi + 1}/{total}: {q['question']}"
     for cid in list(tg.keys()):
         try:
             kind = (tg.get(str(cid)) or {}).get("kind", "")

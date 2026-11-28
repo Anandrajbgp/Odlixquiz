@@ -62,10 +62,10 @@ async def send_q(chat_id, uid, cid, sid, tid, qi, context, stop_msg_id=None):
     from keyboards import stop_quiz_inline
     msg = await _safe_send_poll(
         context.bot, chat_id,
-        f"[{sub_name}] Q{qi + 1}/{total}: {q['question']}",
+        f"Q{qi + 1}/{total}: {q['question']}",
         q["options"], q.get("correct", q.get("answer", 0)), q.get("explanation", ""),
         open_period=timer,
-        reply_markup=stop_quiz_inline()  # Ye line add hui hai
+        reply_markup=stop_quiz_inline()
     )
     active_polls[msg.poll.id] = {
         "cid": cid, "sid": sid, "tid": tid, "qi": qi, "uid": uid,
